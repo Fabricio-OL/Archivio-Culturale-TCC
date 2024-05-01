@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DataBaseDAO {
-    public final String URL = "jdbc:mysql://localhost:3306/ltpa1";
+    public final String URL = "jdbc:mysql://localhost:3306/archiviodb";
     public final String USER = "root";
     public final String SENHA = "";
     public Connection conn;

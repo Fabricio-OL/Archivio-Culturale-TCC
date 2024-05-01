@@ -1,22 +1,24 @@
+/*
 package model;
 
+import pessoa.Leitor;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class PerfilDAO extends DataBaseDAO {
+public class LeitorDAO extends DataBaseDAO {
+
+    public LeitorDAO() throws Exception{}
     
-    public PerfilDAO() throws Exception{}
-    
-    public ArrayList<Perfil> getLista() throws Exception{
-        ArrayList<Perfil> lista = new ArrayList<Perfil>();
+    public ArrayList<Leitor> getLista() throws Exception{
+        ArrayList<Leitor> lista = new ArrayList<Leitor>();
         String SQL = "SELECT * FROM perfil";
         this.conectar();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery(SQL);
         
         while(rs.next()){
-            Perfil p = new Perfil();
+            Leitor p = new Leitor();
             p.setIdPerfil(rs.getInt("idPerfil"));
             p.setNome(rs.getString("nome"));
             lista.add(p);
@@ -26,5 +28,6 @@ public class PerfilDAO extends DataBaseDAO {
         
         return lista;
     }
-    
+
 }
+*/
