@@ -1,4 +1,4 @@
-package model.livro;
+package model;
 
 public enum Status {
     EMPRESTADO,
