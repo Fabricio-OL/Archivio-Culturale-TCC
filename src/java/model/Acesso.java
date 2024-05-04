@@ -1,6 +1,7 @@
 
 package model;
 
+import model.pessoa.Leitor;
 import java.sql.Date;
 
 public class Acesso {
@@ -14,44 +15,26 @@ public class Acesso {
         this.leitor = leitor;
     }
 
-    /**
-     * @return the idAcesso
-     */
     public int getIdAcesso() {
         return idAcesso;
     }
 
-    /**
-     * @param idAcesso the idAcesso to set
-     */
     public void setIdAcesso(int idAcesso) {
         this.idAcesso = idAcesso;
     }
 
-    /**
-     * @return the nome
-     */
     public String getNome() {
         return nome;
     }
 
-    /**
-     * @param nome the nome to set
-     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    /**
-     * @return the leitor
-     */
     public Leitor getLeitor() {
         return leitor;
     }
 
-    /**
-     * @param leitor the leitor to set
-     */
     public void setLeitor(Leitor leitor) {
         this.leitor = leitor;
     }
@@ -60,8 +43,4 @@ public class Acesso {
     public String toString() {
         return "Acesso{" + "idAcesso=" + idAcesso + ", nome=" + nome + ", leitor=" + leitor + '}';
     }
-    
-    
-
-    
 }
