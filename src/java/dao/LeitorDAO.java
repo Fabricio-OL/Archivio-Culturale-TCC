@@ -1,29 +1,30 @@
 package dao;
 
-/*
-package model;
-
-import pessoa.Leitor;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import model.pessoa.Leitor;
 
 public class LeitorDAO extends DataBaseDAO {
 
     public LeitorDAO() throws Exception{}
     
     public ArrayList<Leitor> getLista() throws Exception{
-        ArrayList<Leitor> lista = new ArrayList<Leitor>();
-        String SQL = "SELECT * FROM perfil";
+        ArrayList<Leitor> lista = new ArrayList<>();
+        String SQL = "SELECT * FROM leitor";
         this.conectar();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery(SQL);
         
         while(rs.next()){
-            Leitor p = new Leitor();
-            p.setIdPerfil(rs.getInt("idPerfil"));
-            p.setNome(rs.getString("nome"));
-            lista.add(p);
+            Leitor leitor = new Leitor();
+            leitor.setIdLeitor(rs.getInt("idLeitor"));
+            leitor.setNome(rs.getString("nome"));
+            leitor.setCpf(rs.getString("cpf"));
+            leitor.setDn(rs.getDate("dn"));
+            leitor.setEnd(rs.getString("end"));
+
+            lista.add(leitor);
         }
         
         this.desconectar();
@@ -32,4 +33,3 @@ public class LeitorDAO extends DataBaseDAO {
     }
 
 }
-*/

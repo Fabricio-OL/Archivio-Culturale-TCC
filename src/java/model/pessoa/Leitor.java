@@ -1,19 +1,20 @@
 package model.pessoa;
 
-import model.pessoa.Pessoa;
 import java.sql.Date;
-import model.Emprestimo;
 import model.Emprestimo;
 
 public class Leitor extends Pessoa {
     
     private int idLeitor;
     private Emprestimo emprestimo;
+    
+    public Leitor() {}
 
-    public Leitor(String nome, String cpf, Date dn, String end) {
+    public Leitor(int idLeitor, String nome, String cpf, Date dn, String end) {
         super(nome, cpf, dn, end);
+        this.idLeitor = idLeitor;
     }
-
+    
     public int getIdLeitor() {
         return idLeitor;
     }

@@ -8,6 +8,8 @@ public abstract class Pessoa {
     private String cpf;
     private Date dn;
     private String end;
+    
+    protected Pessoa() {}
 
     protected Pessoa(String nome, String cpf, Date dn, String end) {
         this.nome = nome;
