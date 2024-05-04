@@ -6,10 +6,10 @@ public class Emprestimo {
     private int idEmp;
     private Date dataEmp;
     private Date dataDev;
-    private Status status;
+    private String status;
     private Devolucao devolucao;
 
-    public Emprestimo(int idEmp, Date dataEmp, Date dataDev, Status status, Devolucao devolucao) {
+    public Emprestimo(int idEmp, Date dataEmp, Date dataDev, String status, Devolucao devolucao) {
         this.idEmp = idEmp;
         this.dataEmp = dataEmp;
         this.dataDev = dataDev;
@@ -62,14 +62,14 @@ public class Emprestimo {
     /**
      * @return the status
      */
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
     /**
      * @param status the status to set
      */
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
