@@ -8,6 +8,9 @@ public class Emprestimo {
     private Date dataDev;
     private String status;
     private Devolucao devolucao;
+    
+    public Emprestimo (){
+    }
 
     public Emprestimo(int idEmp, Date dataEmp, Date dataDev, String status, Devolucao devolucao) {
         this.idEmp = idEmp;
@@ -16,6 +19,9 @@ public class Emprestimo {
         this.status = status;
         this.devolucao = devolucao;
     }
+
+  
+
 
     public int getIdEmp() {
         return idEmp;
@@ -61,6 +67,7 @@ public class Emprestimo {
     public String toString() {
         return "Emprestimo{" + "idEmp=" + idEmp + ", dataEmp=" + dataEmp + ", dataDev=" + dataDev + ", status=" + status + ", devolucao=" + devolucao + '}';
     }
-    
+
+   
     
 }

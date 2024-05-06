@@ -8,7 +8,7 @@ public class Livro {
     EDITORA
     GENERO
     RESERVAS
-    (EMPRÉSTIMO segundo o apontamento do fabricio)
+    
     */
     
 }
