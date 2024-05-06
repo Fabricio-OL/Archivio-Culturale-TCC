@@ -2,11 +2,11 @@ package model;
 
 
 import java.sql.Date;
- /*
+ 
 public class Devolucao {
-    /* private int idDev;
+     private int idDev;
     private Date dataDev;
-    /*Condicao condicao (Condição não é uma tabela mas sim um atributo )
+    //Condicao condicao (Condição não é uma tabela mas sim um atributo )
   
     private String condicao;
 
@@ -53,4 +53,4 @@ public class Devolucao {
     
     
 }
-  */
+  

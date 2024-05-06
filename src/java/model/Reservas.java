@@ -7,6 +7,12 @@ public class Reservas {
     private Date dataReserva;
     private String status;
 
+    public Reservas() {
+    }
+    
+    
+    
+
     public Reservas(int idReserva, Date dataReserva, String status) {
         this.idReserva = idReserva;
         this.dataReserva = dataReserva;

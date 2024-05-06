@@ -89,7 +89,7 @@ public class EmprestimoDAO extends DataBaseDAO {
 
     public Emprestimo getCarregaPorID(int idEmp) throws Exception { // O prof usou o LONG mas no nosso banco está INT 
         Emprestimo em = new Emprestimo();
-        String sql = "select * from Emprestimo where id=?";
+        String sql = "select * from Emprestimo where idEmp=?";
         this.conectar();
         PreparedStatement pstm = conn.prepareStatement(sql);
         pstm.setInt(1, idEmp);
@@ -104,4 +104,6 @@ public class EmprestimoDAO extends DataBaseDAO {
         return em;
     }
 
+    
+    // Metodos para FAZER: CalcularMulta, EmitirMulta...
 }
