@@ -4,10 +4,8 @@ package model;
 import java.sql.Date;
  
 public class Devolucao {
-     private int idDev;
+    private int idDev;
     private Date dataDev;
-    //Condicao condicao (Condição não é uma tabela mas sim um atributo )
-  
     private String condicao;
 
     public Devolucao(int idDev, Date dataDev, String condicao) {
@@ -16,31 +14,25 @@ public class Devolucao {
         this.condicao = condicao;
     }
 
-
     public int getIdDev() {
         return idDev;
     }
-
     
     public void setIdDev(int idDev) {
         this.idDev = idDev;
     }
 
-   
     public Date getDataDev() {
         return dataDev;
     }
-
    
     public void setDataDev(Date dataDev) {
         this.dataDev = dataDev;
     }
-
    
     public String getCondicao() {
         return condicao;
     }
-
     
     public void setCondicao(String condicao) {
         this.condicao = condicao;
