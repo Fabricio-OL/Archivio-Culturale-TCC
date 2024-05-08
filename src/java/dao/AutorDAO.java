@@ -51,10 +51,10 @@ public class AutorDAO extends DataBaseDAO {
             pstm.setString(1, autor.getNome());
             pstm.setString(2, autor.getCpf());
             pstm.setDate(3, autor.getDn());
-            pstm.setString(3, autor.getEnd());
+            pstm.setString(4, autor.getEnd());
 
             if (autor.getIdAutor() > 0) {
-                pstm.setLong(4, autor.getIdAutor());
+                pstm.setLong(5, autor.getIdAutor());
             }
             
             pstm.execute();

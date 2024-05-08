@@ -51,10 +51,10 @@ public class LeitorDAO extends DataBaseDAO {
             pstm.setString(1, leitor.getNome());
             pstm.setString(2, leitor.getCpf());
             pstm.setDate(3, leitor.getDn());
-            pstm.setString(3, leitor.getEnd());
+            pstm.setString(4, leitor.getEnd());
 
             if (leitor.getIdLeitor() > 0) {
-                pstm.setLong(4, leitor.getIdLeitor());
+                pstm.setLong(5, leitor.getIdLeitor());
             }
             
             pstm.execute();

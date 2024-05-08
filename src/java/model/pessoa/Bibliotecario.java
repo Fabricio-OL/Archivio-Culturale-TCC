@@ -6,6 +6,8 @@ public class Bibliotecario extends Pessoa {
     
     private int idBibliotecario;
     private double salario;
+    
+    public Bibliotecario() {}
 
     public Bibliotecario(int idBibliotecario, String nome, String cpf, Date dn, String end, double salario) {
         super(nome, cpf, dn, end);
