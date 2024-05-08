@@ -3,21 +3,26 @@ package model;
 
 public class Editora {
     
-    private String cnpj;
+    private int cnpj;
     private String nome;
     private String end;
 
-    public Editora(String cnpj, String nome, String end) {
+    public Editora() {
+    }
+    
+    
+
+    public Editora(int cnpj, String nome, String end) {
         this.cnpj = cnpj;
         this.nome = nome;
         this.end = end;
     }
 
-    public String getCnpj() {
+    public int getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(String cnpj) {
+    public void setCnpj(int cnpj) {
         this.cnpj = cnpj;
     }
 

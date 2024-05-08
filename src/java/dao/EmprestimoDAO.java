@@ -25,7 +25,7 @@ public class EmprestimoDAO extends DataBaseDAO {
             em.setDataEmp(rs.getDate("dataEmp"));
             em.setDataDev(rs.getDate("dataDev"));
             em.setStatus(rs.getString("status"));
-            em.setDevolucao(rs.getInt(0));
+            
 
             lista.add(em);
         }
