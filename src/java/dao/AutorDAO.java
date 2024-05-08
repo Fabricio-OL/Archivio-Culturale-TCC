@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Emprestimo;
 import model.pessoa.Autor;
 
 public class AutorDAO extends DataBaseDAO {
@@ -45,7 +44,7 @@ public class AutorDAO extends DataBaseDAO {
                         + "VALUES (?, ?, ?, ?)";
 
             } else {
-                sql = "UPDATE Autor SET nome = ?, cpf = ?, dn = ?, end = ? WHERE idEmp = ?";
+                sql = "UPDATE Autor SET nome = ?, cpf = ?, dn = ?, end = ? WHERE idAutor = ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -65,6 +64,46 @@ public class AutorDAO extends DataBaseDAO {
             System.out.println(e);
             return false;
         }
+    }
+    
+    public boolean deletar(Autor autor) {
+        
+        try {
+            String sql;
+            this.conectar();
+            sql = "DELETE FROM Autor WHERE idAutor =?;";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setLong(1, autor.getIdAutor());
+            pstm.execute();
+            this.desconectar();
+            return true;
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
+    }
+    
+    public Autor getCarregaPorID(int idAutor) throws Exception {
+        
+        Autor autor = new Autor();
+        String sql = "SELECT * FROM Autor WHERE idAutor = ?";
+        this.conectar();
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        pstm.setInt(1, idAutor);
+        ResultSet rs = pstm.executeQuery();
+        
+        if (rs.next()) {
+            autor.setIdAutor(rs.getInt("idAutor"));
+            autor.setNome   (rs.getString("nome"));
+            autor.setCpf    (rs.getString("cpf"));
+            autor.setDn     (rs.getDate("dn"));
+            autor.setEnd    (rs.getString("end"));
+        }
+        
+        this.desconectar();
+        return autor;
     }
 
 }
