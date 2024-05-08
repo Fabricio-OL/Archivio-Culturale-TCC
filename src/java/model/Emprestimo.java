@@ -3,6 +3,7 @@ package model;
 import java.sql.Date;
 
 public class Emprestimo {
+    
     private int idEmp;
     private Date dataEmp;
     private Date dataDev;
@@ -19,10 +20,7 @@ public class Emprestimo {
         this.status = status;
         this.devolucao = devolucao;
     }
-
-  
-
-
+    
     public int getIdEmp() {
         return idEmp;
     }
@@ -68,6 +66,4 @@ public class Emprestimo {
         return "Emprestimo{" + "idEmp=" + idEmp + ", dataEmp=" + dataEmp + ", dataDev=" + dataDev + ", status=" + status + ", devolucao=" + devolucao + '}';
     }
 
-   
-    
 }

@@ -2,6 +2,7 @@
 package model;
 
 public class Editora {
+    
     private String cnpj;
     private String nome;
     private String end;

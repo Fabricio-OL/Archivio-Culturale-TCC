@@ -4,6 +4,7 @@ package model;
 import java.sql.Date;
  
 public class Devolucao {
+    
     private int idDev;
     private Date dataDev;
     private String condicao;
@@ -42,7 +43,6 @@ public class Devolucao {
     public String toString() {
         return "Devolucao{" + "idDev=" + idDev + ", dataDev=" + dataDev + ", condicao=" + condicao + '}';
     }
-    
     
 }
   

@@ -5,6 +5,7 @@ import model.pessoa.Leitor;
 import java.sql.Date;
 
 public class Acesso {
+    
     private  int idAcesso;
     private String nome;
     private Leitor leitor ;// No Diagrama, consta que a Classe Leitor está dentro de Acesso
