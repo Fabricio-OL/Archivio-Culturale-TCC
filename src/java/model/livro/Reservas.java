@@ -1,5 +1,5 @@
 
-package model;
+package model.livro;
 import java.sql.Date;
 
 public class Reservas {

@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Reservas;
+import model.livro.Reservas;
 
 public class ReservasDAO extends DataBaseDAO {
 

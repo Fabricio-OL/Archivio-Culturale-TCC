@@ -1,5 +1,5 @@
 
-package model;
+package model.livro;
 
 public class Editora {
     

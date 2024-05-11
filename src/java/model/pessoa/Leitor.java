@@ -1,7 +1,7 @@
 package model.pessoa;
 
 import java.sql.Date;
-import model.Emprestimo;
+import model.livro.Emprestimo;
 
 public class Leitor extends Pessoa {
     
