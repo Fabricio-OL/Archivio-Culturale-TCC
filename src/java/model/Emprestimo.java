@@ -65,5 +65,5 @@ public class Emprestimo {
     public String toString() {
         return "Emprestimo{" + "idEmp=" + idEmp + ", dataEmp=" + dataEmp + ", dataDev=" + dataDev + ", status=" + status + ", devolucao=" + devolucao + '}';
     }
-
+// Fazer metodos CalcularMulta e EmitirMulta 
 }

@@ -2,8 +2,8 @@
 package model;
 
 public class Editora {
-    
-    private int cnpj;
+    private int idEditora;
+    private String cnpj;
     private String nome;
     private String end;
 
@@ -12,17 +12,18 @@ public class Editora {
     
     
 
-    public Editora(int cnpj, String nome, String end) {
+    public Editora(int idEditora,String cnpj, String nome, String end) {
+        this.idEditora= idEditora;
         this.cnpj = cnpj;
         this.nome = nome;
         this.end = end;
     }
 
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -42,8 +43,19 @@ public class Editora {
         this.end = end;
     }
 
+   
+    public int getIdEditora() {
+        return idEditora;
+    }
+
+    public void setIdEditora(int idEditora) {
+        this.idEditora = idEditora;
+    }
+
     @Override
     public String toString() {
-        return "Editora{" + "cnpj=" + cnpj + ", nome=" + nome + ", end=" + end + '}';
+        return "Editora{" + "idEditora=" + idEditora + ", cnpj=" + cnpj + ", nome=" + nome + ", end=" + end + '}';
     }
+
+    
 }

@@ -87,7 +87,7 @@ public class EmprestimoDAO extends DataBaseDAO {
     }
 // Metodo carregar por ID , que basicamente busca um emprestimo no banco de dados pelo seu ID.
 
-    public Emprestimo getCarregaPorID(int idEmp) throws Exception { // O prof usou o LONG mas no nosso banco está INT 
+    public Emprestimo getCarregaPorID(int idEmp) throws Exception { 
         Emprestimo em = new Emprestimo();
         String sql = "select * from Emprestimo where idEmp=?";
         this.conectar();
@@ -105,5 +105,20 @@ public class EmprestimoDAO extends DataBaseDAO {
     }
 
     
-    // Metodos para FAZER: CalcularMulta, EmitirMulta...
+    
+   public boolean ConferirStatus(String status)  throws Exception {
+      Emprestimo em = new Emprestimo();
+        String sql = "select * from Emprestimo where status =0 ,1 ,2";
+        this.conectar();
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        pstm.setString (0,status  );
+        ResultSet rs = pstm.executeQuery();
+          
+       
+       
+       
+   }
+     
+    
+    
 }

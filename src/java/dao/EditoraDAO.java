@@ -1,4 +1,3 @@
-
 package dao;
 
 import java.sql.PreparedStatement;
@@ -7,53 +6,54 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import model.Editora;
 
+public class EditoraDAO extends DataBaseDAO {
 
+    public EditoraDAO() throws Exception {
+    }
 
-public class EditoraDAO extends DataBaseDAO{
-    
-    public EditoraDAO() throws Exception{}
-    
-   // Metodo Listar 
-    public ArrayList<Editora> getLista() throws Exception{
+    // Metodo Listar 
+    public ArrayList<Editora> getLista() throws Exception {
         ArrayList<Editora> lista = new ArrayList<>();
         String SQL = "SELECT * FROM Editora";
         this.conectar();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery(SQL);
-        
-        while(rs.next()){
+
+        while (rs.next()) {
             Editora editora = new Editora();
-            editora.setCnpj(rs.getInt(0));
+            editora.setIdEditora(rs.getInt("idEditora"));
+            editora.setCnpj(rs.getString("cnpj"));
             editora.setNome(rs.getString("nome"));
             editora.setEnd(rs.getString("end"));
 
             lista.add(editora);
         }
-        
+
         this.desconectar();
-        
+
         return lista;
     }
-     // Metodo Gravar
+    // Metodo Gravar
 
     public boolean gravar(Editora editora) {
         try {
             String sql;
             this.conectar();
-            if (editora.getCnpj() == 0) {
-                sql = " INSERT INTO Editora(nome , end)"
-                        + "values (?,?)";
+            if (editora.getIdEditora() == 0) {
+                sql = " INSERT INTO Editora(nome,end,cnpj)"
+                        + "values (?,?,?)";
 
             } else {
-                sql = "UPDATE Editora SET nome = ?, end = ? WHERE cnpj = ?";
+                sql = "UPDATE Editora SET nome = ?, end = ? cnpj = ? WHERE idEditora= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setString(1, editora.getNome());
-            pstm.setString(2, editora.getEnd());
+            pstm.setString(1, editora.getCnpj());
+            pstm.setString(2, editora.getNome());
+            pstm.setString(3, editora.getEnd());
             // Condição para o ID 
-            if (editora.getCnpj()> 0) {
-                pstm.setLong(4, editora.getCnpj());
+            if (editora.getIdEditora() > 0) {
+                pstm.setLong(4, editora.getIdEditora());
             }
             pstm.execute();
             this.desconectar();
@@ -65,15 +65,15 @@ public class EditoraDAO extends DataBaseDAO{
         }
 
     }
-      // Metodo Deletar 
+    // Metodo Deletar 
 
     public boolean deletar(Editora editora) {
         try {
             String sql;
             this.conectar();
-            sql = "DELETE FROM Ediotra WHERE cnpj =?;";
+            sql = "DELETE FROM Editora WHERE idEditora=?;";
             PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setInt(1, editora.getCnpj());// Banco de dos está INT, maso prof disse que não dá problema deixar assim
+            pstm.setInt(1, editora.getIdEditora());
             pstm.execute();
             this.desconectar();
             return true;
@@ -82,19 +82,20 @@ public class EditoraDAO extends DataBaseDAO{
             System.out.println(e);
             return false;
         }
-        
-        
-    // Metodo carregar por CNPJ , que basicamente busca A EDITORA no banco de dados pelo seu CNPJ.
 
-    public Editora getCarregaPorID(int cnpj) throws Exception { // O prof usou o LONG mas no nosso banco está INT 
-       Editora editora = new Editora();
-        String sql = "select * from Editora where cnpj=?";
+    }
+    // Metodo carregar por ID, que basicamente busca A EDITORA no banco de dados pelo seu ID.
+
+    public Editora getCarregaPorID(int idEditora) throws Exception {
+        Editora editora = new Editora();
+        String sql = "SELECT * FROM Editora WHERE idEditora=?";
         this.conectar();
         PreparedStatement pstm = conn.prepareStatement(sql);
-        pstm.setInt(1, cnpj);
+        pstm.setInt(1, idEditora);
         ResultSet rs = pstm.executeQuery();
         if (rs.next()) {
-            editora.setCnpj(rs.getInt("cnpj"));
+            editora.setIdEditora(rs.getInt("idEditora"));
+            editora.setCnpj(rs.getString("cnpj"));
             editora.setNome(rs.getString("nome"));
             editora.setEnd(rs.getString("end"));
         }
@@ -103,5 +104,4 @@ public class EditoraDAO extends DataBaseDAO{
 
     }
 
-    
 }
