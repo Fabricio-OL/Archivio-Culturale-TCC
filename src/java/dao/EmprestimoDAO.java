@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Emprestimo;
+import model.livro.Emprestimo;
 
 public class EmprestimoDAO extends DataBaseDAO {
 

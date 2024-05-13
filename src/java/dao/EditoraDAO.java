@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Editora;
+import model.livro.Editora;
 
 public class EditoraDAO extends DataBaseDAO {
 
