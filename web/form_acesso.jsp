@@ -16,18 +16,21 @@
             <h1>Cadastrar Acesso </h1>
 
             <form action="gerenciar_acesso.do" method="post"
-                  <input type="text" name="idAcesso" value="" >
+                  <input type="hidden" name="idAcesso" value="${acesso.idAcesso}"/> 
+                
                 <div class="row">
                     <div class="form-group col-sm-6">
-                        <label for="Acesso" class="control-label">Acessos</label>
-                        <input type="text" class="form-control" id="idAcesso"  name="nome"   requerid="" value="" maxlength="45"/>
+                        <label class="control-label">Nome</label>
+                        <input type="text" class="form-control"   name="nome"  value="${acesso.nome}"/>
                     </div>
                 </div>
-                <div class="row"
-                     <button class="btn btn-sucess">Gravar</button>
-                    <a href="listar_acesso.jsp" class="brn btn-warning">Voltar</a>
+                <div class="row">
+                     <button class="btn btn-sucess">Adicionar</button> 
+                    <a href="listar_acesso.jsp" class="btn btn-warning">Voltar</a>
+                    
+                </div>
 
-
+<!--  Botao Adicionar nao esta funcionando e o metodo Gravar não está funcionando -->
             </div>      
 
         </form>

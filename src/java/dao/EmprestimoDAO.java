@@ -25,7 +25,6 @@ public class EmprestimoDAO extends DataBaseDAO {
             em.setDataEmp(rs.getDate("dataEmp"));
             em.setDataDev(rs.getDate("dataDev"));
             em.setStatus(rs.getString("status"));
-            
 
             lista.add(em);
         }
@@ -87,7 +86,7 @@ public class EmprestimoDAO extends DataBaseDAO {
     }
 // Metodo carregar por ID , que basicamente busca um emprestimo no banco de dados pelo seu ID.
 
-    public Emprestimo getCarregaPorID(int idEmp) throws Exception { 
+    public Emprestimo getCarregaPorID(int idEmp) throws Exception {
         Emprestimo em = new Emprestimo();
         String sql = "select * from Emprestimo where idEmp=?";
         this.conectar();
@@ -104,21 +103,36 @@ public class EmprestimoDAO extends DataBaseDAO {
         return em;
     }
 
-    
-    
-   public boolean ConferirStatus(String status)  throws Exception {
-      Emprestimo em = new Emprestimo();
-        String sql = "select * from Emprestimo where status =0 ,1 ,2";
+    public String ConferirStatus(int id) throws Exception {
+        Emprestimo em = new Emprestimo();
+        String sql = "select status from Emprestimo where id =?";
         this.conectar();
         PreparedStatement pstm = conn.prepareStatement(sql);
-        pstm.setString (0,status  );
+        pstm.setInt(1, id);
         ResultSet rs = pstm.executeQuery();
-          
-       
-       
-       
-   }
-     
-    
-    
+        if (rs.next()) {
+            em.setStatus(rs.getString("status"));
+        }
+        this.desconectar();
+        return em.getStatus();
+
+    }
+
+    public double emitirMulta(int id) throws Exception {
+
+        double multa = 0;
+
+        if (ConferirStatus(id) == "0") {
+            multa = 0;
+
+        } else if (ConferirStatus(id) == "1") {
+            multa = 50;
+
+        } else if (ConferirStatus(id) == "2") {
+            multa = 100;
+
+        }
+        return multa;
+
+    }
 }

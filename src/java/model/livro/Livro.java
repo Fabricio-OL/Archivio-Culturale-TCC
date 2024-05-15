@@ -7,7 +7,6 @@ public class Livro {
     private String titulo;
     private Editora editora;
     private Genero genero;
-    private Reservas reservas;
     private Emprestimo emprestimo;
     
     public Livro(){}
@@ -52,13 +51,6 @@ public class Livro {
         this.genero = genero;
     }
 
-    public Reservas getReservas() {
-        return reservas;
-    }
-
-    public void setReservas(Reservas reservas) {
-        this.reservas = reservas;
-    }
 
     public Emprestimo getEmprestimo() {
         return emprestimo;

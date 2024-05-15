@@ -1,7 +1,9 @@
 <%@page import="dao.AcessoDAO"%>
 <%@page import="model.Acesso"%>
 <%@page import="java.util.ArrayList"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--  Perguntar sobre a TAGLIB para o Professor  -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,26 +29,15 @@
                     <th>Opções</th>
                 </tr>
 
-                <% 
-                    ArrayList<Acesso> lista = new ArrayList<Acesso>();
-                    try {
-                      AcessoDAO aDAO = new AcessoDAO();
-                      lista = aDAO.getLista();
-                    } catch (Exception e) {
-                        out.print(e);
-                    
-                    }
-                    
-                    // Varrer lista
-                    for(Acesso acesso:lista){
-
-                %>
+                
+                <jsp:useBean class="dao.AcessoDAO" id="aDAO"/>
+                <c:forEach var="p" items="${aDAO.lista}">
                 <tr>
-                    <td><%=acesso.getIdAcesso()%></td>
-                    <td><%=acesso.getNome()%></td>
+                    <td>${p.getIdAcesso}</td>
+                    <td>${p.getNome}</td>
                     
                     <td>
-                        <a class="btn btn-primary" href="#">
+                        <a class="btn btn-primary" href="gerenciar_acesso.do?acao=alterar&idAcesso=${acesso.IdAcesso}">
                             <i class='bx bxs-pencil' ></i>
                         </a>
                         <button class="btn btn-danger">
@@ -54,7 +45,7 @@
                         </button>
                     </td>
                 </tr>
-                <% }%>
+                </c:forEach>
             </table>
         </div>
 
