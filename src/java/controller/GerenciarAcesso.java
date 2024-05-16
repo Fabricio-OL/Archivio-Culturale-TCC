@@ -54,6 +54,15 @@ public class GerenciarAcesso extends HttpServlet {
                     mensagem = "Perfil não encontrado";
                 }
             }
+            if (acao.equals("deletar")){
+                acesso.setIdAcesso(Integer.parseInt(idAcesso));
+                if (aDAO.deletar(acesso)){
+                    mensagem ="Deletado com sucesso";
+                }else{
+                    mensagem = "Erro ao excluir Perfil";
+                    
+                }
+            }
 
         } catch (Exception e) {
             System.out.print(e);
@@ -72,7 +81,7 @@ public class GerenciarAcesso extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        
+
         String idAcesso = request.getParameter("idAcesso");
         String nome = request.getParameter("nome");
 
@@ -81,8 +90,7 @@ public class GerenciarAcesso extends HttpServlet {
         Acesso acesso = new Acesso();
         try {
             AcessoDAO aDAO = new AcessoDAO();
-            
-            
+
             if (!idAcesso.isEmpty()) {
                 acesso.setIdAcesso(Integer.parseInt(idAcesso));
             }
@@ -98,6 +106,9 @@ public class GerenciarAcesso extends HttpServlet {
                 }
             }
 
+        } catch (NumberFormatException ex) {
+            mensagem = "Erro ao converter o ID de acesso"; 
+            // Or handle the exception accordingly.
         } catch (Exception e) {
             System.out.println(e.toString());
             mensagem = "Erro ao executar";
