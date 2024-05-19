@@ -1,6 +1,6 @@
-<%@page import="dao.LeitorDAO"%>
+<%@page import="dao.LivroDAO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.pessoa.Leitor"%>
+<%@page import="model.livro.Livro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,38 +16,35 @@
         <div class="container-fluid">
             <%@include file="banner.jsp" %>
             <%@include file="menu.jsp" %>
-            <h1>Lista de Leitores</h1>
+            <h1>Lista de Livros</h1>
             
             <a href="form_perfil.jsp" class="btn btn-primary">Novo Cadastro</a>
             
             <table class="table table-hover">
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Data de Nascimento</th>
-                    <th>Endereço</th>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
                     <th>Opções</th>
                 </tr>
                 
                 <%
-                    ArrayList<Leitor> lista = new ArrayList<Leitor>();
+                    
+                    ArrayList<Livro> lista = new ArrayList<Livro>();
                     try {
-                        LeitorDAO leitorDAO = new LeitorDAO();
-                        lista = leitorDAO.getLista();
+                        LivroDAO livroDAO = new LivroDAO();
+                        lista = livroDAO.getLista();
                     }catch(Exception e){
                         out.print(e);
                     }
                     
-                    for(Leitor leitor : lista){
-                        
+                    for(Livro livro : lista){
+
                 %>
                 <tr>
-                    <td><%=leitor.getIdLeitor()%></td>
-                    <td><%=leitor.getNome()%></td>
-                    <td><%=leitor.getCpf()%></td>
-                    <td><%=leitor.getDn()%></td>
-                    <td><%=leitor.getEnd()%></td>
+                    <td><%=livro.getIdLivro()%></td>
+                    <td><%=livro.getIsbn()%></td>
+                    <td><%=livro.getTitulo()%></td>
 
                     <td>
                         <a class="btn btn-primary" href="#">

@@ -2,6 +2,7 @@
     <ul>
         <li><a href="index.jsp">Inicio</a></li>
         <li><a href="listar_leitor.jsp">Leitores</a></li>
+        <li><a href="listar_livro.jsp">Livros</a></li>
         <li><a href="#">Menus</a></li>
         <li><a href="form_acesso.jsp">Usuários</a></li>
 
