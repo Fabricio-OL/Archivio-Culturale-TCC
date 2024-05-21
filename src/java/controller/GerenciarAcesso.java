@@ -106,9 +106,7 @@ public class GerenciarAcesso extends HttpServlet {
                 }
             }
 
-        } catch (NumberFormatException ex) {
-            mensagem = "Erro ao converter o ID de acesso"; 
-            // Or handle the exception accordingly.
+       
         } catch (Exception e) {
             System.out.println(e.toString());
             mensagem = "Erro ao executar";

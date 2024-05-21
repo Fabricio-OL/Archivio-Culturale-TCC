@@ -6,7 +6,7 @@ public class Livro {
     private int isbn;
     private String titulo;
     private Editora editora;
-    private Genero genero;
+    private String genero;
     private Emprestimo emprestimo;
     
     public Livro(){}
@@ -43,14 +43,7 @@ public class Livro {
         this.editora = editora;
     }
 
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
-
+   
 
     public Emprestimo getEmprestimo() {
         return emprestimo;
@@ -58,6 +51,20 @@ public class Livro {
 
     public void setEmprestimo(Emprestimo emprestimo) {
         this.emprestimo = emprestimo;
+    }
+
+    /**
+     * @return the genero
+     */
+    public String getGenero() {
+        return genero;
+    }
+
+    /**
+     * @param genero the genero to set
+     */
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
     
 }
