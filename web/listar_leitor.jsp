@@ -53,9 +53,9 @@
                         <a class="btn btn-primary" href="gerenciar_leitor.do?acao=alterar&id=<%= leitor.getIdLeitor()%>">
                             <i class='bx bxs-pencil' ></i>
                         </a>
-                        <button class="btn btn-danger">
+                        <a class="btn btn-danger" href="gerenciar_leitor.do?acao=delete&id=<%= leitor.getIdLeitor()%>">
                             <i class='bx bxs-trash'></i>
-                        </button>
+                        </a>
                     </td>
                 </tr>
                 <% } %>
