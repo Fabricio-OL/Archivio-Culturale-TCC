@@ -5,6 +5,8 @@
         <li><a href="listar_livro.jsp">Livros</a></li>
         <li><a href="#">Menus</a></li>
         <li><a href="form_acesso.jsp">Usuários</a></li>
+        <li><a href="form_bibliotecario.jsp">Bibliotecário</a></li>
+
 
     </ul>
 </div>

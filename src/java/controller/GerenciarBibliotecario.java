@@ -67,7 +67,7 @@ public class GerenciarBibliotecario extends HttpServlet {
                 
                 if (bibliotecario.getIdBibliotecario() > 0) {
                     
-                    RequestDispatcher disp = getServletContext().getRequestDispatcher("/form_bibliotecario.jsp");
+                    RequestDispatcher disp = getServletContext().getRequestDispatcher("../../../web/form_bibliotecario.jsp");
                     request.setAttribute("bibliotecario", bibliotecario);
                     disp.forward(request, response);
                     
