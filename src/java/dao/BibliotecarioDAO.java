@@ -25,7 +25,6 @@ public class BibliotecarioDAO extends DataBaseDAO {
             bibliotecario.setCpf(rs.getString("cpf"));
             bibliotecario.setDn(rs.getDate("dn"));
             bibliotecario.setEnd(rs.getString("end"));
-            bibliotecario.setSalario(rs.getDouble("salario"));
             
             lista.add(bibliotecario);
         }
@@ -42,11 +41,11 @@ public class BibliotecarioDAO extends DataBaseDAO {
             this.conectar();
             
             if (bibliotecario.getIdBibliotecario() == 0) {
-                sql = "INSERT INTO Bibliotecario(nome ,cpf, dn, end, salario)"
-                        + "VALUES (?, ?, ?, ?, ?)";
+                sql = "INSERT INTO Bibliotecario(nome ,cpf, dn, end)"
+                        + "VALUES (?, ?, ?, ?)";
 
             } else {
-                sql = "UPDATE Bibliotecario SET nome = ?, cpf = ?, dn = ?, end = ?, salario = ? WHERE idBibliotecario = ?";
+                sql = "UPDATE Bibliotecario SET nome = ?, cpf = ?, dn = ?, end = ? WHERE idBibliotecario = ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -54,10 +53,9 @@ public class BibliotecarioDAO extends DataBaseDAO {
             pstm.setString(2, bibliotecario.getCpf());
             pstm.setDate(3, bibliotecario.getDn());
             pstm.setString(4, bibliotecario.getEnd());
-            pstm.setDouble(5, bibliotecario.getSalario());
 
             if (bibliotecario.getIdBibliotecario() > 0) {
-                pstm.setLong(6, bibliotecario.getIdBibliotecario());
+                pstm.setInt(5, bibliotecario.getIdBibliotecario());
             }
             
             pstm.execute();
@@ -103,7 +101,6 @@ public class BibliotecarioDAO extends DataBaseDAO {
             bibliotecario.setCpf    (rs.getString("cpf"));
             bibliotecario.setDn     (rs.getDate("dn"));
             bibliotecario.setEnd    (rs.getString("end"));
-            bibliotecario.setSalario(rs.getDouble("salario"));
         }
         
         this.desconectar();

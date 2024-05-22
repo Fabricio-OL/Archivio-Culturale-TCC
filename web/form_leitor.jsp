@@ -1,5 +1,5 @@
 <%-- 
-    Document   : form_bibliotecario
+    Document   : form_leitor
     Created on : May 21, 2024, 8:53:43 PM
     Author     : Fabricio
 --%>
@@ -56,18 +56,18 @@
         <%@include file="banner.jsp" %>
         <%@include file="menu.jsp" %>
         <section class="container">
-            <h1>Adicionar/Atualizar Bibliotecário</h1>
+            <h1>Adicionar/Atualizar Leitor</h1>
             
-            <form method="post" action="gerenciar_bibliotecario.do" class="form">
+            <form method="post" action="gerenciar_leitor.do" class="form">
                 <input 
-                    value="${bibliotecario.idBibliotecario}"
-                    name="idBibliotecario" 
+                    value="${leitor.idLeitor}"
+                    name="idLeitor" 
                     type="hidden" 
                 />
                 
                 <label for="nome">Nome</label>
                 <input 
-                    value="${bibliotecario.nome}"
+                    value="${leitor.nome}"
                     name="nome" 
                     id="nome" 
                     type="text"
@@ -76,7 +76,7 @@
 
                 <label for="cpf">CPF</label>
                 <input 
-                    value="${bibliotecario.cpf}"
+                    value="${leitor.cpf}"
                     name="cpf" 
                     id="cpf" 
                     type="text"
@@ -85,7 +85,7 @@
 
                 <label for="dataNascimento">Data de Nascimento</label>
                 <input 
-                    value="${bibliotecario.dn}"
+                    value="${leitor.dn}"
                     name="dn" 
                     id="dataNascimento" 
                     type="date"
@@ -93,7 +93,7 @@
 
                 <label for="endereco">Endereço</label>
                 <input 
-                    value="${bibliotecario.endereco}"
+                    value="${leitor.endereco}"
                     name="end" 
                     id="endereco" 
                     type="text"

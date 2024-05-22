@@ -1,7 +1,8 @@
-<%@page import="dao.LeitorDAO"%>
+<%@page import="dao.BibliotecarioDAO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.pessoa.Leitor"%>
+<%@page import="model.pessoa.Bibliotecario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,9 +17,9 @@
         <div class="container-fluid">
             <%@include file="banner.jsp" %>
             <%@include file="menu.jsp" %>
-            <h1>Lista de Leitores</h1>
+            <h1>Lista de Bibliotecario</h1>
             
-            <a href="form_leitor.jsp" class="btn btn-primary">Novo Cadastro</a>
+            <a href="form_bibliotecario.jsp" class="btn btn-primary">Novo Cadastro</a>
             
             <table class="table table-hover">
                 <tr>
@@ -31,26 +32,27 @@
                 </tr>
                 
                 <%
-                    ArrayList<Leitor> lista = new ArrayList<Leitor>();
+                    ArrayList<Bibliotecario> lista = new ArrayList<Bibliotecario>();
                     try {
-                        LeitorDAO leitorDAO = new LeitorDAO();
-                        lista = leitorDAO.getLista();
+                        BibliotecarioDAO bibliotecarioDAO = new BibliotecarioDAO();
+                        lista = bibliotecarioDAO.getLista();
                     }catch(Exception e){
                         out.print(e);
                     }
                     
-                    for(Leitor leitor : lista){
+                    for(Bibliotecario bibliotecario : lista){
                         
                 %>
                 <tr>
-                    <td><%=leitor.getIdLeitor()%></td>
-                    <td><%=leitor.getNome()%></td>
-                    <td><%=leitor.getCpf()%></td>
-                    <td><%=leitor.getDn()%></td>
-                    <td><%=leitor.getEnd()%></td>
+                    <td><%=bibliotecario.getIdBibliotecario()%></td>
+                    <td><%=bibliotecario.getNome()%></td>
+                    <td><%=bibliotecario.getCpf()%></td>
+                    <td><%=bibliotecario.getDn()%></td>
+                    <td><%=bibliotecario.getEnd()%></td>
+
 
                     <td>
-                        <a class="btn btn-primary" href="gerenciar_leitor.do">
+                        <a class="btn btn-primary" href="#">
                             <i class='bx bxs-pencil' ></i>
                         </a>
                         <button class="btn btn-danger">

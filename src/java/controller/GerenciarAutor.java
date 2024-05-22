@@ -5,6 +5,7 @@
  */
 package controller;
 
+
 import dao.AutorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -104,7 +105,7 @@ public class GerenciarAutor extends HttpServlet {
         String idAutor = request.getParameter("idAutor");
         String nome = request.getParameter("nome");
         String  cpf  = request.getParameter("cpf");
-        Date  dn  = request.getParameter("dn"); // String ?
+        String dn  = request.getParameter("dn"); 
         String  end  = request.getParameter("end");
 
         String mensagem = "";
@@ -121,7 +122,7 @@ public class GerenciarAutor extends HttpServlet {
 
             } else {
                 autor.setNome(nome);
-                if (autor.gravar(autor)) { // não ta chamando o metodo gravar 
+                if (autorDAO.gravar(autor)) { // não ta chamando o metodo gravar 
                     mensagem = " Gravado com sucesso!";
                 } else {
                     mensagem = "Erro ao gravar no banco de dados!";
