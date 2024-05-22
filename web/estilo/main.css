@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 22, 2024, 4:52:19 PM
+    Author     : Fabricio
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('banner.css');
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", "Arial";
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    height: 90vh;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 980px;
+}
+
+.banner {
+    height: 100%;
+}
