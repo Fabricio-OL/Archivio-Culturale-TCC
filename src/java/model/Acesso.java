@@ -13,8 +13,6 @@ public class Acesso {
     public Acesso() {
     }
     
-    
-
     public Acesso(int idAcesso, String nome, Leitor leitor) {
         this.idAcesso = idAcesso;
         this.nome = nome;
