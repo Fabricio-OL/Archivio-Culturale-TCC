@@ -28,6 +28,7 @@ public class GerenciarLeitor extends HttpServlet {
 
         String acao = request.getParameter("acao");
         String id = request.getParameter("id");
+        System.out.println(acao + id);
 
         Leitor leitor = new Leitor();
 
