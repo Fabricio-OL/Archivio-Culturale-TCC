@@ -126,10 +126,10 @@ public class EmprestimoDAO extends DataBaseDAO {
             multa = 0;
 
         } else if (ConferirStatus(id) == "1") {
-            multa = 50;
+            multa = 15;
 
         } else if (ConferirStatus(id) == "2") {
-            multa = 100;
+            multa = 50;
 
         }
         return multa;
