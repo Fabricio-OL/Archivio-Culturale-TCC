@@ -25,15 +25,15 @@
                     <th>ID</th>
                     <th>ISBN</th>
                     <th>Titulo</th>
-                    <th>Opções</th>
+                    <th>Genêro</th>
                 </tr>
                 
                 <%
                     
                     ArrayList<Livro> lista = new ArrayList<Livro>();
                     try {
-                        LivroDAO livroDAO = new LivroDAO();
-                        lista = livroDAO.getLista();
+                        LivroDAO liDAO = new LivroDAO();
+                        lista = liDAO.getLista();
                     }catch(Exception e){
                         out.print(e);
                     }
@@ -45,12 +45,13 @@
                     <td><%=livro.getIdLivro()%></td>
                     <td><%=livro.getIsbn()%></td>
                     <td><%=livro.getTitulo()%></td>
+                    <td><%=livro.getGenero()%></td>
 
                     <td>
-                        <a class="btn btn-primary" href="#">
+                        <a class="btn btn-primary" href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
                             <i class='bx bxs-pencil' ></i>
                         </a>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" href="gerenciar_livro.do?acao=delete&id=<%= livro.getIdLivro()%>">
                             <i class='bx bxs-trash'></i>
                         </button>
                     </td>

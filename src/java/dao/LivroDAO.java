@@ -24,8 +24,9 @@ public class LivroDAO extends DataBaseDAO {
         while (rs.next()) {
             Livro livro = new Livro();
             livro.setIdLivro(rs.getInt("idLivro"));
-            livro.setIsbn(rs.getInt("isbn"));
+            livro.setIsbn(rs.getString("isbn"));
             livro.setTitulo(rs.getString("titulo"));
+            livro.setGenero(rs.getString("genero"));
             
 
             lista.add(livro);
@@ -45,16 +46,18 @@ public class LivroDAO extends DataBaseDAO {
             String sql;
             this.conectar();
             if (livro.getIdLivro()== 0) {
-                sql = " INSERT INTO Livro(isbn,titulo)"
-                        + "values (?,?)";
+                sql = " INSERT INTO Livro(isbn,titulo,genero)"
+                        + "values (?,?,?)";
 
             } else {
-                sql = "UPDATE Livro SET  isbn= ? ,titulo = ? WHERE idLivro= ?";
+                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ? WHERE idLivro= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, livro.getTitulo());
-            pstm.setInt(2, livro.getIsbn());
+            pstm.setString(2, livro.getIsbn());
+            pstm.setString(3, livro.getGenero());
+            
       
             // Condição para o ID 
             if (livro.getIdLivro()> 0) {
@@ -103,7 +106,8 @@ public class LivroDAO extends DataBaseDAO {
         if (rs.next()) {
             livro.setIdLivro(rs.getInt("idLivro"));
             livro.setTitulo(rs.getString("titulo"));
-            livro.setIsbn(rs.getInt("isbn"));
+            livro.setIsbn(rs.getString("isbn"));
+            livro.setGenero(rs.getString("genero"));
            
         }
         this.desconectar();

@@ -6,17 +6,19 @@ public class Editora {
     private String cnpj;
     private String nome;
     private String end;
+    private Livro livro;
 
     public Editora() {
     }
     
     
 
-    public Editora(int idEditora,String cnpj, String nome, String end) {
+    public Editora(int idEditora,String cnpj, String nome, String end,Livro livro) {
         this.idEditora= idEditora;
         this.cnpj = cnpj;
         this.nome = nome;
         this.end = end;
+        this.livro=livro;
     }
 
     public String getCnpj() {
@@ -52,10 +54,26 @@ public class Editora {
         this.idEditora = idEditora;
     }
 
+    /**
+     * @return the livro
+     */
+    public Livro getLivro() {
+        return livro;
+    }
+
+    /**
+     * @param livro the livro to set
+     */
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
+
     @Override
     public String toString() {
-        return "Editora{" + "idEditora=" + idEditora + ", cnpj=" + cnpj + ", nome=" + nome + ", end=" + end + '}';
+        return "Editora{" + "idEditora=" + idEditora + ", cnpj=" + cnpj + ", nome=" + nome + ", end=" + end + ", livro=" + livro + '}';
     }
+
+    
 
     
 }

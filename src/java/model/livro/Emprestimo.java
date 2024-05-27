@@ -1,6 +1,8 @@
 package model.livro;
 
 import java.sql.Date;
+import model.pessoa.Bibliotecario;
+import model.pessoa.Leitor;
 
 public class Emprestimo {
     
@@ -8,17 +10,22 @@ public class Emprestimo {
     private Date dataEmp;
     private Date dataDev;
     private String status;
-    private Devolucao devolucao;
+    private Leitor leitor;
+    private Livro livro;
+    private Bibliotecario bibliotecario; 
+    
     
     public Emprestimo (){
     }
 
-    public Emprestimo(int idEmp, Date dataEmp, Date dataDev, String status, Devolucao devolucao) {
+    public Emprestimo(int idEmp, Date dataEmp, Date dataDev, String status,Leitor leitor,Livro livro,Bibliotecario bibliotecario) {
         this.idEmp = idEmp;
         this.dataEmp = dataEmp;
         this.dataDev = dataDev;
         this.status = status;
-        this.devolucao = devolucao;
+        this.leitor=leitor;
+        this.bibliotecario=bibliotecario;
+        this.livro=livro;
     }
     
     public int getIdEmp() {
@@ -53,17 +60,53 @@ public class Emprestimo {
         this.status = status;
     }
 
-    public Devolucao getDevolucao() {
-        return devolucao;
+
+
+    public Leitor getLeitor() {
+        return leitor;
     }
 
-    public void setDevolucao(Devolucao devolucao) {
-        this.devolucao = devolucao;
+    
+    public void setLeitor(Leitor leitor) {
+        this.leitor = leitor;
+    }
+
+    /**
+     * @return the livro
+     */
+    public Livro getLivro() {
+        return livro;
+    }
+
+    /**
+     * @param livro the livro to set
+     */
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
+
+    /**
+     * @return the bibliotecario
+     */
+    public Bibliotecario getBibliotecario() {
+        return bibliotecario;
+    }
+
+    /**
+     * @param bibliotecario the bibliotecario to set
+     */
+    public void setBibliotecario(Bibliotecario bibliotecario) {
+        this.bibliotecario = bibliotecario;
     }
 
     @Override
     public String toString() {
-        return "Emprestimo{" + "idEmp=" + idEmp + ", dataEmp=" + dataEmp + ", dataDev=" + dataDev + ", status=" + status + ", devolucao=" + devolucao + '}';
+        return "Emprestimo{" + "idEmp=" + idEmp + ", dataEmp=" + dataEmp + ", dataDev=" + dataDev + ", status=" + status + ", leitor=" + leitor + ", livro=" + livro + ", bibliotecario=" + bibliotecario + '}';
     }
-// Fazer metodos CalcularMulta e EmitirMulta 
+
+    
+    
+    
+    
+    
 }
