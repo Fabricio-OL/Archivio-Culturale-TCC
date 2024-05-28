@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`Autor_Livro` (
   `idAutor` INT NOT NULL,
   `idLivro` INT NOT NULL,
   PRIMARY KEY (`idAutor`, `idLivro`),
-  INDEX `fk_Autor_has_Livro_Livro1_idx` (`idLivro` ASC) VISIBLE,
-  INDEX `fk_Autor_has_Livro_Autor1_idx` (`idAutor` ASC) VISIBLE,
+  INDEX `fk_Autor_has_Livro_Livro1_idx` (`idLivro` ASC)  ,
+  INDEX `fk_Autor_has_Livro_Autor1_idx` (`idAutor` ASC)  ,
   CONSTRAINT `fk_Autor_has_Livro_Autor1`
     FOREIGN KEY (`idAutor`)
     REFERENCES `biblioteca`.`Autor` (`idAutor`)
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`Editora` (
   `cnpj` VARCHAR(45) NOT NULL,
   `Livro_idLivro` INT NOT NULL,
   PRIMARY KEY (`idEditora`),
-  INDEX `fk_Editora_Livro1_idx` (`Livro_idLivro` ASC) VISIBLE,
+  INDEX `fk_Editora_Livro1_idx` (`Livro_idLivro` ASC)  ,
   CONSTRAINT `fk_Editora_Livro1`
     FOREIGN KEY (`Livro_idLivro`)
     REFERENCES `biblioteca`.`Livro` (`idLivro`)
@@ -128,9 +128,9 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`Emprestimo` (
   `Livro_idLivro` INT NOT NULL,
   `Bibliotecario_idBibliotecario` INT NOT NULL,
   PRIMARY KEY (`idEmp`),
-  INDEX `fk_Emprestimo_Leitor1_idx` (`Leitor_idLeitor` ASC) VISIBLE,
-  INDEX `fk_Emprestimo_Livro1_idx` (`Livro_idLivro` ASC) VISIBLE,
-  INDEX `fk_Emprestimo_Bibliotecario1_idx` (`Bibliotecario_idBibliotecario` ASC) VISIBLE,
+  INDEX `fk_Emprestimo_Leitor1_idx` (`Leitor_idLeitor` ASC)  ,
+  INDEX `fk_Emprestimo_Livro1_idx` (`Livro_idLivro` ASC)  ,
+  INDEX `fk_Emprestimo_Bibliotecario1_idx` (`Bibliotecario_idBibliotecario` ASC)  ,
   CONSTRAINT `fk_Emprestimo_Leitor1`
     FOREIGN KEY (`Leitor_idLeitor`)
     REFERENCES `biblioteca`.`Leitor` (`idLeitor`)
