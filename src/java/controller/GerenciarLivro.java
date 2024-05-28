@@ -107,6 +107,7 @@ public class GerenciarLivro extends HttpServlet {
         String isbn = request.getParameter("isbn");
         String titulo = request.getParameter("titulo");
         String genero = request.getParameter("genero");
+        System.out.println("----------------" + id);
         
 
 

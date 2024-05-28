@@ -40,20 +40,22 @@ public class EditoraDAO extends DataBaseDAO {
             String sql;
             this.conectar();
             if (editora.getIdEditora() == 0) {
-                sql = " INSERT INTO Editora(nome,end,cnpj)"
+                sql = " INSERT INTO Editora(nome,end,cnpj,livro_idlivro)"
                         + "values (?,?,?)";
 
             } else {
-                sql = "UPDATE Editora SET nome = ?, end = ? cnpj = ? WHERE idEditora= ?";
+                sql = "UPDATE Editora SET nome = ?, end = ?, cnpj = ?,livro_idlivro=? WHERE idEditora= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, editora.getCnpj());
             pstm.setString(2, editora.getNome());
             pstm.setString(3, editora.getEnd());
+            pstm.setInt(4, editora.getLivro()); // Duvidas 
+            
             // Condição para o ID 
             if (editora.getIdEditora() > 0) {
-                pstm.setLong(4, editora.getIdEditora());
+                pstm.setLong(5, editora.getIdEditora());
             }
             pstm.execute();
             this.desconectar();

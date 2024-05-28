@@ -52,24 +52,25 @@ public class GerenciarAutor extends HttpServlet {
         String mensagem = "";
 
         String acao = request.getParameter("acao");
-        String idAutor = request.getParameter("idAutor");
+        String id = request.getParameter("id");
+        System.out.println(acao + id);
     
         Autor autor = new Autor ();
         
         try {
             AutorDAO autorDAO = new AutorDAO();
             if (acao.equals("alterar")) {
-                autor = autorDAO.getCarregaPorID(Integer.parseInt(idAutor));
+                autor = autorDAO.getCarregaPorID(Integer.parseInt(id));
                 if (autor.getIdAutor() > 0) {
                     RequestDispatcher disp = getServletContext().getRequestDispatcher("/form_autor.jsp");
                     request.setAttribute("autor", autor);
                     disp.forward(request, response);
                 } else {
-                    mensagem = "Perfil não encontrado";
+                    mensagem = "Autor não encontrado";
                 }
             }
-            if (acao.equals("deletar")){
-                autor.setIdAutor(Integer.parseInt(idAutor));
+            if (acao.equals("delete")){
+                autor.setIdAutor(Integer.parseInt(id));
                 if (autorDAO.deletar(autor)){
                     mensagem ="Deletado com sucesso";
                 }else{
@@ -102,11 +103,12 @@ public class GerenciarAutor extends HttpServlet {
         
          PrintWriter out = response.getWriter();
 
-        String idAutor = request.getParameter("idAutor");
+        String id = (request.getParameter("idAutor").equals(""))? "0": request.getParameter("idAutor");
         String nome = request.getParameter("nome");
         String  cpf  = request.getParameter("cpf");
         String dn  = request.getParameter("dn"); 
         String  end  = request.getParameter("end");
+        System.out.println("----------------" + id);
 
         String mensagem = "";
 
@@ -114,15 +116,20 @@ public class GerenciarAutor extends HttpServlet {
         try {
             AutorDAO autorDAO = new AutorDAO();
 
-            if (!idAutor.isEmpty()) {
-                autor.setIdAutor(Integer.parseInt(idAutor));
+            if (!id.isEmpty()) {
+                autor.setIdAutor(Integer.parseInt(id));
             }
             if (nome.equals("") || nome.isEmpty()) {
                 mensagem = "Campos Obrigatórios deverão ser preenchidos";
 
             } else {
+                autor.setIdAutor(Integer.parseInt(id));
+                autor.setCpf(cpf);
+                autor.setDn(Date.valueOf(dn));
+                autor.setEnd(end);
                 autor.setNome(nome);
-                if (autorDAO.gravar(autor)) { // não ta chamando o metodo gravar 
+                
+                if (autorDAO.gravar(autor)) { 
                     mensagem = " Gravado com sucesso!";
                 } else {
                     mensagem = "Erro ao gravar no banco de dados!";

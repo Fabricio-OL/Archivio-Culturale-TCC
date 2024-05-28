@@ -18,7 +18,7 @@
             <%@include file="menu.jsp" %>
             <h1>Lista de Livros</h1>
             
-            <a href="form_perfil.jsp" class="btn btn-primary">Novo Cadastro</a>
+            <a href="form_livro.jsp" class="btn btn-primary">Novo Cadastro</a>
             
             <table class="table table-hover">
                 <tr>
@@ -51,9 +51,10 @@
                         <a class="btn btn-primary" href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
                             <i class='bx bxs-pencil' ></i>
                         </a>
-                        <button class="btn btn-danger" href="gerenciar_livro.do?acao=delete&id=<%= livro.getIdLivro()%>">
+                            
+                          <a class="btn btn-danger" href="gerenciar_livro.do?acao=delete&id=<%= livro.getIdLivro()%>">
                             <i class='bx bxs-trash'></i>
-                        </button>
+                          </a>
                     </td>
                 </tr>
                 <% } %>
