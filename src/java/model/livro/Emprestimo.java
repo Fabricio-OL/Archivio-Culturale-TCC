@@ -11,6 +11,7 @@ public class Emprestimo {
     private Date dataDev;
     private String status;
     private Leitor leitor;
+    private String condicao;
     private Livro livro;
     private Bibliotecario bibliotecario; 
     
@@ -104,9 +105,12 @@ public class Emprestimo {
         return "Emprestimo{" + "idEmp=" + idEmp + ", dataEmp=" + dataEmp + ", dataDev=" + dataDev + ", status=" + status + ", leitor=" + leitor + ", livro=" + livro + ", bibliotecario=" + bibliotecario + '}';
     }
 
-    
-    
-    
-    
-    
+    public String getCondicao() {
+        return condicao;
+    }
+
+    public void setCondicao(String condicao) {
+        this.condicao = condicao;
+    }
+
 }
