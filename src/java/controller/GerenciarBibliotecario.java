@@ -27,7 +27,8 @@ public class GerenciarBibliotecario extends HttpServlet {
         String mensagem = "";
 
         String acao = request.getParameter("acao");
-        String id = request.getParameter("idBibliotecario");
+        String id = request.getParameter("id");
+        System.out.println(acao + id);
 
         Bibliotecario bibliotecario = new Bibliotecario();
 
@@ -75,13 +76,14 @@ public class GerenciarBibliotecario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         PrintWriter out = response.getWriter();
-        String id = (request.getParameter("idBibliotecario") == null)? "0": request.getParameter("idBibliotecario");
+        String id = (request.getParameter("idBibliotecario").equals(""))? "0": request.getParameter("idBibliotecario");
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String dn = request.getParameter("dn");
         String end = request.getParameter("end");
+        System.out.println("----------------" + id);
 
 
         String mensagem = "";
@@ -93,11 +95,6 @@ public class GerenciarBibliotecario extends HttpServlet {
 
             if (!id.isEmpty()) {
                 bibliotecario.setIdBibliotecario(Integer.parseInt(id));
-                
-            }else{
-                //bibliotecario.setIdBibliotecario(0);
-                id = "0";
-                System.out.println("AAAAAAAAAAA:" + bibliotecario.getIdBibliotecario());
             }
 
             if (nome.equals("") || nome.isEmpty()) {
@@ -123,7 +120,7 @@ public class GerenciarBibliotecario extends HttpServlet {
             System.out.println(e);
             //out.print(e);
             mensagem = e.toString();
-            System.out.printf("Id:%s\nNome:%s\nCPF:%s\nDN:%s\nEND:%s",id,nome,cpf,dn,end);
+            //System.out.printf("Id:%s\nNome:%s\nCPF:%s\nDN:%s\nEND:%s",id,nome,cpf,dn,end);
         }
 
         out.println("<script type='text/javascript'>");

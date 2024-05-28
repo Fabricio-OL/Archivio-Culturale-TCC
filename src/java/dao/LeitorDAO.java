@@ -19,6 +19,7 @@ public class LeitorDAO extends DataBaseDAO {
         
         while(rs.next()){
             Leitor leitor = new Leitor();
+            
             leitor.setIdLeitor(rs.getInt("idLeitor"));
             leitor.setNome(rs.getString("nome"));
             leitor.setCpf(rs.getString("cpf"));

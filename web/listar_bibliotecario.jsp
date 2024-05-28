@@ -52,12 +52,12 @@
 
 
                     <td>
-                        <a class="btn btn-primary" href="#">
+                        <a class="btn btn-primary" href="gerenciar_bibliotecario.do?acao=alterar&id=<%= bibliotecario.getIdBibliotecario()%>">
                             <i class='bx bxs-pencil' ></i>
                         </a>
-                        <button class="btn btn-danger">
+                        <a class="btn btn-danger" href="gerenciar_bibliotecario.do?acao=delete&id=<%= bibliotecario.getIdBibliotecario()%>">
                             <i class='bx bxs-trash'></i>
-                        </button>
+                        </a>
                     </td>
                 </tr>
                 <% } %>

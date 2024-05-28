@@ -12,21 +12,21 @@ public class BibliotecarioDAO extends DataBaseDAO {
     
     public ArrayList<Bibliotecario> getLista() throws Exception{
         ArrayList<Bibliotecario> lista = new ArrayList<>();
-        String SQL = "SELECT * FROM bibliotecario";
+        String SQL = "SELECT * FROM Bibliotecario";
         this.conectar();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery(SQL);
         
         while(rs.next()){
-            Bibliotecario bibliotecario = new Bibliotecario();
+            Bibliotecario Bibliotecario = new Bibliotecario();
             
-            bibliotecario.setIdBibliotecario(rs.getInt("idBibliotecario"));
-            bibliotecario.setNome(rs.getString("nome"));
-            bibliotecario.setCpf(rs.getString("cpf"));
-            bibliotecario.setDn(rs.getDate("dn"));
-            bibliotecario.setEnd(rs.getString("end"));
-            
-            lista.add(bibliotecario);
+            Bibliotecario.setIdBibliotecario(rs.getInt("idBibliotecario"));
+            Bibliotecario.setNome(rs.getString("nome"));
+            Bibliotecario.setCpf(rs.getString("cpf"));
+            Bibliotecario.setDn(rs.getDate("dn"));
+            Bibliotecario.setEnd(rs.getString("end"));
+
+            lista.add(Bibliotecario);
         }
         
         this.desconectar();
@@ -34,13 +34,13 @@ public class BibliotecarioDAO extends DataBaseDAO {
         return lista;
     }
     
-        public boolean gravar(Bibliotecario bibliotecario) {
+        public boolean gravar(Bibliotecario Bibliotecario) {
         
         try {
             String sql;
             this.conectar();
             
-            if (bibliotecario.getIdBibliotecario() == 0) {
+            if (Bibliotecario.getIdBibliotecario() == 0) {
                 sql = "INSERT INTO Bibliotecario(nome ,cpf, dn, end)"
                         + "VALUES (?, ?, ?, ?)";
 
@@ -49,13 +49,13 @@ public class BibliotecarioDAO extends DataBaseDAO {
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setString(1, bibliotecario.getNome());
-            pstm.setString(2, bibliotecario.getCpf());
-            pstm.setDate(3, bibliotecario.getDn());
-            pstm.setString(4, bibliotecario.getEnd());
+            pstm.setString(1, Bibliotecario.getNome());
+            pstm.setString(2, Bibliotecario.getCpf());
+            pstm.setDate(3, Bibliotecario.getDn());
+            pstm.setString(4, Bibliotecario.getEnd());
 
-            if (bibliotecario.getIdBibliotecario() > 0) {
-                pstm.setInt(5, bibliotecario.getIdBibliotecario());
+            if (Bibliotecario.getIdBibliotecario() > 0) {
+                pstm.setLong(5, Bibliotecario.getIdBibliotecario());
             }
             
             pstm.execute();
@@ -67,14 +67,14 @@ public class BibliotecarioDAO extends DataBaseDAO {
         }
     }
     
-    public boolean deletar(Bibliotecario bibliotecario) {
+    public boolean deletar(Bibliotecario Bibliotecario) {
         
         try {
             String sql;
             this.conectar();
             sql = "DELETE FROM Bibliotecario WHERE idBibliotecario =?;";
             PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setLong(1, bibliotecario.getIdBibliotecario());
+            pstm.setLong(1, Bibliotecario.getIdBibliotecario());
             pstm.execute();
             this.desconectar();
             return true;
@@ -88,7 +88,7 @@ public class BibliotecarioDAO extends DataBaseDAO {
     
     public Bibliotecario getCarregaPorID(int idBibliotecario) throws Exception {
         
-        Bibliotecario bibliotecario = new Bibliotecario();
+        Bibliotecario Bibliotecario = new Bibliotecario();
         String sql = "SELECT * FROM Bibliotecario WHERE idBibliotecario = ?";
         this.conectar();
         PreparedStatement pstm = conn.prepareStatement(sql);
@@ -96,15 +96,15 @@ public class BibliotecarioDAO extends DataBaseDAO {
         ResultSet rs = pstm.executeQuery();
         
         if (rs.next()) {
-            bibliotecario.setIdBibliotecario(rs.getInt("idBibliotecario"));
-            bibliotecario.setNome   (rs.getString("nome"));
-            bibliotecario.setCpf    (rs.getString("cpf"));
-            bibliotecario.setDn     (rs.getDate("dn"));
-            bibliotecario.setEnd    (rs.getString("end"));
+            Bibliotecario.setIdBibliotecario(rs.getInt("idBibliotecario"));
+            Bibliotecario.setNome   (rs.getString("nome"));
+            Bibliotecario.setCpf    (rs.getString("cpf"));
+            Bibliotecario.setDn     (rs.getDate("dn"));
+            Bibliotecario.setEnd    (rs.getString("end"));
         }
         
         this.desconectar();
-        return bibliotecario;
+        return Bibliotecario;
     }
 
 }

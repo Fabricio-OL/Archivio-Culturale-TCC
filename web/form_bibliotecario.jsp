@@ -93,7 +93,7 @@
 
                 <label for="endereco">Endereço</label>
                 <input 
-                    value="${bibliotecario.endereco}"
+                    value="${bibliotecario.end}"
                     name="end" 
                     id="endereco" 
                     type="text"
