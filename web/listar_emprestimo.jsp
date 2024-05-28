@@ -26,8 +26,9 @@
                     <th>ID</th>
                     <th>Data do Emprestimo</th>
                     <th>Data da Devolução</th>
-                    <th>ID leitor</th>
+                    <th>Status</th>
                     <th>Condição</th>
+                    <th>ID leitor</th>
                     <th>ID livro</th>
                     <th>ID bibliotecario</th>
                     <th>Opções</th>
@@ -50,10 +51,10 @@
                     <td><%=emprestimo.getDataEmp()%></td>
                     <td><%=emprestimo.getDataDev()%></td>
                     <td><%=emprestimo.getStatus()%></td>
-                    <td><%=emprestimo.getLeitor().getIdLeitor()%></td>
                     <td><%=emprestimo.getCondicao()%></td>
-                    <td><%=emprestimo.getLivro()%></td>
-                    <td><%=emprestimo.getBibliotecario()%></td>
+                    <td><%=emprestimo.getLeitor().getIdLeitor()%></td>
+                    <td><%=emprestimo.getLivro().getIdLivro()%></td>
+                    <td><%=emprestimo.getBibliotecario().getIdBibliotecario()%></td>
                     <td>
                         <a class="btn btn-primary" href="gerenciar_emprestimo.do?acao=alterar&id=<%= emprestimo.getIdEmp()%>">
                             <i class='bx bxs-pencil' ></i>

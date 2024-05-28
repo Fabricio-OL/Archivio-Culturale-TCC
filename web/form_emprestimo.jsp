@@ -80,13 +80,13 @@
                     id="dataDev" 
                     type="date"
                 />
-
-                <label for="Leitor_idLeitor">ID leitor</label>
+                
+                <label for="status">Status</label>
                 <input 
-                    value="${emprestimo.Leitor_idLeitor}"
-                    name="Leitor_idLeitor" 
-                    id="Leitor_idLeitor" 
-                    type="number"
+                    value="${emprestimo.status}"
+                    name="status" 
+                    id="status" 
+                    type="text"
                 />
 
                 <label for="condicao">Condição</label>
@@ -96,6 +96,14 @@
                     id="condicao" 
                     type="text"
                     placeholder="Insira a Condição que o livro se encontra. Ex. Danificado, Novo, Semi-Novo"
+                />
+                
+                <label for="Leitor_idLeitor">ID leitor</label>
+                <input 
+                    value="${emprestimo.Leitor_idLeitor}"
+                    name="Leitor_idLeitor" 
+                    id="Leitor_idLeitor" 
+                    type="number"
                 />
                 
                 <label for="Livro_idLivro">ID livro</label>
