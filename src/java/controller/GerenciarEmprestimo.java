@@ -10,12 +10,16 @@ import dao.EmprestimoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.time.LocalDate;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.livro.Emprestimo;
+import model.livro.Livro;
+import model.pessoa.Bibliotecario;
+import model.pessoa.Leitor;
 
 
 
@@ -36,19 +40,19 @@ public class GerenciarEmprestimo extends HttpServlet {
         String id = request.getParameter("id");
         System.out.println(acao + id);
 
-        Emprestimo emp = new Emprestimo();
+        Emprestimo emprestimo = new Emprestimo();
 
         try {
-            EmprestimoDAO empDAO = new EmprestimoDAO();
+            EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
             
             if (acao.equals("alterar")) {
                 
-               emp= empDAO.getCarregaPorID(Integer.parseInt(id));
+               emprestimo = emprestimoDAO.getCarregaPorID(Integer.parseInt(id));
                 
-                if (emp.getIdEmp() > 0) {
+                if (emprestimo.getIdEmp() > 0) {
                     
                     RequestDispatcher disp = getServletContext().getRequestDispatcher("/form_emprestimo.jsp");
-                    request.setAttribute("emprestimo", emp);
+                    request.setAttribute("emprestimo", emprestimo);
                     disp.forward(request, response);
                     
                 } else {
@@ -59,9 +63,9 @@ public class GerenciarEmprestimo extends HttpServlet {
             }
             if(acao.equals("delete")){
                 
-                emp.setIdEmp(Integer.parseInt(id));
+                emprestimo.setIdEmp(Integer.parseInt(id));
                 
-                if(empDAO.deletar(emp)){
+                if(emprestimoDAO.deletar(emprestimo)){
                     mensagem = "Deletado com sucesso";
                 }else{
                     mensagem = "Erro ao excluir emprestimo";
@@ -87,36 +91,52 @@ public class GerenciarEmprestimo extends HttpServlet {
             throws ServletException, IOException {
         
         PrintWriter out = response.getWriter();
-        String id = (request.getParameter("idEmprestimo").equals(""))? "0": request.getParameter("idEmprestimo");
+        String id = (request.getParameter("idEmp").equals(""))? "0": request.getParameter("idEmp");
         String dataEmp = request.getParameter("dataEmp");
         String dataDev = request.getParameter("dataDev");
         String status= request.getParameter("status");
         String condicao = request.getParameter("condicao");
+        String idLeitor = request.getParameter("Leitor_idLeitor");
+        String idLivro = request.getParameter("Livro_idLivro");
+        String idBibliotecario = request.getParameter("Bibliotecario_idBibliotecario");
+
 
 
         String mensagem = "";
 
-        Emprestimo emp  = new Emprestimo();
+        Emprestimo emprestimo  = new Emprestimo();
+        Leitor leitor = new Leitor();
+        Livro livro = new Livro();
+        Bibliotecario bibliotecario = new Bibliotecario();
         
         try {
-            EmprestimoDAO empDAO = new EmprestimoDAO();
+            EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 
             if (!id.isEmpty()) {
-                emp.setIdEmp(Integer.parseInt(id));
+                emprestimo.setIdEmp(Integer.parseInt(id));
                 
             }
 
-            if (nome.equals("") || nome.isEmpty()) {
+            if (condicao.equals("") || condicao.isEmpty()) {
                 mensagem = "Campos obrigatorios deverão ser preenchidos";
                 
             } else {
-                 emp.setIdEmp(Integer.parseInt(id));
-                 emp.setDataDev(dataDev);
-                leitor.setCpf(cpf);
-                leitor.setDn(Date.valueOf(dn));
-                leitor.setEnd(end);
+                emprestimo.setIdEmp(Integer.parseInt(id));
+                emprestimo.setDataEmp(Date.valueOf(dataEmp));
+                emprestimo.setDataDev(Date.valueOf(dataDev));
+                emprestimo.setStatus(status);
+                emprestimo.setCondicao(condicao);
+                
+                leitor.setIdLeitor(Integer.parseInt(idLeitor));
+                emprestimo.setLeitor(leitor);
+                
+                livro.setIdLivro(Integer.parseInt(idLivro));
+                emprestimo.setLivro(livro);
 
-                if (leitorDAO.gravar(leitor)) {
+                bibliotecario.setIdBibliotecario(Integer.parseInt(idBibliotecario));
+                emprestimo.setBibliotecario(bibliotecario);
+
+                if (emprestimoDAO.gravar(emprestimo)) {
                     mensagem = "Gravado com sucesso";
                     
                 } else {
@@ -134,7 +154,7 @@ public class GerenciarEmprestimo extends HttpServlet {
 
         out.println("<script type='text/javascript'>");
         out.println("alert('" + mensagem + "');");
-        out.println("location.href='listar_leitor.jsp';");
+        out.println("location.href='listar_emprestimo.jsp';");
         out.println("</script>");
         
         
