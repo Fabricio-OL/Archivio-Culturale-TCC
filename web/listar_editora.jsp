@@ -27,7 +27,9 @@
                     <th>Nome</th>
                     <th>CNPJ</th>
                     <th>Endereço</th>
+                    <th>ID livro</th>
                     <th>Opções</th>
+                    
                 </tr>
                 
                 <%
@@ -47,6 +49,7 @@
                     <td><%=editora.getNome()%></td>
                     <td><%=editora.getCnpj()%></td>
                     <td><%=editora.getEnd()%></td>
+                    <td><%=editora.getLivro().getIdLivro()%></td>
 
 
                     <td>

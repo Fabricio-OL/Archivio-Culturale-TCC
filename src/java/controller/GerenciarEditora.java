@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.livro.Editora;
+import model.livro.Livro;
 
 
 
@@ -101,12 +102,12 @@ public class GerenciarEditora extends HttpServlet {
         String nome = request.getParameter("nome");
         String cnpj = request.getParameter("cnpj");
         String end = request.getParameter("end");
-        System.out.println("----------------" + id);
-
+        String idLivro = request.getParameter("Livro_idLivro");
 
         String mensagem = "";
 
         Editora editora = new Editora();
+        Livro livro = new Livro();
         
         try {
             EditoraDAO editoraDAO = new EditoraDAO();
@@ -123,6 +124,9 @@ public class GerenciarEditora extends HttpServlet {
                 editora.setNome(nome);
                 editora.setCnpj(cnpj);
                 editora.setEnd(end);
+                
+                livro.setIdLivro(Integer.parseInt(idLivro));
+                editora.setLivro(livro);
 
                 if (editoraDAO.gravar(editora)) {
                     mensagem = "Gravado com sucesso";

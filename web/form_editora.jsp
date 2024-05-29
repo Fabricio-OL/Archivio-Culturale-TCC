@@ -74,13 +74,13 @@
                     placeholder="Insira Nome. Ex. Thomas Jefferson"
                 />
 
-                <label for="cpf">CNPJ</label>
+                <label for="cnpj">CNPJ</label>
                 <input 
-                    value="${editora.cpf}"
+                    value="${editora.cnpj}"
                     name="cnpj" 
                     id="cnpj" 
                     type="text"
-                    placeholder="Insira CPF. Ex. 12.345.678/0001-00"
+                    placeholder="Insira CNPJ. Ex. 12.345.678/0001-00"
                 />
 
 
@@ -92,7 +92,15 @@
                     type="text"
                     placeholder="Insira Endereço. Ex. Q5, B3, L2, Avenida dos Anjos, Brasília - DF"
                 />
-
+                
+                <label for="Livro_idLivro">ID livro</label>
+                <input 
+                    value="${editora.livro.idLivro}"
+                    name="Livro_idLivro" 
+                    id="Livro_idLivro" 
+                    type="number"
+                />
+                
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>
