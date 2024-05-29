@@ -4,6 +4,13 @@
     Author     : Fabricio
 --%>
 
+<%@page import="dao.BibliotecarioDAO"%>
+<%@page import="model.pessoa.Bibliotecario"%>
+<%@page import="dao.LivroDAO"%>
+<%@page import="model.livro.Livro"%>
+<%@page import="dao.LeitorDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.pessoa.Leitor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -39,7 +46,7 @@
                 flex-direction: column;
             }
             
-            .form input {
+            .form input, .form select {
                 padding: 0.4rem;
                 margin: 2% 0;
                 
@@ -98,29 +105,62 @@
                     placeholder="Insira a Condição que o livro se encontra. Ex. Danificado, Novo, Semi-Novo"
                 />
                 
-                <label for="Leitor_idLeitor">ID leitor</label>
-                <input 
-                    value="${emprestimo.leitor.idLeitor}"
-                    name="Leitor_idLeitor" 
-                    id="Leitor_idLeitor" 
-                    type="number"
-                />
+            <label for="Leitor_idLeitor">ID Leitor</label>
+            <select name="Leitor_idLeitor" id="Leitor_idLeitor">
+                <option value="" selected>Selecione...</option>
+                <% 
+                    ArrayList<Leitor> listaLeitores = new ArrayList<Leitor>();
+                    try {
+                        LeitorDAO leitorDAO = new LeitorDAO();
+                        listaLeitores = leitorDAO.getLista();
+                        for(Leitor leitor : listaLeitores){
+                %>
+                <option value="<%= leitor.getIdLeitor() %>"><%= leitor.getIdLeitor() %></option>
+                <% 
+                        } 
+                    } catch(Exception e) {
+                        out.print(e);
+                    }
+                %>
+            </select>
                 
-                <label for="Livro_idLivro">ID livro</label>
-                <input 
-                    value="${emprestimo.livro.idLivro}"
-                    name="Livro_idLivro" 
-                    id="Livro_idLivro" 
-                    type="number"
-                />
+            <label for="Livro_idLivro">ID Livro</label>
+            <select name="Livro_idLivro" id="Livro_idLivro">
+                <option value="" selected>Selecione...</option>
+                <% 
+                    ArrayList<Livro> listaLivros = new ArrayList<Livro>();
+                    try {
+                        LivroDAO livroDAO = new LivroDAO();
+                        listaLivros = livroDAO.getLista();
+                        for(Livro livro : listaLivros){
+                %>
+                <option value="<%= livro.getIdLivro() %>"><%= livro.getIdLivro() %></option>
+                <% 
+                        } 
+                    } catch(Exception e) {
+                        out.print(e);
+                    }
+                %>
+            </select>
                 
-                <label for="Bibliotecario_idBibliotecario">ID bibliotecario</label>
-                <input 
-                    value="${emprestimo.bibliotecario.idBibliotecario}"
-                    name="Bibliotecario_idBibliotecario" 
-                    id="Bibliotecario_idBibliotecario" 
-                    type="number"
-                />
+            <label for="Bibliotecario_idBibliotecario">ID Bibliotecário</label>
+            <select name="Bibliotecario_idBibliotecario" id="Bibliotecario_idBibliotecario">
+                <option value="" selected>Selecione...</option>
+                <% 
+                    ArrayList<Bibliotecario> listaBibliotecarios = new ArrayList<Bibliotecario>();
+                    try {
+                        BibliotecarioDAO bibliotecarioDAO = new BibliotecarioDAO();
+                        listaBibliotecarios = bibliotecarioDAO.getLista();
+                        for(Bibliotecario bibliotecario : listaBibliotecarios){
+                %>
+                <option value="<%= bibliotecario.getIdBibliotecario() %>"><%= bibliotecario.getIdBibliotecario() %></option>
+                <% 
+                        } 
+                    } catch(Exception e) {
+                        out.print(e);
+                    }
+                %>
+            </select>
 
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
