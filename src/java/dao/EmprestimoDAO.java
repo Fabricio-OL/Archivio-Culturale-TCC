@@ -132,7 +132,7 @@ public class EmprestimoDAO extends DataBaseDAO {
 
     public Emprestimo getCarregaPorID(int idEmp) throws Exception {
         Emprestimo emprestimo = new Emprestimo();
-        String sql = "select * from Emprestimo where idEmp=?";
+        String sql = "SELECT * FROM Emprestimo WHERE idEmp=?";
         this.conectar();
         PreparedStatement pstm = conn.prepareStatement(sql);
         pstm.setInt(1, idEmp);
