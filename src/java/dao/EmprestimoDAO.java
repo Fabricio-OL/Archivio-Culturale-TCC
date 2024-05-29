@@ -131,20 +131,40 @@ public class EmprestimoDAO extends DataBaseDAO {
 // Metodo carregar por ID , que basicamente busca um emprestimo no banco de dados pelo seu ID.
 
     public Emprestimo getCarregaPorID(int idEmp) throws Exception {
+        
         Emprestimo emprestimo = new Emprestimo();
-        String sql = "SELECT * FROM Emprestimo WHERE idEmp=?";
+        Leitor leitor = new Leitor();
+        Livro livro = new Livro();
+        Bibliotecario bibliotecario = new Bibliotecario();
+        
+        String sql = "SELECT * FROM Emprestimo WHERE idEmp = ?";
+        
         this.conectar();
+        
         PreparedStatement pstm = conn.prepareStatement(sql);
         pstm.setInt(1, idEmp);
         ResultSet rs = pstm.executeQuery();
+        
         if (rs.next()) {
             emprestimo.setIdEmp(rs.getInt("idEmp"));
             emprestimo.setDataEmp(rs.getDate("dataEmp"));
             emprestimo.setDataDev(rs.getDate("dataDev"));
             emprestimo.setStatus(rs.getString("status"));
+            emprestimo.setCondicao(rs.getString("condicao"));
+            
+            leitor.setIdLeitor(rs.getInt("Leitor_idLeitor"));
+            emprestimo.setLeitor(leitor);
+            
+            livro.setIdLivro(rs.getInt("Livro_idLivro"));
+            emprestimo.setLivro(livro);
+            
+            bibliotecario.setIdBibliotecario(rs.getInt("Bibliotecario_idBibliotecario"));
+            emprestimo.setBibliotecario(bibliotecario);
+
         }
         this.desconectar();
         return emprestimo;
+        
     }
 
     public String ConferirStatus(int id) throws Exception {

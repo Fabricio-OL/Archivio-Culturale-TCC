@@ -100,7 +100,7 @@
                 
                 <label for="Leitor_idLeitor">ID leitor</label>
                 <input 
-                    value="${leitor.idLeitor}"
+                    value="${emprestimo.leitor.idLeitor}"
                     name="Leitor_idLeitor" 
                     id="Leitor_idLeitor" 
                     type="number"
@@ -108,7 +108,7 @@
                 
                 <label for="Livro_idLivro">ID livro</label>
                 <input 
-                    value="${livro.idLivro}"
+                    value="${emprestimo.livro.idLivro}"
                     name="Livro_idLivro" 
                     id="Livro_idLivro" 
                     type="number"
@@ -116,7 +116,7 @@
                 
                 <label for="Bibliotecario_idBibliotecario">ID bibliotecario</label>
                 <input 
-                    value="${bibliotecario.idBibliotecario}"
+                    value="${emprestimo.bibliotecario.idBibliotecario}"
                     name="Bibliotecario_idBibliotecario" 
                     id="Bibliotecario_idBibliotecario" 
                     type="number"
