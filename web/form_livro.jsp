@@ -89,6 +89,14 @@
                     id="genero" 
                     type="text"
                 />
+                
+                <label for="Editora_idEditora">ID Editora</label>
+                <input 
+                    value="${livro.editora.idEditora}"
+                    name="Editora_idEditora" 
+                    id="Editora_idEditora" 
+                    type="number"
+                />
 
                 <input class="button" type="submit" value="Adicionar"/>
             </form>

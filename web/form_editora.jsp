@@ -93,13 +93,6 @@
                     placeholder="Insira Endereço. Ex. Q5, B3, L2, Avenida dos Anjos, Brasília - DF"
                 />
                 
-                <label for="Livro_idLivro">ID livro</label>
-                <input 
-                    value="${editora.livro.idLivro}"
-                    name="Livro_idLivro" 
-                    id="Livro_idLivro" 
-                    type="number"
-                />
                 
                 <input class="button" type="submit" value="Adicionar"/>
             </form>

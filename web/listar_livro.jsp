@@ -26,6 +26,8 @@
                     <th>ISBN</th>
                     <th>Titulo</th>
                     <th>Genêro</th>
+                    <th>ID Editora</th>
+                    <th>Opções</th>
                 </tr>
                 
                 <%
@@ -46,6 +48,7 @@
                     <td><%=livro.getIsbn()%></td>
                     <td><%=livro.getTitulo()%></td>
                     <td><%=livro.getGenero()%></td>
+                    <td><%=livro.getEditora().getIdEditora()%></td>
 
                     <td>
                         <a class="btn btn-primary" href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
