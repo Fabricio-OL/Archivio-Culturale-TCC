@@ -107,4 +107,18 @@ public class BibliotecarioDAO extends DataBaseDAO {
         return Bibliotecario;
     }
 
+    
+    public boolean login(String nome,String senha)  throws Exception{
+     //Bibliotecario bi = new Bibliotecario();
+     String sql ="SELECT * FROM Bibliotecario WHERE nome =? and senha=?";
+     this.conectar();
+     PreparedStatement pstm = conn.prepareStatement(sql);
+     pstm.setString(1, nome);
+     pstm.setString(2, senha);
+     ResultSet rs = pstm.executeQuery();
+     return rs.next();
+        
+        
+    }
+    
 }

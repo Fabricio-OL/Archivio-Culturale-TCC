@@ -1,9 +1,8 @@
-<%-- 
-    Document   : form_livro
-    Created on : 27/05/2024, 16:45:47
-    Author     : Claudia
---%>
 
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.EditoraDAO"%>
+<%@page import="model.livro.Editora"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -91,13 +90,26 @@
                 />
                 
                 <label for="Editora_idEditora">ID Editora</label>
-                <input 
-                    value="${livro.editora.idEditora}"
-                    name="Editora_idEditora" 
-                    id="Editora_idEditora" 
-                    type="number"
-                />
-
+                <select  name="Editora_idEditora" id="Editora_idEditora">
+                    <option value="" selected>Selecione...</option>
+                <% 
+                    ArrayList<Editora> listaeditora = new ArrayList<Editora>();
+                    try {
+                         EditoraDAO editoraDAO = new EditoraDAO();
+                         listaeditora= editoraDAO.getLista();
+                         
+                        for(Editora editora : listaeditora){
+                %>
+                <option value="<%= editora.getIdEditora() %>"><%= editora.getIdEditora() %></option>
+                <% 
+                        } 
+                    } catch(Exception e) {
+                        out.print(e);
+                    }
+                %>
+                    
+                </select>
+                
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>

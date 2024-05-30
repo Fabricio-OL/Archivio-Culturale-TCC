@@ -5,7 +5,8 @@
  */
 package controller;
 
-import dao.AcessoDAO;
+
+import dao.BibliotecarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,7 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Acesso;
+import javax.servlet.http.HttpSession;
+
 
 /**
  *
@@ -33,87 +35,53 @@ public class GerenciarAcesso extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Se mexe com o LINK é no GET 
-        PrintWriter out = response.getWriter();
-        String mensagem = "";
-
-        String acao = request.getParameter("acao");
-        String idAcesso = request.getParameter("idAcesso");
-
-        Acesso acesso = new Acesso();
-
-        try {
-            AcessoDAO aDAO = new AcessoDAO();
-            if (acao.equals("alterar")) {
-                acesso = aDAO.getCarregaPorID(Integer.parseInt(idAcesso));
-                if (acesso.getIdAcesso() > 0) {
-                    RequestDispatcher disp = getServletContext().getRequestDispatcher("/form_acesso.jsp");
-                    request.setAttribute("acesso", acesso);
-                    disp.forward(request, response);
-                } else {
-                    mensagem = "Perfil não encontrado";
-                }
-            }
-            if (acao.equals("deletar")){
-                acesso.setIdAcesso(Integer.parseInt(idAcesso));
-                if (aDAO.deletar(acesso)){
-                    mensagem ="Deletado com sucesso";
-                }else{
-                    mensagem = "Erro ao excluir Perfil";
-                    
-                }
-            }
-
-        } catch (Exception e) {
-            System.out.print(e);
-            mensagem = "Erro ao executar";
-
+        // LOGOFF
+        HttpSession session = request.getSession();
+        String acao=request.getParameter("acao");
+        
+        
+        if(acao.equals("logoff")){
+            session.invalidate();
+            response.sendRedirect("./index.jsp");
         }
-
-        out.println("<script type='text/javascript'>");
-        out.println("alert('" + mensagem + "');");
-        out.println("location.href='listar_acesso.jsp';");
-        out.println("</script>");
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // LOGIN 
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
 
-        String idAcesso = request.getParameter("idAcesso");
         String nome = request.getParameter("nome");
+        String senha = request.getParameter("senha");
 
         String mensagem = "";
+        String local="";
 
-        Acesso acesso = new Acesso();
         try {
-            AcessoDAO aDAO = new AcessoDAO();
+            BibliotecarioDAO biDAO = new BibliotecarioDAO();
 
-            if (!idAcesso.isEmpty()) {
-                acesso.setIdAcesso(Integer.parseInt(idAcesso));
-            }
-            if (nome.equals("") || nome.isEmpty()) {
-                mensagem = "Campos Obrigatórios deverão ser preenchidos";
-
-            } else {
-                acesso.setNome(nome);
-                if (aDAO.gravar(acesso)) {
-                    mensagem = " Gravado com sucesso!";
-                } else {
-                    mensagem = "Erro ao gravar no banco de dados!";
-                }
+            if (biDAO.login(nome, senha)) {
+                mensagem="Login Realizado com sucesso";
+                local="./listar_bibliotecario";
+                session.setAttribute("n",nome);
+            }else {
+                 mensagem="Falha na autenticação,Bibliotecario:"+ nome+"não encontrado";
+                 local="./index.jsp";
+                 session.setAttribute("n",nome);
+                  
             }
 
        
         } catch (Exception e) {
             System.out.println(e.toString());
-            mensagem = "Erro ao executar";
+            mensagem = e.toString();
+            local="./index.jsp";
         }
         out.println("<script type='text/javascript'>");
         out.println("alert('" + mensagem + "');");
-        out.println("location.href='listar_acesso.jsp';");
+        out.println("location.href='"+local+"';");
         out.println("</script>");
     }
 
