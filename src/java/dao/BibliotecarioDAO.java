@@ -24,7 +24,8 @@ public class BibliotecarioDAO extends DataBaseDAO {
             Bibliotecario.setNome(rs.getString("nome"));
             Bibliotecario.setCpf(rs.getString("cpf"));
             Bibliotecario.setDn(rs.getDate("dn"));
-            Bibliotecario.setEnd(rs.getString("end"));
+            Bibliotecario.setSenha(rs.getString("senha"));
+            
 
             lista.add(Bibliotecario);
         }
@@ -41,18 +42,18 @@ public class BibliotecarioDAO extends DataBaseDAO {
             this.conectar();
             
             if (Bibliotecario.getIdBibliotecario() == 0) {
-                sql = "INSERT INTO Bibliotecario(nome ,cpf, dn, end)"
+                sql = "INSERT INTO Bibliotecario(nome ,cpf, dn,senha)"
                         + "VALUES (?, ?, ?, ?)";
 
             } else {
-                sql = "UPDATE Bibliotecario SET nome = ?, cpf = ?, dn = ?, end = ? WHERE idBibliotecario = ?";
+                sql = "UPDATE Bibliotecario SET nome = ?, cpf = ?, dn = ?, senha = ? WHERE idBibliotecario = ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, Bibliotecario.getNome());
             pstm.setString(2, Bibliotecario.getCpf());
             pstm.setDate(3, Bibliotecario.getDn());
-            pstm.setString(4, Bibliotecario.getEnd());
+            pstm.setString(4, Bibliotecario.getSenha());
 
             if (Bibliotecario.getIdBibliotecario() > 0) {
                 pstm.setLong(5, Bibliotecario.getIdBibliotecario());
@@ -100,7 +101,7 @@ public class BibliotecarioDAO extends DataBaseDAO {
             Bibliotecario.setNome   (rs.getString("nome"));
             Bibliotecario.setCpf    (rs.getString("cpf"));
             Bibliotecario.setDn     (rs.getDate("dn"));
-            Bibliotecario.setEnd    (rs.getString("end"));
+            Bibliotecario.setSenha    (rs.getString("senha"));
         }
         
         this.desconectar();

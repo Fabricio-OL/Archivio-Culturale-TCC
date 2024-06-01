@@ -5,14 +5,14 @@ import java.sql.Date;
 public class Bibliotecario extends Pessoa {
     
     private int idBibliotecario;
-    private double salario;
+    private String senha;
     
     public Bibliotecario() {}
 
-    public Bibliotecario(int idBibliotecario, String nome, String cpf, Date dn, String end, double salario) {
+    public Bibliotecario(int idBibliotecario, String nome, String cpf, Date dn, String end, String senha) {
         super(nome, cpf, dn, end);
         this.idBibliotecario = idBibliotecario;
-        this.salario = salario;
+        this.senha = senha;
     }
 
     public int getIdBibliotecario() {
@@ -23,12 +23,21 @@ public class Bibliotecario extends Pessoa {
         this.idBibliotecario = idBibliotecario;
     }
 
-    public double getSalario() {
-        return salario;
+   
+    public String getSenha() {
+        return senha;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
+
+    @Override
+    public String toString() {
+        return "Bibliotecario{" + "idBibliotecario=" + idBibliotecario + ", senha=" + senha + '}';
+    }
+
+    
     
 }

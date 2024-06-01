@@ -18,7 +18,7 @@ public class LivroDAO extends DataBaseDAO {
         ArrayList<Livro> lista = new ArrayList<>();
         String SQL =  "SELECT"
                     + " li.idLivro, li.isbn, li.titulo, li.genero," 
-                    + " li.idEditora_idEditora"
+                    + " li.Editora_idEditora"
                     + " FROM Livro li"
                     + " JOIN Editora ed ON li.Editora_idEditora = ed.idEditora";
         
@@ -60,7 +60,7 @@ public class LivroDAO extends DataBaseDAO {
                         + "values (?,?,?,?)";
 
             } else {
-                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?,Editora_idEditora=? WHERE idLivro= ?";
+                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?, Editora_idEditora=? WHERE idLivro= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
