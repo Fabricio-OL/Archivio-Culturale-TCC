@@ -17,27 +17,30 @@
     <body>
         <%@include file="index.jsp" %>          
         <div class="container">
-            <div class="card card1">
+
+            <%
+
+            ArrayList<Livro> lista = new ArrayList<Livro>();
+            try {
+                LivroDAO liDAO = new LivroDAO();
+                lista = liDAO.getLista();
+            } catch (Exception e) {
+                out.print(e);
+            }
+
+            for (Livro livro : lista) {
+
+            %>
+
+            <div class="card">
                 <tr>
                     <th>ID</th>
                     <th>ISBN</th>
                     <th>Titulo</th>
-                    <th>Genêro</th>
+                    <th>Genï¿½ro</th>
                 </tr>
                 <table>
-                    <%
 
-                        ArrayList<Livro> lista = new ArrayList<Livro>();
-                        try {
-                            LivroDAO liDAO = new LivroDAO();
-                            lista = liDAO.getLista();
-                        } catch (Exception e) {
-                            out.print(e);
-                        }
-
-                        for (Livro livro : lista) {
-
-                    %>
                     <tr>
                         <td><%=livro.getIdLivro()%></td>
                         <td><%=livro.getIsbn()%></td>
@@ -52,46 +55,14 @@
                             </a>
                         </td>
                     </tr>
-                    <% }%>
+                    
+                    <tr>
+                        <img src=<%=livro.getImageURL()%> alt="" class="produto" style="padding-top:25px;">
+                        <button>Alugar</button>
+                    </tr>
                 </table>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card2">
-                <h2>Livro2</h2>
-                <img src="imagens/A Coroa.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card3">
-                <h2>Livro3</h2>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card4">
-                <h2>Livro4</h2>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card5">
-                <h2>Livro5</h2>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card6">
-                <h2>Livro6</h2>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card7">
-                <h2>Livro7</h2>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>
-            <div class="card card8">
-                <h2>Livro8</h2>
-                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
-                <button>Alugar</button>
-            </div>            
+                <% }%>
+            </div>           
         </div>
 
         <script>
