@@ -16,34 +16,28 @@ public class EditoraDAO extends DataBaseDAO {
     public ArrayList<Editora> getLista() throws Exception {
         ArrayList<Editora> lista = new ArrayList<>();
         /* 
+        Aqui é o que era antes 
+        
         String SQL = "SELECT"
                     + " ed.idEditora, ed.nome, ed.end, ed.cnpj" 
-                    + " liv.idLivro,"
+                    + " liv.idLivro"
                     + " FROM Editora ed"
                     + " JOIN Livro liv ON ed.Livro_idLivro = liv.idLivro";   */
         
-        String SQL = "SELECT"
-                    + " ed.idEditora, ed.nome, ed.end, ed.cnpj," 
-                    + " liv.idLivro"
-                    + " FROM Editora ed"
-                    + " JOIN Livro liv ON ed.Livro_idLivro = liv.idLivro";        
-        
+        String SQL = "SELECT* FROM Editora";
         this.conectar();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery(SQL);
 
         while (rs.next()) {
             Editora editora = new Editora();
-            Livro livro = new Livro();
+           
             
             editora.setIdEditora(rs.getInt("idEditora"));
             editora.setCnpj(rs.getString("cnpj"));
             editora.setNome(rs.getString("nome"));
             editora.setEnd(rs.getString("end"));
             
-            livro.setIdLivro(rs.getInt("idLivro"));
-            editora.setLivro(livro);
-
             lista.add(editora);
         }
 
@@ -58,18 +52,18 @@ public class EditoraDAO extends DataBaseDAO {
             String sql;
             this.conectar();
             if (editora.getIdEditora() == 0) {
-                sql = " INSERT INTO Editora(nome,end,cnpj,Livro_idLivro)"
-                        + "values (?,?,?,?)";
+                sql = " INSERT INTO Editora(nome,end,cnpj)"
+                        + "values (?,?,?)";
 
             } else {
-                sql = "UPDATE Editora SET nome = ?, end = ?, cnpj = ?,Livro_idLivro=? WHERE idEditora= ?";
+                sql = "UPDATE Editora SET nome = ?, end = ?, cnpj = ? WHERE idEditora= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, editora.getNome());
             pstm.setString(2, editora.getEnd());
             pstm.setString(3, editora.getCnpj());
-            pstm.setInt(4,editora.getLivro().getIdLivro());
+           
             
             // Condição para o ID 
             if (editora.getIdEditora() > 0) {
@@ -121,8 +115,7 @@ public class EditoraDAO extends DataBaseDAO {
             editora.setNome(rs.getString("nome"));
             editora.setEnd(rs.getString("end"));
             
-            livro.setIdLivro(rs.getInt("Livro_idLivro"));
-            editora.setLivro(livro);
+           
         }
         this.desconectar();
         return editora;

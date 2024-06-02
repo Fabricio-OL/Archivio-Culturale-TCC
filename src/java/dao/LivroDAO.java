@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import model.livro.Livro;
-
+import model.livro.Editora;
 
 public class LivroDAO extends DataBaseDAO {
     
@@ -16,17 +16,27 @@ public class LivroDAO extends DataBaseDAO {
     // Metodo Listar 
     public ArrayList<Livro> getLista() throws Exception {
         ArrayList<Livro> lista = new ArrayList<>();
-        String SQL = "SELECT * FROM Livro";
+        String SQL =  "SELECT"
+                    + " li.idLivro, li.isbn, li.titulo, li.genero," 
+                    + " li.Editora_idEditora"
+                    + " FROM Livro li"
+                    + " JOIN Editora ed ON li.Editora_idEditora = ed.idEditora";
+        
         this.conectar();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery(SQL);
 
         while (rs.next()) {
             Livro livro = new Livro();
+            Editora editora = new Editora();
+            
             livro.setIdLivro(rs.getInt("idLivro"));
             livro.setIsbn(rs.getString("isbn"));
             livro.setTitulo(rs.getString("titulo"));
             livro.setGenero(rs.getString("genero"));
+            
+            editora.setIdEditora(rs.getInt("idEditora"));
+            livro.setEditora(editora);
             
 
             lista.add(livro);
@@ -46,17 +56,18 @@ public class LivroDAO extends DataBaseDAO {
             String sql;
             this.conectar();
             if (livro.getIdLivro()== 0) {
-                sql = " INSERT INTO Livro(isbn,titulo,genero)"
-                        + "values (?,?,?)";
+                sql = " INSERT INTO Livro(isbn,titulo,genero,Editora_idEditora)"
+                        + "values (?,?,?,?)";
 
             } else {
-                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ? WHERE idLivro= ?";
+                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?, Editora_idEditora=? WHERE idLivro= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, livro.getTitulo());
             pstm.setString(2, livro.getIsbn());
             pstm.setString(3, livro.getGenero());
+            pstm.setInt(4,livro.getEditora().getIdEditora());
             
       
             // Condição para o ID 
@@ -98,6 +109,8 @@ public class LivroDAO extends DataBaseDAO {
 
     public Livro getCarregaPorID(int idLivro) throws Exception {
         Livro livro = new Livro();
+        Editora editora = new Editora();
+        
         String sql = "SELECT * FROM Livro WHERE idLivro=?";
         this.conectar();
         PreparedStatement pstm = conn.prepareStatement(sql);
@@ -108,7 +121,9 @@ public class LivroDAO extends DataBaseDAO {
             livro.setTitulo(rs.getString("titulo"));
             livro.setIsbn(rs.getString("isbn"));
             livro.setGenero(rs.getString("genero"));
-           
+            
+           editora.setIdEditora(rs.getInt("idEditora"));
+            livro.setEditora(editora);
         }
         this.desconectar();
         return livro;

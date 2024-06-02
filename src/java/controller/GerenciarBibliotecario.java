@@ -82,7 +82,7 @@ public class GerenciarBibliotecario extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String dn = request.getParameter("dn");
-        String end = request.getParameter("end");
+        String senha = request.getParameter("senha");
         System.out.println("----------------" + id);
 
 
@@ -105,7 +105,7 @@ public class GerenciarBibliotecario extends HttpServlet {
                 bibliotecario.setNome(nome);
                 bibliotecario.setCpf(cpf);
                 bibliotecario.setDn(Date.valueOf(dn));
-                bibliotecario.setEnd(end);
+                bibliotecario.setSenha(senha);
 
                 if (bibliotecarioDAO.gravar(bibliotecario)) {
                     mensagem = "Gravado com sucesso";

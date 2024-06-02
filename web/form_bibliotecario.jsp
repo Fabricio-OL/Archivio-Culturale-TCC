@@ -53,9 +53,20 @@
         </style>
     </head>
     <body>
+        
         <%@include file="banner.jsp" %>
         <%@include file="menu.jsp" %>
         <section class="container">
+            
+            <%
+                /* Aqui mostrará se o nome do usuario for nulo, ele sera redirecionado a pagina inicial ou a de login
+             String nome=(String) session.getAttribute("n");
+              if(nome==null){
+                  response.sendRedirect("./index.jsp");
+              }
+
+            */
+            %>
             <h1>Adicionar/Atualizar Bibliotecário</h1>
             
             <form method="post" action="gerenciar_bibliotecario.do" class="form">
@@ -91,7 +102,7 @@
                     type="date"
                 />
 
-                <label for="endereco">Endereço</label>
+                <%--<label for="endereco">Endereço</label>
                 <input 
                     value="${bibliotecario.end}"
                     name="end" 
@@ -99,7 +110,7 @@
                     type="text"
                     placeholder="Insira Endereço. Ex. Q1, C2, L3, Avenida dos Coqueiros, Brasília - DF"
                 />
-
+                --%>
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>

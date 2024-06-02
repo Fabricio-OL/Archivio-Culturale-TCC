@@ -5,7 +5,7 @@ public class Livro {
     private int idLivro;
     private String isbn;
     private String titulo;
-
+    private Editora editora;
     private String genero;
 
     public Livro() {
@@ -43,10 +43,26 @@ public class Livro {
         this.genero = genero;
     }
 
+    /**
+     * @return the editora
+     */
+    public Editora getEditora() {
+        return editora;
+    }
+
+    /**
+     * @param editora the editora to set
+     */
+    public void setEditora(Editora editora) {
+        this.editora = editora;
+    }
+
     @Override
     public String toString() {
-        return "Livro{" + "idLivro=" + idLivro + ", isbn=" + isbn + ", titulo=" + titulo + ", genero=" + genero + '}';
+        return "Livro{" + "idLivro=" + idLivro + ", isbn=" + isbn + ", titulo=" + titulo + ", editora=" + editora + ", genero=" + genero + '}';
     }
+
+    
     
     
 

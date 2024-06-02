@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.livro.Editora;
 import model.livro.Livro;
 
 
@@ -107,12 +108,13 @@ public class GerenciarLivro extends HttpServlet {
         String isbn = request.getParameter("isbn");
         String titulo = request.getParameter("titulo");
         String genero = request.getParameter("genero");
-        System.out.println("----------------" + id);
+        String idEditora = request.getParameter("Editora_idEditora");
         
 
 
         String mensagem = "";
 
+        Editora editora = new Editora();
         Livro livro = new Livro();
         
         try {
@@ -132,6 +134,9 @@ public class GerenciarLivro extends HttpServlet {
                 livro.setTitulo(titulo);
                 livro.setGenero(genero);
                
+                
+                editora.setIdEditora(Integer.parseInt(idEditora));
+                livro.setEditora(editora);
                 
                 if (liDAO.gravar(livro)) {
                     mensagem = "Gravado com sucesso";
