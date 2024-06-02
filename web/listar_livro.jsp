@@ -37,7 +37,7 @@
                     <th>ID</th>
                     <th>ISBN</th>
                     <th>Titulo</th>
-                    <th>Gen�ro</th>
+                    <th>Genêro</th>
                 </tr>
                 <table>
 
