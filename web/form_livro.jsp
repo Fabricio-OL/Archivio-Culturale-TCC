@@ -28,20 +28,23 @@
             }
             
             .container {
-                margin: 0 auto;
+                margin: auto;
                 width: 90%;
                 max-width: 980px;
+              
             }
             
             .form {
                 display: flex;
                 flex-direction: column;
+                padding: 50px;
+                padding-left: 60px;
             }
             
             .form input {
                 padding: 0.4rem;
                 margin: 2% 0;
-                
+                border-radius: 15px;
             }
             
             .form .button {
@@ -52,10 +55,9 @@
         </style>
     </head>
     <body>
-        <%@include file="banner.jsp" %>
-        <%@include file="menu.jsp" %>
         <section class="container">
-            <h1>Adicionar/Atualizar Livro</h1>
+             <%@include file="index.jsp" %>
+            <h1 style="margin-left:20%;">Adicionar/Atualizar Livro</h1>
             
             <form method="post" action="gerenciar_livro.do" class="form">
                 <input 

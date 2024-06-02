@@ -94,7 +94,7 @@
                 />
                 
                 <label for="Livro_idLivro">ID livro</label>
-                <input 
+                <input> 
                     value="${editora.livro.idLivro}"
                     name="Livro_idLivro" 
                     id="Livro_idLivro" 

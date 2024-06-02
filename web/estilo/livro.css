@@ -1,0 +1,90 @@
+/* 
+    Created on : 01/06/2024, 00:18:14
+    Author     : Diego Gruber
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'outfit', sans-serif;
+}
+body{
+    height: 100vh;
+}
+.container{
+    width: 16%;
+    height: 100px;
+    align-items: center;
+    justify-content:space-around ;
+    transform-style: preserve-3d;
+    display:grid;
+    flex-wrap: wrap;
+}
+.card{
+    width: 200px;
+    padding: 7px;
+    margin: 60px 0px 0px 0px ;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transform-style: preserve-3d;
+
+}
+.container .card h2{
+    color: #ffffff;
+    transform-style: preserve-3d;
+}
+
+.container .card img.produto{
+    max-width: 250px;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+.container .card:hover img.produto, .container .card:hover button{
+    transform: translate3d(0,0,60px);
+}
+.container .card button{
+    padding: 2px 10px;
+    background-color: #2b3743;
+    border-radius: 20px;
+    color: #f4f4f4;
+    font-size: 20px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+.container div.card1{
+    background-image: linear-gradient(45deg, #f5e4e4, #759cf5 );
+}
+.container div.card2{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container div.card3{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container div.card4{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container div.card5{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container div.card6{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container div.card7{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container div.card8{
+    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
+}
+.container .card2 img.produto{
+    height: 220px;
+    width: 175px;
+}
+.list{
+    width: 200px;
+    height: 0px;
+}
+

@@ -66,7 +66,7 @@
                 />
                 
                 <label for="dataEmp">Data do Emprestimo</label>
-                <input 
+                <input> 
                     value="${emprestimo.dataEmp}"
                     name="dataEmp" 
                     id="dataEmp" 
@@ -74,7 +74,7 @@
                 />
 
                 <label for="dataDev">Data da Devolução</label>
-                <input 
+                <input> 
                     value="${emprestimo.dataDev}"
                     name="dataDev" 
                     id="dataDev" 
@@ -99,7 +99,7 @@
                 />
                 
                 <label for="Leitor_idLeitor">ID leitor</label>
-                <input 
+                <input> 
                     value="${emprestimo.leitor.idLeitor}"
                     name="Leitor_idLeitor" 
                     id="Leitor_idLeitor" 
@@ -107,7 +107,7 @@
                 />
                 
                 <label for="Livro_idLivro">ID livro</label>
-                <input 
+                <input> 
                     value="${emprestimo.livro.idLivro}"
                     name="Livro_idLivro" 
                     id="Livro_idLivro" 
@@ -115,7 +115,7 @@
                 />
                 
                 <label for="Bibliotecario_idBibliotecario">ID bibliotecario</label>
-                <input 
+                <input> 
                     value="${emprestimo.bibliotecario.idBibliotecario}"
                     name="Bibliotecario_idBibliotecario" 
                     id="Bibliotecario_idBibliotecario" 

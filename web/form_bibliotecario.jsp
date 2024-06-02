@@ -84,7 +84,7 @@
                 />
 
                 <label for="dataNascimento">Data de Nascimento</label>
-                <input 
+                <input> 
                     value="${bibliotecario.dn}"
                     name="dn" 
                     id="dataNascimento" 

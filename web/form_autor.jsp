@@ -84,13 +84,12 @@
                 />
 
                 <label for="dataNascimento">Data de Nascimento</label>
-                <input 
+                <input> 
                     value="${autor.dn}"
                     name="dn" 
                     id="dataNascimento" 
                     type="date"
                 />
-
                 <label for="endereco">Endereço</label>
                 <input 
                     value="${autor.end}"
@@ -99,7 +98,6 @@
                     type="text"
                     placeholder="Insira Endereço. Ex. Q1, C2, L3, Avenida dos Coqueiros, Brasília - DF"
                 />
-
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>

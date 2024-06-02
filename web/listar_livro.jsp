@@ -1,69 +1,116 @@
 <%@page import="dao.LivroDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.livro.Livro"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="estilo/banner.css">
-        <title>Listar</title>
+        <link rel="stylesheet" href="estilo/index.css" type="text/css"/>
+        <link rel="stylesheet" href="estilo/livro.css" type="text/css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <title>Livros</title>
     </head>
     <body>
-        <div class="container-fluid">
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
-            <h1>Lista de Livros</h1>
-            
-            <a href="form_livro.jsp" class="btn btn-primary">Novo Cadastro</a>
-            
-            <table class="table table-hover">
+        <%@include file="index.jsp" %>          
+        <div class="container">
+            <div class="card card1">
                 <tr>
                     <th>ID</th>
                     <th>ISBN</th>
                     <th>Titulo</th>
-                    <th>GenÃªro</th>
+                    <th>Genêro</th>
                 </tr>
-                
-                <%
-                    
-                    ArrayList<Livro> lista = new ArrayList<Livro>();
-                    try {
-                        LivroDAO liDAO = new LivroDAO();
-                        lista = liDAO.getLista();
-                    }catch(Exception e){
-                        out.print(e);
-                    }
-                    
-                    for(Livro livro : lista){
+                <table>
+                    <%
 
-                %>
-                <tr>
-                    <td><%=livro.getIdLivro()%></td>
-                    <td><%=livro.getIsbn()%></td>
-                    <td><%=livro.getTitulo()%></td>
-                    <td><%=livro.getGenero()%></td>
+                        ArrayList<Livro> lista = new ArrayList<Livro>();
+                        try {
+                            LivroDAO liDAO = new LivroDAO();
+                            lista = liDAO.getLista();
+                        } catch (Exception e) {
+                            out.print(e);
+                        }
 
-                    <td>
-                        <a class="btn btn-primary" href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
-                            <i class='bx bxs-pencil' ></i>
-                        </a>
-                            
-                          <a class="btn btn-danger" href="gerenciar_livro.do?acao=delete&id=<%= livro.getIdLivro()%>">
-                            <i class='bx bxs-trash'></i>
-                          </a>
-                    </td>
-                </tr>
-                <% } %>
-            </table>
+                        for (Livro livro : lista) {
+
+                    %>
+                    <tr>
+                        <td><%=livro.getIdLivro()%></td>
+                        <td><%=livro.getIsbn()%></td>
+                        <td><%=livro.getTitulo()%></td>
+                        <td><%=livro.getGenero()%></td>
+                        <td>
+                            <a href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
+                                <i class='bx bxs-pencil' ></i>
+                            </a>
+                            <a href="gerenciar_livro.do?acao=delete&id=<%= livro.getIdLivro()%>">
+                                <i class='bx bxs-trash'></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <% }%>
+                </table>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card2">
+                <h2>Livro2</h2>
+                <img src="imagens/A Coroa.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card3">
+                <h2>Livro3</h2>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card4">
+                <h2>Livro4</h2>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card5">
+                <h2>Livro5</h2>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card6">
+                <h2>Livro6</h2>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card7">
+                <h2>Livro7</h2>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>
+            <div class="card card8">
+                <h2>Livro8</h2>
+                <img src="imagens/A Herdeira.png" alt="" class="produto" style="padding-top:25px;">
+                <button>Alugar</button>
+            </div>            
         </div>
-            
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+        <script>
+            VanillaTilt.init(document.querySelectorAll(".card"), {
+                max: 25,
+                speed: 400,
+                glare: true,
+                "max-glare": 1
+            });
+        </script>
+
+
+        <div class="list">                                               
+            <div>
+                <a href="form_livro.jsp"  >Novo Cadastro</a>
+
+            </div>
+        </div>
     </body>
+
 </html>
 

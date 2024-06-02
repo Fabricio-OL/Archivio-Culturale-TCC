@@ -22,6 +22,8 @@
             
             body {
                 margin: 0;
+                padding-top:50px; 
+                margin-top: 50px;
             }
             
             section {
@@ -37,11 +39,13 @@
             .form {
                 display: flex;
                 flex-direction: column;
+                padding: 50px;
             }
             
             .form input {
                 padding: 0.4rem;
                 margin: 2% 0;
+                border-radius: 15px;
                 
             }
             
@@ -52,11 +56,10 @@
             
         </style>
     </head>
-    <body>
-        <%@include file="banner.jsp" %>
-        <%@include file="menu.jsp" %>
+    <body>       
         <section class="container">
-            <h1>Adicionar/Atualizar Leitor</h1>
+            <%@include file="index.jsp" %>
+            <h1 style="margin-left:200%;">Adicionar/Atualizar Leitor</h1>
             
             <form method="post" action="gerenciar_leitor.do" class="form">
                 <input 
@@ -84,11 +87,13 @@
                 />
 
                 <label for="dataNascimento">Data de Nascimento</label>
-                <input 
+                
+                <input
                     value="${leitor.dn}"
                     name="dn" 
                     id="dataNascimento" 
                     type="date"
+                    placeholder="Insira Data de Nascimento"
                 />
 
                 <label for="endereco">Endereço</label>
