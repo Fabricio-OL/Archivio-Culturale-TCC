@@ -14,8 +14,6 @@
         <title>Listar</title>
     </head>
     <body>       
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
             <h1>Lista de Autores </h1>
             
             <a href="form_autor.jsp" class="btn btn-primary">Novo Cadastro</a>

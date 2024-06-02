@@ -53,8 +53,6 @@
         </style>
     </head>
     <body>
-        <%@include file="banner.jsp" %>
-        <%@include file="menu.jsp" %>
         <section class="container">
             <h1>Adicionar/Atualizar Editora</h1>
             

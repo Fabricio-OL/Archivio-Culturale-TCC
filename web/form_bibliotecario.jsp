@@ -54,8 +54,6 @@
     </head>
     <body>
         
-        <%@include file="banner.jsp" %>
-        <%@include file="menu.jsp" %>
         <section class="container">
             
             <%
@@ -95,7 +93,7 @@
                 />
 
                 <label for="dataNascimento">Data de Nascimento</label>
-                <input> 
+                <input
                     value="${bibliotecario.dn}"
                     name="dn" 
                     id="dataNascimento" 
