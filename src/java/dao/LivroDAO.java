@@ -72,7 +72,7 @@ public class LivroDAO extends DataBaseDAO {
       
             // Condição para o ID 
             if (livro.getIdLivro()> 0) {
-                pstm.setLong(4, livro.getIdLivro());
+                pstm.setLong(5, livro.getIdLivro());
             }
             pstm.execute();
             this.desconectar();

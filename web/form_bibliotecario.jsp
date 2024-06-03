@@ -99,6 +99,17 @@
                     id="dataNascimento" 
                     type="date"
                 />
+                
+                <label for="senha">Senha</label>
+                <input
+                    value="${bibliotecario.senha}"
+                    name="senha" 
+                    id="senha" 
+                    type="text"
+                    placeholder="Insira a senha . Ex. 1@34%R"
+                />
+                
+                
 
                 <%--<label for="endereco">Endereço</label>
                 <input 

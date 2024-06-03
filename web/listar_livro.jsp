@@ -15,7 +15,11 @@
         <title>Livros</title>
     </head>
     <body>
-        <%@include file="index.jsp" %>          
+        <%@include file="index.jsp" %>    
+        
+        <div class="container" id="cartao">
+            <div class="car card1">
+                
         <div class="container">
 
             <%
@@ -37,7 +41,8 @@
                     <th>ID</th>
                     <th>ISBN</th>
                     <th>Titulo</th>
-                    <th>GenÃªro</th>
+                    <th>Genêro</th>
+                    <th>Editora</th>
                 </tr>
                 <table>
 
@@ -46,6 +51,7 @@
                         <td><%=livro.getIsbn()%></td>
                         <td><%=livro.getTitulo()%></td>
                         <td><%=livro.getGenero()%></td>
+                        <td><%=livro.getEditora()%></td>
                         <td>
                             <a href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
                                 <i class='bx bxs-pencil' ></i>
@@ -56,10 +62,7 @@
                         </td>
                     </tr>
                     
-                    <tr>
-                        <img src=<%=livro.getImageURL()%> alt="" class="produto" style="padding-top:25px;">
-                        <button>Alugar</button>
-                    </tr>
+                    
                 </table>
                 <% }%>
             </div>           
