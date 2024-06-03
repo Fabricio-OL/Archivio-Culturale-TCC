@@ -15,8 +15,7 @@
         <title>Archivio Culturale</title>
     </head>
     <body>
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
+            <%@include file="index.jsp" %> 
             <h1>Lista de Perfis </h1>
 
             <a  href="form_acesso.jsp" class="btn btn-primary">Novo Cadastro</a>

@@ -16,7 +16,7 @@
     </head>
     <body>
         <%@include file="index.jsp" %>          
-        <div class="container">
+        <div class="container" id="cartao">
             <div class="card card1">
                 <tr>
                     <th>ID</th>
@@ -104,11 +104,8 @@
         </script>
 
 
-        <div class="list">                                               
-            <div>
-                <a href="form_livro.jsp"  >Novo Cadastro</a>
-
-            </div>
+        <div class="list">                                                         
+            <a href="form_livro.jsp"  >Novo Cadastro</a>         
         </div>
     </body>
 

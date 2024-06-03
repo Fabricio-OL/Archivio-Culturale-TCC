@@ -14,10 +14,6 @@
                 font-family: sans-serif;
             }
             
-            * {
-                box-sizing: border-box;
-            }
-            
             body {
                 margin: 0;
             }
@@ -27,7 +23,7 @@
             }
             
             .container {
-                margin: auto;
+               
                 width: 90%;
                 max-width: 980px;
               
@@ -36,8 +32,7 @@
             .form {
                 display: flex;
                 flex-direction: column;
-                padding: 50px;
-                padding-left: 60px;
+                
             }
             
             .form input {
@@ -54,8 +49,9 @@
         </style>
     </head>
     <body>
+        <%@include file="index.jsp" %>
         <section class="container">
-             <%@include file="index.jsp" %>
+             
             <h1 style="margin-left:20%;">Adicionar/Atualizar Livro</h1>
             
             <form method="post" action="gerenciar_livro.do" class="form">

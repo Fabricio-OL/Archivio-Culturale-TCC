@@ -10,8 +10,7 @@
     </head>
     <body>
         
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
+           <%@include file="index.jsp" %> 
             <h1>Cadastrar Acesso </h1>
 
             <form action="gerenciar_acesso.do" method="post">               

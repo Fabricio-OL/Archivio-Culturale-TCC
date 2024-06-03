@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="estilo/banner.css">
         <title>Listar</title>
     </head>
-    <body>       
+    <body>   
+        <%@include file="index.jsp" %> 
             <h1>Lista de Autores </h1>
             
             <a href="form_autor.jsp" class="btn btn-primary">Novo Cadastro</a>

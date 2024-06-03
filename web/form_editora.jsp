@@ -53,7 +53,9 @@
         </style>
     </head>
     <body>
+        <%@include file="index.jsp" %>
         <section class="container">
+            
             <h1>Adicionar/Atualizar Editora</h1>
             
             <form method="post" action="gerenciar_editora.do" class="form">

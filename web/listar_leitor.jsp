@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="estilo/index.css">
+       <link rel="stylesheet" href="estilo/leitor.css" type="text/css"/>
         <title>Leitores</title>
     </head>
     <body>       

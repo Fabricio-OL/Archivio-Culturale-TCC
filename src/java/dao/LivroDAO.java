@@ -17,10 +17,10 @@ public class LivroDAO extends DataBaseDAO {
     public ArrayList<Livro> getLista() throws Exception {
         ArrayList<Livro> lista = new ArrayList<>();
         String SQL =  "SELECT"
-                    + " li.idLivro, li.isbn, li.titulo, li.genero," 
-                    + " li.Editora_idEditora"
-                    + " FROM Livro li"
-                    + " JOIN Editora ed ON li.Editora_idEditora = ed.idEditora";
+                    + " li.idLivro, li.isbn, li.titulo, li.genero" 
+                    //+ " li.Editora_idEditora"
+                    + " FROM Livro li";
+                    //+ " JOIN Editora ed ON li.Editora_idEditora = ed.idEditora";
         
         this.conectar();
         Statement stm = conn.createStatement();
@@ -35,8 +35,8 @@ public class LivroDAO extends DataBaseDAO {
             livro.setTitulo(rs.getString("titulo"));
             livro.setGenero(rs.getString("genero"));
             
-            editora.setIdEditora(rs.getInt("idEditora"));
-            livro.setEditora(editora);
+            //editora.setIdEditora(rs.getInt("idEditora"));
+            //livro.setEditora(editora);
             
 
             lista.add(livro);

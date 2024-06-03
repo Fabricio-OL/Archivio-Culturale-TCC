@@ -11,6 +11,8 @@
 }
 body{
     height: 100vh;
+    display: flex;
+    justify-content: space-between;
 }
 .container{
     width: 16%;
@@ -55,36 +57,28 @@ body{
     transform-style: preserve-3d;
     transition: 0.5s;
 }
-.container div.card1{
+.container div.card{
     background-image: linear-gradient(45deg, #f5e4e4, #759cf5 );
 }
-.container div.card2{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
-.container div.card3{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
-.container div.card4{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
-.container div.card5{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
-.container div.card6{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
-.container div.card7{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
-.container div.card8{
-    background-image: linear-gradient(45deg, #fceaf8, #a766ba);
-}
+
 .container .card2 img.produto{
     height: 220px;
     width: 175px;
 }
 .list{
-    width: 200px;
-    height: 0px;
+   
+    margin: 10px 150px 5px 0px; 
+    background-color: #2b3743;
+    border-radius: 20px;
+    color: #f4f4f4;
+    font-size: 20px;
+    cursor: pointer;
+    justify-content: center;
 }
-
+#cartao{
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    padding-left: 60px;
+}

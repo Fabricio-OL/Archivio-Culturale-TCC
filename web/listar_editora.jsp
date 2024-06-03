@@ -14,8 +14,7 @@
     </head>
     <body>
         <div>
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
+           <%@include file="index.jsp" %> 
             <h1>Lista de Editoras</h1>
             
             <a href="form_editora.jsp">Novo Cadastro</a>

@@ -13,8 +13,7 @@
         <title>Listar</title>
     </head>
     <body>
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
+            <%@include file="index.jsp" %> 
             <h1>Lista de Bibliotecario</h1>
             
             <a href="form_bibliotecario.jsp" class="btn btn-primary">Novo Cadastro</a>

@@ -16,10 +16,7 @@
                 font-family: sans-serif;
             }
             
-            * {
-                box-sizing: border-box;
-            }
-            
+           
             body {
                 margin: 0;
                 padding-top:50px; 
@@ -31,15 +28,16 @@
             }
             
             .container {
-                margin: 0 auto;
-                width: 90%;
+               margin-right: 5%;
+                width: 14%;
                 max-width: 980px;
+            
             }
             
             .form {
-                display: flex;
+              
                 flex-direction: column;
-                padding: 50px;
+               
             }
             
             .form input {
@@ -56,10 +54,11 @@
             
         </style>
     </head>
-    <body>       
+    <body>   
+        <%@include file="index.jsp" %>
         <section class="container">
-            <%@include file="index.jsp" %>
-            <h1 style="margin-left:200%;">Adicionar/Atualizar Leitor</h1>
+            
+            <h1>Adicionar/Atualizar Leitor</h1>
             
             <form method="post" action="gerenciar_leitor.do" class="form">
                 <input 

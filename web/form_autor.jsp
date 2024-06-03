@@ -53,7 +53,9 @@
         </style>
     </head>
     <body>
+        <%@include file="index.jsp" %>
         <section class="container">
+            
             <h1>Adicionar/Atualizar Autores</h1>
             
             <form method="post" action="gerenciar_autor.do" class="form">

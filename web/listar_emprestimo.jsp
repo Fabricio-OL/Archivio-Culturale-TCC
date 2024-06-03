@@ -14,8 +14,7 @@
     </head>
     <body>
         <div>
-            <%@include file="banner.jsp" %>
-            <%@include file="menu.jsp" %>
+            
             <h1>Lista de Emprestimo</h1>
             
             <a href="form_emprestimo.jsp">Novo Cadastro</a>

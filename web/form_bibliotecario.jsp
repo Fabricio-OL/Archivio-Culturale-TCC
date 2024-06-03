@@ -53,8 +53,9 @@
         </style>
     </head>
     <body>
-        
+        <%@include file="index.jsp" %>
         <section class="container">
+            
             
             <%
                 /* Aqui mostrará se o nome do usuario for nulo, ele sera redirecionado a pagina inicial ou a de login
@@ -109,6 +110,19 @@
                     placeholder="Insira Endereço. Ex. Q1, C2, L3, Avenida dos Coqueiros, Brasília - DF"
                 />
                 --%>
+                
+                
+                <label for="senha">Senha</label>
+                <input
+                    value="${bibliotecario.senha}"
+                    name="senha" 
+                    id="senha" 
+                    type="text"
+                    placeholder=" Insira a senha. Ex. 1@ew#21"
+                />
+                
+                
+                
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>
