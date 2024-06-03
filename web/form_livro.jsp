@@ -91,8 +91,8 @@
                     type="text"
                 />
                 
-                <label for="Editora_idEditora">ID Editora</label>
-                <select  name="Editora_idEditora" id="Editora_idEditora">
+                <label for="idEditora">ID Editora</label>
+                <select  name="idEditora" id="idEditora">
                     <option value="" selected>Selecione...</option>
                 <% 
                     ArrayList<Editora> listaeditora = new ArrayList<Editora>();
