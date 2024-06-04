@@ -102,30 +102,7 @@
                     type="text"
                     placeholder="Insira a Condição que o livro se encontra. Ex. Danificado, Novo, Semi-Novo"
                 />
-                
-                <label for="Leitor_idLeitor">ID leitor</label>
-                <input
-                    value="${emprestimo.leitor.idLeitor}"
-                    name="Leitor_idLeitor" 
-                    id="Leitor_idLeitor" 
-                    type="number"
-                />
-                
-                <label for="Livro_idLivro">ID livro</label>
-                <input
-                    value="${emprestimo.livro.idLivro}"
-                    name="Livro_idLivro" 
-                    id="Livro_idLivro" 
-                    type="number"
-                />
-                
-                <label for="Bibliotecario_idBibliotecario">ID bibliotecario</label>
-                <input
-                    value="${emprestimo.bibliotecario.idBibliotecario}"
-                    name="Bibliotecario_idBibliotecario" 
-                    id="Bibliotecario_idBibliotecario" 
-                    type="number"
-                />
+    
                 
             <label for="Leitor_idLeitor">ID Leitor</label>
             <select name="Leitor_idLeitor" id="Leitor_idLeitor">
@@ -137,7 +114,7 @@
                         listaLeitores = leitorDAO.getLista();
                         for(Leitor leitor : listaLeitores){
                 %>
-                <option value="<%= leitor.getIdLeitor() %>"><%= leitor.getIdLeitor() %></option>
+                <option value="<%= leitor.getIdLeitor() %>"><%= leitor.getIdLeitor() %> - <%= leitor.getNome() %></option>
                 <% 
                         } 
                     } catch(Exception e) {
@@ -156,7 +133,7 @@
                         listaLivros = livroDAO.getLista();
                         for(Livro livro : listaLivros){
                 %>
-                <option value="<%= livro.getIdLivro() %>"><%= livro.getIdLivro() %></option>
+                <option value="<%= livro.getIdLivro() %>"><%= livro.getIdLivro() %>  - <%= livro.getTitulo() %>  </option>
                 <% 
                         } 
                     } catch(Exception e) {
@@ -175,7 +152,7 @@
                         listaBibliotecarios = bibliotecarioDAO.getLista();
                         for(Bibliotecario bibliotecario : listaBibliotecarios){
                 %>
-                <option value="<%= bibliotecario.getIdBibliotecario() %>"><%= bibliotecario.getIdBibliotecario() %></option>
+                <option value="<%= bibliotecario.getIdBibliotecario() %>"><%= bibliotecario.getIdBibliotecario() %> - <%= bibliotecario.getNome() %></option>
                 <% 
                         } 
                     } catch(Exception e) {
@@ -183,6 +160,11 @@
                     }
                 %>
             </select>
+            
+            
+            
+            
+            
 
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
