@@ -1,4 +1,3 @@
-<%@page import="dao.EmprestimoDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.livro.Emprestimo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

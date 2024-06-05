@@ -17,10 +17,10 @@ public class LivroDAO extends DataBaseDAO {
     public ArrayList<Livro> getLista() throws Exception {
         ArrayList<Livro> lista = new ArrayList<>();
         String SQL =  "SELECT"
-                    + " li.idLivro, li.isbn, li.titulo, li.genero" 
-                    //+ " li.Editora_idEditora"
-                    + " FROM Livro li";
-                    //+ " JOIN Editora ed ON li.Editora_idEditora = ed.idEditora";
+                    + " li.idLivro, li.isbn, li.titulo, li.genero," 
+                    + " li.idEditora"
+                    + " FROM Livro li"
+                    + " JOIN Editora ed ON li.idEditora = ed.idEditora";
         
         this.conectar();
         Statement stm = conn.createStatement();
@@ -56,11 +56,11 @@ public class LivroDAO extends DataBaseDAO {
             String sql;
             this.conectar();
             if (livro.getIdLivro()== 0) {
-                sql = " INSERT INTO Livro(isbn,titulo,genero,Editora_idEditora)"
+                sql = " INSERT INTO Livro(isbn,titulo,genero,idEditora)"
                         + "values (?,?,?,?)";
 
             } else {
-                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?, Editora_idEditora=? WHERE idLivro= ?";
+                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?, idEditora=? WHERE idLivro= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -72,7 +72,7 @@ public class LivroDAO extends DataBaseDAO {
       
             // Condição para o ID 
             if (livro.getIdLivro()> 0) {
-                pstm.setLong(4, livro.getIdLivro());
+                pstm.setLong(5, livro.getIdLivro());
             }
             pstm.execute();
             this.desconectar();

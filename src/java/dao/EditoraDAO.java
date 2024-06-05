@@ -67,7 +67,7 @@ public class EditoraDAO extends DataBaseDAO {
             
             // Condição para o ID 
             if (editora.getIdEditora() > 0) {
-                pstm.setLong(5, editora.getIdEditora());
+                pstm.setLong(4, editora.getIdEditora());
             }
             pstm.execute();
             this.desconectar();

@@ -24,7 +24,7 @@
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Data de Nascimento</th>
-                    <th>Endereço</th>
+                  
                     <th>Opções</th>
                 </tr>
                 
@@ -45,8 +45,7 @@
                     <td><%=bibliotecario.getNome()%></td>
                     <td><%=bibliotecario.getCpf()%></td>
                     <td><%=bibliotecario.getDn()%></td>
-                    <td><%=bibliotecario.getEnd()%></td>
-
+                    
 
                     <td>
                         <a class="btn btn-primary" href="gerenciar_bibliotecario.do?acao=alterar&id=<%= bibliotecario.getIdBibliotecario()%>">

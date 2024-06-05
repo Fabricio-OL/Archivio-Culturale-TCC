@@ -41,7 +41,8 @@
                     <th>ID</th>
                     <th>ISBN</th>
                     <th>Titulo</th>
-                    <th>Genêro</th>
+                    <th>Gen�ro</th>
+                    <th>Editora</th>
                 </tr>
                 <table>
 
@@ -50,6 +51,7 @@
                         <td><%=livro.getIsbn()%></td>
                         <td><%=livro.getTitulo()%></td>
                         <td><%=livro.getGenero()%></td>
+                        <td><%=livro.getEditora()%></td>
                         <td>
                             <a href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
                                 <i class='bx bxs-pencil' ></i>
@@ -60,10 +62,14 @@
                         </td>
                     </tr>
                     
+<<<<<<< HEAD
                     <tr>
                         
                         <button>Alugar</button>
                     </tr>
+=======
+                    
+>>>>>>> 74e0d1d12a27fac605ae231b3be348952c626615
                 </table>
                 <% }%>
             </div>    
