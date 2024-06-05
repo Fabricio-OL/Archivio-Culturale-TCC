@@ -10,51 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Archivio Culturale</title>
-        
-        <style>
-            :root {
-                font-family: sans-serif;
-            }
-            
-           
-            body {
-                margin: 0;
-                padding-top:50px; 
-                margin-top: 50px;
-            }
-            
-            section {
-                height: 90vh;
-            }
-            
-            .container {
-               margin-right: 5%;
-                width: 14%;
-                max-width: 980px;
-            
-            }
-            
-            .form {
-              
-                flex-direction: column;
-               
-            }
-            
-            .form input {
-                padding: 0.4rem;
-                margin: 2% 0;
-                border-radius: 15px;
-                
-            }
-            
-            .form .button {
-                width: 30%;
-                padding: 1rem;
-            }
-            
-        </style>
     </head>
-    <body>   
+    <body>  
+      
         <%@include file="index.jsp" %>
         <section class="container">
             

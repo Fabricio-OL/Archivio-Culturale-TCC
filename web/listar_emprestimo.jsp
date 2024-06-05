@@ -14,7 +14,7 @@
     </head>
     <body>
         <div>
-            
+            <%@include file="index.jsp" %>
             <h1>Lista de Emprestimo</h1>
             
             <a href="form_emprestimo.jsp">Novo Cadastro</a>

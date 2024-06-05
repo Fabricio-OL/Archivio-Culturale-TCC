@@ -60,7 +60,7 @@
         </style>
     </head>
     <body>
-        
+        <%@include file="index.jsp" %>
         <section class="container">
 
             <h1>Adicionar/Atualizar Emprestimo</h1>
