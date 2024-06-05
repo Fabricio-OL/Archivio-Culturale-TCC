@@ -53,7 +53,18 @@
                         LocalDate dataEmpLocalDate = dataEmpDate.toLocalDate();
                         LocalDate dataDevLocalDate = dataDevDate.toLocalDate();
                         
+                        int PERIODO_MAXIMO_EMPRESTIMO_DIAS = 7;
+                        String condicaoLivro = emprestimo.getCondicao();
                         long duracaoEmprestimo = ChronoUnit.DAYS.between(dataEmpLocalDate, dataDevLocalDate);
+                        boolean isAtrasado = duracaoEmprestimo > PERIODO_MAXIMO_EMPRESTIMO_DIAS;
+                        boolean isDanificado = condicaoLivro.equalsIgnoreCase("Danificado");
+                        String status = "Devolvido";
+                        
+                        if(isAtrasado) {
+                            status = "Devolvido com atraso";
+                        } else if(isDanificado) {
+                            status = "Devolvido com ressalvas";
+                        }
                 %>
                 %>
                 <tr>
@@ -61,7 +72,7 @@
                     <td><%=emprestimo.getDataEmp()%></td>
                     <td><%=emprestimo.getDataDev()%></td>
                     <td><%=duracaoEmprestimo%></td>
-                    <td><%=emprestimo.getStatus()%></td>
+                    <td><%=status%></td>
                     <td><%=emprestimo.getCondicao()%></td>
                     <td><%=emprestimo.getLeitor().getIdLeitor()%></td>
                     <td><%=emprestimo.getLivro().getIdLivro()%></td>
