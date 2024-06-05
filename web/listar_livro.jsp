@@ -3,7 +3,7 @@
 <%@page import="model.livro.Livro"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,14 +62,10 @@
                         </td>
                     </tr>
                     
-<<<<<<< HEAD
                     <tr>
                         
                         <button>Alugar</button>
                     </tr>
-=======
-                    
->>>>>>> 74e0d1d12a27fac605ae231b3be348952c626615
                 </table>
                 <% }%>
             </div>    

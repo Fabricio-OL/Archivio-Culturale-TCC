@@ -7,9 +7,13 @@ body{
     background-color: #1e2d4a;
     display: flex;
     background-image: url("../imagens/bibli.jpeg");
-     
     
 }
+
+label {
+    color: white;
+}
+
 .img-banner{
     width: 1000%;
     height: 100vh;
