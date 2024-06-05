@@ -1,3 +1,8 @@
+<%@page import="java.time.ZoneId"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.sql.Date"%>
+<%@page import="java.time.temporal.ChronoUnit"%>
+<%@page import="dao.EmprestimoDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.livro.Emprestimo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,6 +28,7 @@
                     <th>ID</th>
                     <th>Data do Emprestimo</th>
                     <th>Data da Devolução</th>
+                    <th>Duração do Empréstimo</th>
                     <th>Status</th>
                     <th>Condição</th>
                     <th>ID leitor</th>
@@ -41,12 +47,20 @@
                     }
                     
                     for(Emprestimo emprestimo : lista){
+                        Date dataEmpDate = emprestimo.getDataEmp();
+                        Date dataDevDate = emprestimo.getDataDev();
                         
+                        LocalDate dataEmpLocalDate = dataEmpDate.toLocalDate();
+                        LocalDate dataDevLocalDate = dataDevDate.toLocalDate();
+                        
+                        long duracaoEmprestimo = ChronoUnit.DAYS.between(dataEmpLocalDate, dataDevLocalDate);
+                %>
                 %>
                 <tr>
                     <td><%=emprestimo.getIdEmp()%></td>
                     <td><%=emprestimo.getDataEmp()%></td>
                     <td><%=emprestimo.getDataDev()%></td>
+                    <td><%=duracaoEmprestimo%></td>
                     <td><%=emprestimo.getStatus()%></td>
                     <td><%=emprestimo.getCondicao()%></td>
                     <td><%=emprestimo.getLeitor().getIdLeitor()%></td>
