@@ -14,6 +14,9 @@ body{
     display: flex;
     justify-content: space-between;
     background-size: cover;
+       margin: 0px;     
+    display: flex;
+     
 .container {
   width: 16%;
   height: 100px;

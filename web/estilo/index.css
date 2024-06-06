@@ -4,10 +4,7 @@
 body{
     margin: 0px;
     min-height: 100vh;
-    background-color: #1e2d4a;
-    display: flex;
-    background-image: url("../imagens/bibli.jpeg");
-    
+    display: flex;  
 }
 
 label {
@@ -18,8 +15,8 @@ label {
     width: 1000%;
     height: 100vh;
     display: hidden;
- 
-    
+
+
 }
 
 #biblioteca{
@@ -37,10 +34,6 @@ label {
     height: 100vh;
     border-radius: 0px 12px 12px 0px;
     transition: width 0.5s;
-}
-eca_content{
-    padding: 12px;
-    color: #ffffff;
 }
 #user{
     display: flex;
@@ -102,11 +95,11 @@ main {
     display: none;
 }
 .side-item, #logout_btn:hover:not(){
-    background-color: #767df9;
+    background-color: #7e5d39;
 }
 
 .side-item:hover:not(.active){
-    background-color: #767df9;
+    background-color: #7e5d39;
 }
 .side-item a{
     text-decoration: none;

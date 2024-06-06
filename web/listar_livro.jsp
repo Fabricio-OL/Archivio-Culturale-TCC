@@ -69,9 +69,7 @@
                 </table>
                 <% }%>
             </div>    
-              <div class="list">                                                         
-            <a href="form_livro.jsp"  >Novo Cadastro</a>         
-        </div>
+              
         </div>
 
      
@@ -85,7 +83,9 @@
                 "max-glare": 1
             });
         </script>
-
+<div class="list">                                                         
+            <a href="form_livro.jsp"  >Novo Cadastro</a>         
+        </div>
     </body>
 
 </html>

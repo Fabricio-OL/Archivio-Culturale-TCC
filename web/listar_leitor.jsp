@@ -16,7 +16,7 @@
         <div class="cadastro">                             
             <h1>Lista de Leitores</h1>           
             <a href="form_leitor.jsp">Novo Cadastro</a>           
-            <table class="table table-hover">
+            <table class="table">
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
