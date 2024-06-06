@@ -29,6 +29,8 @@
                     <th>Data do Emprestimo</th>
                     <th>Data da Devolução</th>
                     <th>Duração do Empréstimo</th>
+                    <th>Dias Atrasados</th>
+                    <th>Valor do Emprestimo</th>
                     <th>Status</th>
                     <th>Condição</th>
                     <th>ID leitor</th>
@@ -47,21 +49,27 @@
                     }
                     
                     for(Emprestimo emprestimo : lista){
+                        
                         Date dataEmpDate = emprestimo.getDataEmp();
                         Date dataDevDate = emprestimo.getDataDev();
                         
                         LocalDate dataEmpLocalDate = dataEmpDate.toLocalDate();
                         LocalDate dataDevLocalDate = dataDevDate.toLocalDate();
                         
-                        int PERIODO_MAXIMO_EMPRESTIMO_DIAS = 7;
+                        final int PERIODO_MAXIMO_EMPRESTIMO_DIAS = 7;
                         String condicaoLivro = emprestimo.getCondicao();
+                        
                         long duracaoEmprestimo = ChronoUnit.DAYS.between(dataEmpLocalDate, dataDevLocalDate);
+                        long diasAtraso = Math.max(0, duracaoEmprestimo - PERIODO_MAXIMO_EMPRESTIMO_DIAS);
+                        
                         boolean isAtrasado = duracaoEmprestimo > PERIODO_MAXIMO_EMPRESTIMO_DIAS;
                         boolean isDanificado = condicaoLivro.equalsIgnoreCase("Danificado");
                         String status = "Devolvido";
+                        double valorAluguel = 10.0;
                         
                         if(isAtrasado) {
                             status = "Devolvido com atraso";
+                            valorAluguel = emprestimo.emitirMulta(diasAtraso, valorAluguel);
                         } else if(isDanificado) {
                             status = "Devolvido com ressalvas";
                         }
@@ -72,6 +80,8 @@
                     <td><%=emprestimo.getDataEmp()%></td>
                     <td><%=emprestimo.getDataDev()%></td>
                     <td><%=duracaoEmprestimo%></td>
+                    <td><%=diasAtraso%></td>
+                    <td><%="R$ " + valorAluguel%></td>
                     <td><%=status%></td>
                     <td><%=emprestimo.getCondicao()%></td>
                     <td><%=emprestimo.getLeitor().getIdLeitor()%></td>

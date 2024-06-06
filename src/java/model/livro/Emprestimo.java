@@ -112,5 +112,13 @@ public class Emprestimo {
     public void setCondicao(String condicao) {
         this.condicao = condicao;
     }
+    
+    public double emitirMulta(long diasAtraso, double valorAluguel) {
+        
+        final double VALOR_PADRAO_MULTA = 0.35;
+        double valorAluguelComMulta = valorAluguel + (diasAtraso * VALOR_PADRAO_MULTA);
+        
+        return valorAluguelComMulta;
+    }
 
 }
