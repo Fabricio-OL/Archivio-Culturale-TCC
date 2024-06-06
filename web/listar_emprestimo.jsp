@@ -65,7 +65,7 @@
                         boolean isAtrasado = duracaoEmprestimo > PERIODO_MAXIMO_EMPRESTIMO_DIAS;
                         boolean isDanificado = condicaoLivro.equalsIgnoreCase("Danificado");
                         String status = "Devolvido";
-                        double valorAluguel = 10.0;
+                        double valorAluguel = 5.0;
                         
                         if(isAtrasado) {
                             status = "Devolvido com atraso";
