@@ -190,11 +190,12 @@ public class EmprestimoDAO extends DataBaseDAO {
             multa = 0;
 
         } else if (ConferirStatus(id) == "1") {
-            multa = 15;
+            multa = 0.15;
+            // Multa por atraso
 
         } else if (ConferirStatus(id) == "2") {
-            multa = 50;
-
+            multa = 0.35;
+       // Multa por estragar o  livro
         }
         return multa;
 
