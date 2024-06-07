@@ -10,12 +10,14 @@
         <link rel="stylesheet" href="estilo/fundo.css" type="text/css"/>
     </head>
     <body>
-        
+        <div class="tela tela1">
+                        <h2>Tela 1</h2>
+                    </div>                          
         <div class="container">
         <nav id="biblioteca">
-            <div class="biblioteca_content">
-                <div id="user">                                                                                   
-                    <img class="img-biblioteca" src="imagens/biblioteca.jpeg" alt="biblioteca">
+                <div id="user">  
+                    
+                    <img class="img-biblioteca" src="imagens/biblioteca.jpeg">
                 <p id="user_infos">
                     <span class="item-description">  
                         Biblioteca
@@ -24,7 +26,7 @@
                       <strong>Archivio Culturale</strong>
                     </span>
                 </p>
-            </div> 
+            </div>         
          <ul id="side_items">
               <li class="side-item ">
                   <a href="index.jsp">
@@ -82,17 +84,15 @@
                         </span>
                     </a>
                 </li>
-    </ul>      
-        </div>            
-        <div id="logout">
+    </ul> 
+             <div id="logout">
             <button id="logout_btn">
                <i class='bx bx-log-in-circle'></i>
                 <span class="item-description">
                     Logout
                 </span>
             </button>
-            </div>    
-     </nav> 
-    </div>
+             </div>
+        </div>
     </body>
 </html>

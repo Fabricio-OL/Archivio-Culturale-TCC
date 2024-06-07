@@ -1,5 +1,3 @@
-
-
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.EditoraDAO"%>
 <%@page import="model.livro.Editora"%>
@@ -12,6 +10,7 @@
            <style>
             :root {
                 font-family: sans-serif;
+                color: #ffffff;
             }
             
             body {
@@ -49,10 +48,10 @@
         </style>
     </head>
     <body>
-        <%@include file="index.jsp" %>
+        <%@include file="listar_livro.jsp" %>
         <section class="container">
              
-            <h1 style="margin-left:20%;">Adicionar/Atualizar Livro</h1>
+            <h1>Adicionar/Atualizar Livro</h1>
             
             <form method="post" action="gerenciar_livro.do" class="form">
                 <input 

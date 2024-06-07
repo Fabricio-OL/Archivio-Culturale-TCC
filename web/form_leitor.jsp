@@ -11,48 +11,44 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Archivio Culturale</title>
         <style>
-            :root {
-                font-family: sans-serif;
-                color: #ffffff;
-                text-align: center;
-                padding-right: 50%;
-            }
+        :root {
+            font-family: sans-serif;
+            color: #ffffff;
+            justify-content: center; 
+            
+        }
 
-            body {
-                margin: 0;
-            }
+        section {
+            height: 90vh;
+        }
 
-            section {
-                height: 90vh;
-            }
+        .container {
+            width: 90%;
+            max-width: 980px;
+        }
 
-            .container {
+        .form {            
+            justify-content: center;
+            align-items: center;
+        }
 
-                width: 90%;
-                max-width: 980px;
-            }
+        .form input {
+            padding: 0.4rem;
+            margin: 2% 0;
+            border-radius: 15px;
+        }
 
-            .form {
-                display: flex;
-                flex-direction: column;
-
-            }
-
-            .form input {
-                padding: 0.4rem;
-                margin: 2% 0;
-                border-radius: 15px;
-            }
-
-            .form .button {
-                width: 30%;
-                padding: 1rem;
-            }            
-        </style>
+        .form .button {
+            width: 30%;
+            padding: 1rem;
+        }            
+    </style>
+</head>
+<body>
     </head>
     <body>  
 
-        <%@include file="index.jsp" %>
+        <%@include file="listar_leitor.jsp" %>
         <section class="containerleitor">
 
             <h1>Adicionar/Atualizar Leitor</h1>
