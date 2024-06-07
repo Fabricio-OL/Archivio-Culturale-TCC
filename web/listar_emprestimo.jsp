@@ -66,12 +66,15 @@
                         boolean isDanificado = condicaoLivro.equalsIgnoreCase("Danificado");
                         String status = "Devolvido";
                         double valorAluguel = 5.0;
+                         
+                      
                         
                         if(isAtrasado) {
                             status = "Devolvido com atraso";
                             valorAluguel = emprestimo.emitirMulta(diasAtraso, valorAluguel);
                         } else if(isDanificado) {
                             status = "Devolvido com ressalvas";
+                            valorAluguel = emprestimo.emitirMultaDanificado(valorAluguel );
                         }
                 %>
                 %>

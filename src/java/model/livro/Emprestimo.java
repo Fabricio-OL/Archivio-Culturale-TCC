@@ -115,10 +115,18 @@ public class Emprestimo {
     
     public double emitirMulta(long diasAtraso, double valorAluguel) {
         
-        final double VALOR_PADRAO_MULTA = 0.15;
+        final double VALOR_PADRAO_MULTA = 0.80;
         double valorAluguelComMulta = valorAluguel + (diasAtraso * VALOR_PADRAO_MULTA);
         
         return valorAluguelComMulta;
     }
 
+    
+    
+    public double emitirMultaDanificado(double valorAluguel){
+         final double VALOR_PADRAO_MULTA = 0.35;
+         
+         
+          return valorAluguel = valorAluguel + VALOR_PADRAO_MULTA;
+    }
 }
