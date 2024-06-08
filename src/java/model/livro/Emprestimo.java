@@ -11,7 +11,7 @@ public class Emprestimo {
     
     private static final double VALOR_PADRAO_ALUGUEL = 5.0;
     private static final double VALOR_PADRAO_MULTA = 0.80;
-    private static final double VALOR_PADRAO_MULTA_DANIFICADO = 0.35;
+    private static final double VALOR_PADRAO_MULTA_DANIFICADO = 35.0;
     
     private int idEmp;
     private Date dataEmp;
