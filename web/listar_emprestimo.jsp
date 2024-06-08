@@ -64,17 +64,22 @@
                         
                         boolean isAtrasado = duracaoEmprestimo > PERIODO_MAXIMO_EMPRESTIMO_DIAS;
                         boolean isDanificado = condicaoLivro.equalsIgnoreCase("Danificado");
-                        String status = "Devolvido";
-                        double valorAluguel = 5.0;
-                         
-                      
                         
+                        String status = "Devolvido"; // valor padrão se não cair em nenhuma condição
+                        String valorAluguel = emprestimo.getValorAluguelFinal(isAtrasado, isDanificado, diasAtraso);
+
                         if(isAtrasado) {
                             status = "Devolvido com atraso";
-                            valorAluguel = emprestimo.emitirMulta(diasAtraso, valorAluguel);
-                        } else if(isDanificado) {
-                            status = "Devolvido com ressalvas";
-                            valorAluguel = emprestimo.emitirMultaDanificado(valorAluguel );
+                        }
+                        
+                        if(isDanificado) {
+                            
+                            if(isAtrasado) {
+                                status = "Devolvido com atraso e ressalvas";
+                            } else {
+                                status = "Devolvido com ressalvas";
+                            }
+                            
                         }
                 %>
                 %>
@@ -84,7 +89,7 @@
                     <td><%=emprestimo.getDataDev()%></td>
                     <td><%=duracaoEmprestimo%></td>
                     <td><%=diasAtraso%></td>
-                    <td><%="R$ " + valorAluguel%></td>
+                    <td><%=valorAluguel%></td>
                     <td><%=status%></td>
                     <td><%=emprestimo.getCondicao()%></td>
                     <td><%=emprestimo.getLeitor().getIdLeitor()%></td>
