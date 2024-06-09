@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="estilo/leitor.css" type="text/css"/>
     </head>
     <body>
-                    </div>                          
+                                            
         <div class="container">
         <nav id="biblioteca">
                 <div id="user">  

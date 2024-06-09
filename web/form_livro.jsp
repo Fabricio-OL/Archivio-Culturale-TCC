@@ -10,7 +10,8 @@
            <style>
             :root {
                 font-family: sans-serif;
-                color: #ffffff;
+                background-image: linear-gradient(25deg, #362a1e, #deb897);
+                color: #fff;
             }
             
             body {
@@ -48,7 +49,7 @@
         </style>
     </head>
     <body>
-        <%@include file="listar_livro.jsp" %>
+        <%@include file="index.jsp" %>
         <section class="container">
              
             <h1>Adicionar/Atualizar Livro</h1>

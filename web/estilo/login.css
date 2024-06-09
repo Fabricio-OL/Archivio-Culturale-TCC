@@ -1,0 +1,83 @@
+/*area do login - página login*/
+.area-login{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/*area do login - página login*/
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1B264F;
+    border-radius: 30px;
+    width: 250px;
+    height: 350px;
+    padding: 45px;
+}
+
+/*formulário - página login*/
+.login form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login input:focus {
+    background-color: #1b263b;
+}
+
+
+
+/*campos de preenchimento - página login*/
+.logins {
+    margin-top: 25px; /*colocar espaçamento entre os campos de login*/
+    background-color: #353d5d;
+    opacity: 80%;
+    color: white;
+    padding-left: 20px;
+    border: none;
+    height: 35px;
+    outline: none;
+    border-radius: 30px;
+    width: 200px;
+}
+
+
+/*Logo na área de login - página login*/
+.login img{
+    width: 300px;
+    height: auto;
+}
+
+
+/* Botão enter - página login*/
+form [type="submit"]{
+    display: block;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 25px; /*colocar espaçamento entre os campos de login*/
+    background-color: #61a9d3;
+    opacity: 80%;
+    color: white;
+    border: none;
+    height: 35px;
+    outline: none;
+    border-radius: 30px;
+    width: 150px;
+}
+
+
+
+/*texto bem-vindo - página login*/
+.login h1{
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+}
