@@ -1,10 +1,17 @@
 package model.livro;
 
 import java.sql.Date;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import model.pessoa.Bibliotecario;
 import model.pessoa.Leitor;
 
 public class Emprestimo {
+    
+    private static final double VALOR_PADRAO_ALUGUEL = 5.0;
+    private static final double VALOR_PADRAO_MULTA = 0.80;
+    private static final double VALOR_PADRAO_MULTA_DANIFICADO = 35.0;
     
     private int idEmp;
     private Date dataEmp;
@@ -113,12 +120,31 @@ public class Emprestimo {
         this.condicao = condicao;
     }
     
-    public double emitirMulta(long diasAtraso, double valorAluguel) {
+    public double emitirMultaAtraso(long diasAtraso) {
         
-        final double VALOR_PADRAO_MULTA = 0.15;
-        double valorAluguelComMulta = valorAluguel + (diasAtraso * VALOR_PADRAO_MULTA);
+        double multaPorAtraso = diasAtraso * VALOR_PADRAO_MULTA;
         
-        return valorAluguelComMulta;
+        return multaPorAtraso;
     }
+    
+    public double emitirMultaDanificado(){
+        return VALOR_PADRAO_MULTA_DANIFICADO;
+    }
+    
+    public String getValorAluguelFinal(boolean isAtrasado, boolean isDanificado, long diasAtraso) {
+        
+        double valorAluguel = VALOR_PADRAO_ALUGUEL;
+        
+        if(isAtrasado) {
+            valorAluguel += emitirMultaAtraso(diasAtraso);
+        }
+        
+        if(isDanificado) {
+            valorAluguel += emitirMultaDanificado();
+        }
+        
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
+        return nf.format(valorAluguel);
+    }
 }
