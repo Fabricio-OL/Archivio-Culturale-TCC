@@ -24,7 +24,7 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>CNPJ</th>
-                    <th>Endereço</t
+                    <th>Endereço</th>
                     <th>Opções</th>
                     
                 </tr>

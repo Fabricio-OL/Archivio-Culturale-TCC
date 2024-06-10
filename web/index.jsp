@@ -7,7 +7,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Archivio Culturale</title>        
         <link rel="stylesheet" href="estilo/index.css" type="text/css"/>
-        <link rel="stylesheet" href="estilo/fundo.css" type="text/css"/>
+        
     </head>
     <body>
         <div class="tela tela1">
@@ -70,7 +70,8 @@
                 </li>
                   <li class="side-item">
                     <a href="Livros.html">
-                       <i class='bx bx-cart-download'></i>
+                       
+                       <i class='bx bx-edit'></i>
                         <span class="item-des">
                             Editora
                         </span>
@@ -78,7 +79,7 @@
                 </li>
                   <li class="side-item">
                     <a href="Livros.html">
-                       <i class='bx bx-cart-download'></i>
+                       <i class='bx bx-user-check'></i>
                         <span class="item-des">
                             Autora
                         </span>

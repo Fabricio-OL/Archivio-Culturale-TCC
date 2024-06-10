@@ -36,7 +36,7 @@
             }
             
             .form input {
-                padding: 0.4rem;
+                padding-top: 0.4rem;
                 margin: 2% 0;
                 border-radius: 15px;
             }
