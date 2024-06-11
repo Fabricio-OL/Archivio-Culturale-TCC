@@ -37,10 +37,10 @@
 
                 <h1> Seja bem-vindo ! </h1>               
 
-                <form action="gerenciar_login.do" method="POST">
+                <form action="gerenciar_acesso.do" method="POST">
 
                     <!-- Nome do usuário  -->                       
-                    <input class="logins" type="text" name="login" placeholder="Login" id="login" value="" required="" autocomplete="off">
+                    <input class="logins" type="text" name="nome" placeholder="Login" id="login" value="" required="" autocomplete="off">
 
                     <!-- Senha do usuário  -->  
                     <input  class="logins" type="password" name="senha" placeholder="Senha" id="senha" value="" required="" autocomplete="off">

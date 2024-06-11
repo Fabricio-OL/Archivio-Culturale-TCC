@@ -85,14 +85,7 @@
                 --%>
                 
                 
-                <label for="senha">Senha</label>
-                <input
-                    value="${bibliotecario.senha}"
-                    name="senha" 
-                    id="senha" 
-                    type="text"
-                    placeholder=" Insira a senha. Ex. 1@ew#21"
-                />
+               
                 
                 
                 
