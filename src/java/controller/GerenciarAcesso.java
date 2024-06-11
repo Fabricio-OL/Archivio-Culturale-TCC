@@ -68,7 +68,7 @@ public class GerenciarAcesso extends HttpServlet {
                 session.setAttribute("n",nome);
             }else {
                  mensagem="Falha na autenticação,Bibliotecario:"+ nome+"não encontrado";
-                 local="./index.jsp";
+                 local="./form_login.jsp";
                  session.setAttribute("n",nome);
                   
             }

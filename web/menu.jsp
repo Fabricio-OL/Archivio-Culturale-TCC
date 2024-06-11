@@ -22,10 +22,10 @@
                 </a>
             </li>
             <li class="side-item">
-                <a href="Livros.html">
+                <a href="listar_bibliotecario.jsp">
                     <i class='bx bx-user-pin'></i>
                     <span class="item-des">
-                        Usuários
+                        Bibliotecario
                     </span>
                 </a>
             </li>
@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="side-item">
-                <a href="index.jsp">
+                <a href="listar_emprestimo.jsp">
                     <i class='bx bx-cart-download'></i>
                     <span class="item-des">
                         Empréstimos
@@ -54,7 +54,7 @@
                 </a>
             </li>
             <li class="side-item">
-                <a href="index.jsp">
+                <a href="listar_editora.jsp">
                     <i class='bx bx-edit'></i>
                     <span class="item-des">
                         Editora
@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li class="side-item">
-                <a href="index.jsp">
+                <a href="listar_autor.jsp">
                     <i class='bx bx-user-check'></i>
                     <span class="item-des">
                         Autor
@@ -78,6 +78,4 @@
                 </span>
             </button>
         </div>
-        <a href="form_leitor.jsp">
-            Novo Cadastro</a>
 </div>

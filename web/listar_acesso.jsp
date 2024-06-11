@@ -9,13 +9,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="estilo/banner.css">
        
         <title>Archivio Culturale</title>
     </head>
     <body>
-            <%@include file="index.jsp" %> 
+            <%@include file="menu.jsp" %>
             <h1>Lista de Perfis </h1>
 
             <a  href="form_acesso.jsp" class="btn btn-primary">Novo Cadastro</a>

@@ -12,13 +12,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="estilo/index.css">
         <title>Listar</title>
     </head>
     <body>
-        <div>
-           
+           <%@include file="menu.jsp" %>
             <h1>Lista de Emprestimo</h1>
             
             <a href="form_emprestimo.jsp">Novo Cadastro</a>
@@ -106,7 +105,6 @@
                 </tr>
                 <% } %>
             </table>
-        </div>
 
     </body>
 </html>

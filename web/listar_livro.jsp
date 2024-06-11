@@ -8,98 +8,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="estilo/livro.css" type="text/css"/>
+        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Livros</title>
     </head>
     <body>
 
-        <div class="container">
-            <nav id="biblioteca">
-                <div id="user">  
+        <%@include file="menu.jsp" %>
 
-                    <img class="img-biblioteca" src="imagens/biblioteca.jpeg">
-                    <p id="user_infos">
-                        <span class="item-description">  
-                            Biblioteca
-                        </span>
-                        <span class="item-description">
-                            <strong>Archivio Culturale</strong>
-                        </span>
-                    </p>
-                </div>         
-                <ul id="side_items">
-                    <li class="side-item ">
-                        <a href="index.jsp">
-                            <i class='bx bx-store'></i>
-                            <span class="item-des">
-                                Inicio
-                            </span>
-                        </a>
-                    </li>
-                    <li class="side-item">
-                       <a href="index.jsp">
-                            <i class='bx bx-user-pin'></i>                       
-                            <span class="item-des">
-                                Usuários
-                            </span>
-                        </a>
-                    </li>
-                    <li class="side-item">
-                        <a href="listar_leitor.jsp"> 
-                            <i class='bx bxs-book-reader'></i>
-                            <span class="item-des">
-                                Leitores
-                            </span>
-                        </a>
-                    </li>
-                    <li class="side-item">
-                        <a href="listar_livro.jsp">
-                            <i class='bx bxs-book-bookmark'></i>
-                            <span class="item-des">
-                                Livros
-                            </span>
-                        </a>
-                    </li>
-                    <li class="side-item">
-                        <a href="index.jsp">
-                            <i class='bx bx-cart-download'></i>
-                            <span class="item-des">
-                                Empréstimos
-                            </span>
-                        </a>
-                    </li>
-                    <li class="side-item">
-                        <a href="index.jsp">
-                            <i class='bx bx-edit'></i>
-                            <span class="item-des">
-                                Editora
-                            </span>
-                        </a>
-                    </li>
-                    <li class="side-item">
-                        <a href="index.jsp">
-                            <i class='bx bx-user-check'></i>
-                            <span class="item-des">
-                                Autora
-                            </span>
-                        </a>
-                    </li>
-                </ul> 
-                <div id="logout">
-                    <button id="logout_btn">
-                        <i class='bx bx-log-in-circle'></i>
-                        <span class="item-description">
-                            Logout
-                        </span>
-                    </button>
-                </div>
-                <a href="form_livro.jsp">
-                    Novo Cadastro</a>
-        </div>
-
-
+            <a href="form_livro.jsp">Novo Cadastro</a>
         <div class="container">
             <div class="card">
                 <h2>     <%
