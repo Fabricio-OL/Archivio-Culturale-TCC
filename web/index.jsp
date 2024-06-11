@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="estilo/index.css" type="text/css"/>
         
     </head>
-    <body>
+    <body>  
         <div class="tela tela1">
                        
                     </div>                          

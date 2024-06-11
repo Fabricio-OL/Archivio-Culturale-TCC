@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Archivio Culturale</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1,
               user-scalable=no" name="viewport"/>
-        <link rel="stylesheet" href="estilos/menu.css" type="text/css"/>
+        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
 

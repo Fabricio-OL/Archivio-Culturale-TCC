@@ -101,8 +101,6 @@
 
 
         <div class="container">
-            
-
             <div class="card">
                 <h2>     <%
 
@@ -149,6 +147,36 @@
             <div class="card">
                 <h2>A Coroa</h2>
                 <img src="imagens/A Coroa.png" class="produtoL2">
+                <button>Alugar</button>
+            </div>
+            <div class="card">
+                <h2>Biblia Sagrada</h2>
+                <img src="imagens/bibliaSagrada.png" class="produtoL3">
+                <button>Alugar</button>
+            </div>
+            <div class="card">
+                <h2>O pequeno Principe</h2>
+                <img src="imagens/pequeno.png" class="produtoL4">
+                <button>Alugar</button>
+            </div>
+            <div class="card">
+                <h2>Uma Garota</h2>
+                <img src="imagens/garota.png" class="produtoL5">
+                <button>Alugar</button>
+            </div>
+            <div class="card">
+                <h2>Uma Garota</h2>
+                <img src="imagens/narnia.png" class="produtoL6">
+                <button>Alugar</button>
+            </div>
+            <div class="card">
+                <h2>Uma Garota</h2>
+                <img src="imagens/banana.png" class="produtoL7">
+                <button>Alugar</button>
+            </div>
+            <div class="card">
+                <h2>Uma Garota</h2>
+                <img src="imagens/maquiavel.png" class="produtoL8">
                 <button>Alugar</button>
             </div>
             <script>

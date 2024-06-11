@@ -9,57 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Archivio Culturale</title>
-        <style>
-
-
-
-
-            :root {
-                font-family: sans-serif;
-                background-image: linear-gradient(25deg, #362a1e, #deb897);
-                color: #fff;
-            }
-
-            body {
-                margin: 0;
-                
-            }
-
-            section {
-                height: 90vh;
-            }
-
-            .container {
-
-                width: 90%;
-                max-width: 980px;
-
-            }
-
-            .form {
-                display: flex;
-                flex-direction: column;
-
-            }
-
-            .form input {
-                padding-top: 0.4rem;
-                margin: 2% 0;
-                border-radius: 15px;
-            }
-
-            .form .button {
-                width: 30%;
-                padding: 1rem;
-            }
-
-        </style>
+        
     </head>
     <body>
     </head>
 <body> 
+    <%@include file="menu.jsp" %>
     <section class="container">
 
         <h1>Adicionar/Atualizar Leitor</h1>
@@ -111,8 +69,6 @@
             <input class="button" type="submit" value="Adicionar"/>
         </form>
     </section>
-
-    <%@include file="listar_leitor.jsp" %>
-
+                
 </body>
 </html>

@@ -10,7 +10,7 @@
     </head>
     <body>
         
-           <%@include file="index.jsp" %> 
+           <%@include file="menu.jsp" %> 
             <h1>Cadastrar Acesso </h1>
 
             <form action="gerenciar_acesso.do" method="post">               
