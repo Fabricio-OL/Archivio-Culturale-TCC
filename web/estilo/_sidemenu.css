@@ -1,0 +1,54 @@
+/* 
+    Atalho pra selecionar itens semelhantes:
+    SELECIONAR + CTRL + D
+*/
+
+/* aspect ratio explicação */
+/* width: height * aspect-ratio  */
+/* height: width * aspect-ratio */
+
+.sidemenu {
+    background-color: var(--secondary);
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 0 8px var(--primary)
+}
+
+.menu {
+    flex-grow: 1;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+}
+
+.menu-items li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user .user-image {
+    width: 30%;
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+

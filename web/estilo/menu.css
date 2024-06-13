@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 106vh;
+    height: 96vh;
     border-radius: 0px 12px 12px 0px;
     transition: width 0.5s;
 }
@@ -115,7 +115,20 @@ main {
 #logout{
     border-top: 2px solid #ffffff;
     padding: 12px;
-
+    border: none;
+    padding: 12px;
+    font-size: 26px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    bacFkground-color: transparent;
+    color: #f4f4f4;
+}
+#logout a {
+    text-decoration: none;
 }
 #logout_btn {
     border: none;

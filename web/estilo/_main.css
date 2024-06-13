@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url(_sidemenu.css);
+@import url(_logo.css);
+@import url(_form.css);
+
+:root {
+    --text: #1b1513;
+    --text-light: #ece6e4;
+    --background: #f8f6f6;
+    --primary: #4e3b37;
+    --secondary: #b7b49a;
+    --accent: #7e805b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    background-color: var(--background);
+}
+
+section {
+    height: 100vh;
+}
+
+section.section {
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    height: 100%;
+}
+

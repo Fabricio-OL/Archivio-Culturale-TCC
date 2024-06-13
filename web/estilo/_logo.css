@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logotype p {
+    line-height: 0;
+}

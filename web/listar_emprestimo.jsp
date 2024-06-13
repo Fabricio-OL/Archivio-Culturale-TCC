@@ -80,7 +80,7 @@
                             }
                             
                         }
-                %>
+               
                 %>
                 <tr>
                     <td><%=emprestimo.getIdEmp()%></td>

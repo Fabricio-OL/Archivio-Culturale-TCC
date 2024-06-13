@@ -14,14 +14,45 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Livros</title>
     </head>
-    <body>
+    <body style="padding-left: 0px; ">
 
         <%@include file="menu.jsp" %>
-
+        <div class="" ></div>
             <a href="form_livro.jsp">Novo Cadastro</a>
         <div class="container">
             <div class="card">
-                <h2>     <%
+                <h2>A Herdeira</h2>
+                <img src="imagens/A Herdeira.png" class="produtoL1">               
+            </div>        
+            <div class="card">
+                <h2>A Coroa</h2>
+                <img src="imagens/A Coroa.png" class="produtoL2">
+            </div>
+            <div class="card">
+                <h2>Biblia Sagrada</h2>
+                <img src="imagens/bibliaSagrada.png" class="produtoL3">
+            </div>
+            <div class="card">
+                <h2>O pequeno Príncipe</h2>
+                <img src="imagens/pequeno.png" class="produtoL4">
+            </div>
+            <div class="card">
+                <h2>Uma Garota</h2>
+                <img src="imagens/garota.png" class="produtoL5">
+            </div>
+            <div class="card">
+                <h2>Nárnia</h2>
+                <img src="imagens/narnia.png" class="produtoL6">
+            </div>
+            <div class="card">
+                <h2>Diário De Um Banana</h2>
+                <img src="imagens/banana.png" class="produtoL7">
+            </div>
+            <div class="card">
+                <h2>O Príncipe Maquiavel</h2>
+                <img src="imagens/maquiavel.png" class="produtoL8">
+            </div>
+            <%
 
                     ArrayList<Livro> lista = new ArrayList<Livro>();
                     try {
@@ -47,7 +78,11 @@
                             <td><%=livro.getIsbn()%></td>
                             <td><%=livro.getTitulo()%></td>
                             <td><%=livro.getGenero()%></td>
-                            <td><%=livro.getEditora()%></td>
+                            <td><%=livro.getEditora().getIdEditora()%></td>
+                            
+                            
+                            <td><img src="${pageContext.request.contextPath}/img/${li.nomearquivo}" style="width: 100px; height: 100px;"/></td>
+                                     
                             <td>
                                 <a href="gerenciar_livro.do?acao=alterar&id=<%= livro.getIdLivro()%>">
                                     <i class='bx bxs-pencil' ></i>
@@ -59,45 +94,7 @@
                         </tr>
                     </table>
 
-                    <% }%></h2>
-                <img src="imagens/A Herdeira.png" class="produtoL1">
-                <button>Alugar</button>
-            </div>        
-            <div class="card">
-                <h2>A Coroa</h2>
-                <img src="imagens/A Coroa.png" class="produtoL2">
-                <button>Alugar</button>
-            </div>
-            <div class="card">
-                <h2>Biblia Sagrada</h2>
-                <img src="imagens/bibliaSagrada.png" class="produtoL3">
-                <button>Alugar</button>
-            </div>
-            <div class="card">
-                <h2>O pequeno Principe</h2>
-                <img src="imagens/pequeno.png" class="produtoL4">
-                <button>Alugar</button>
-            </div>
-            <div class="card">
-                <h2>Uma Garota</h2>
-                <img src="imagens/garota.png" class="produtoL5">
-                <button>Alugar</button>
-            </div>
-            <div class="card">
-                <h2>Uma Garota</h2>
-                <img src="imagens/narnia.png" class="produtoL6">
-                <button>Alugar</button>
-            </div>
-            <div class="card">
-                <h2>Uma Garota</h2>
-                <img src="imagens/banana.png" class="produtoL7">
-                <button>Alugar</button>
-            </div>
-            <div class="card">
-                <h2>Uma Garota</h2>
-                <img src="imagens/maquiavel.png" class="produtoL8">
-                <button>Alugar</button>
-            </div>
+                    <% }%>
             <script>
                 VanillaTilt.init(document.querySelectorAll(".card"), {
                     max: 25,

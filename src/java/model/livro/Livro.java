@@ -7,6 +7,7 @@ public class Livro {
     private String titulo;
     private Editora editora;
     private String genero;
+    private String nomearquivo;
 
     public Livro() {
     }
@@ -57,11 +58,21 @@ public class Livro {
         this.editora = editora;
     }
 
-    @Override
-    public String toString() {
-        return "Livro{" + "idLivro=" + idLivro + ", isbn=" + isbn + ", titulo=" + titulo + ", editora=" + editora + ", genero=" + genero + '}';
+    public String getNomearquivo() {
+        return nomearquivo;
     }
 
+    public void setNomearquivo(String nomearquivo) {
+        this.nomearquivo = nomearquivo;
+    }
+
+    @Override
+    public String toString() {
+        return "Livro{" + "idLivro=" + idLivro + ", isbn=" + isbn + ", titulo=" + titulo + ", editora=" + editora + ", genero=" + genero + ", nomearquivo=" + nomearquivo + '}';
+    }
+
+    
+    
     
     
     

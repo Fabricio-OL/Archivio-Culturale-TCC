@@ -34,9 +34,10 @@ public class LivroDAO extends DataBaseDAO {
             livro.setIsbn(rs.getString("isbn"));
             livro.setTitulo(rs.getString("titulo"));
             livro.setGenero(rs.getString("genero"));
+            livro.setNomearquivo(rs.getString("nomearquivo"));
             
-            //editora.setIdEditora(rs.getInt("idEditora"));
-            //livro.setEditora(editora);
+            editora.setIdEditora(rs.getInt("idEditora"));
+            livro.setEditora(editora);
             
 
             lista.add(livro);
@@ -56,23 +57,24 @@ public class LivroDAO extends DataBaseDAO {
             String sql;
             this.conectar();
             if (livro.getIdLivro()== 0) {
-                sql = " INSERT INTO Livro(isbn,titulo,genero,idEditora)"
-                        + "values (?,?,?,?)";
+                sql = " INSERT INTO Livro(isbn,titulo,genero,idEditora,nomearquivo)"
+                        + "values (?,?,?,?,?)";
 
             } else {
-                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?, idEditora=? WHERE idLivro= ?";
+                sql = "UPDATE Livro SET  isbn= ? ,titulo = ?,genero = ?, nomearquivo=?,idEditora=? WHERE idLivro= ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, livro.getTitulo());
             pstm.setString(2, livro.getIsbn());
             pstm.setString(3, livro.getGenero());
-            pstm.setInt(4,livro.getEditora().getIdEditora());
+            pstm.setString(4,livro.getNomearquivo());
+            pstm.setInt(5,livro.getEditora().getIdEditora());
             
       
             // Condição para o ID 
             if (livro.getIdLivro()> 0) {
-                pstm.setLong(5, livro.getIdLivro());
+                pstm.setLong(6, livro.getIdLivro());
             }
             pstm.execute();
             this.desconectar();

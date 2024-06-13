@@ -71,11 +71,13 @@
             </li>
         </ul>
         <div id="logout">
+            <a href="form_login.jsp">
             <button id="logout_btn">
                 <i class='bx bx-log-in-circle'></i>
                 <span class="item-description">
                     Logout
                 </span>
             </button>
+                </a>
         </div>
 </div>

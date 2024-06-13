@@ -49,6 +49,20 @@
                     id="genero" 
                     type="text"
                 />
+            
+                <label for="nomearquivo" class="control-label">Nome Arquivo</label>
+                                <input 
+                    value="${livro.genero}"
+                    name="genero" 
+                    id="genero" 
+                    type="text"
+                    
+                />
+                
+                
+                
+                
+                
                 
                 <label for="idEditora">ID Editora</label>
                 <select  name="idEditora" id="idEditora">
