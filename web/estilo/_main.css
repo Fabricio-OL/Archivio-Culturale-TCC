@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+p {
+    line-height: 0;
+}
+
 body {
     font-family: Montserrat, sans-serif;
     margin: 0;
@@ -32,7 +36,9 @@ section.section {
 }
 
 .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     flex-grow: 1;
     height: 100%;
 }
-

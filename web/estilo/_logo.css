@@ -8,8 +8,5 @@
 .logotype p {
     line-height: 0;
     overflow: hidden;
-    display: none;
-}
-.menu .menu-items p{
-    display: none;
+   
 }
