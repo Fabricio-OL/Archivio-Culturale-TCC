@@ -49,7 +49,7 @@
                 <a href="listar_emprestimo.jsp">
                     <i class='bx bx-cart-download'></i>
                     <span class="item-des">
-                        Empréstimos
+                        EmprÃ©stimos
                     </span>
                 </a>
             </li>
