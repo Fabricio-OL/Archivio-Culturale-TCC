@@ -1,0 +1,37 @@
+body {
+    background-image: radial-gradient(circle at center, var(--secondary), var(--primary));
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1080px;
+}
+
+.login-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.login-section,
+.login-banner {
+    width: 50%;
+    height: 80%;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.3);
+}
+
+.login-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary);
+    color: white;
+}
+
+.login-fields {
+    display: flex;
+    flex-direction: column;
+}
