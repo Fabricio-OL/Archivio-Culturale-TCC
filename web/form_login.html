@@ -9,53 +9,62 @@
     <title>Archivio Culturale</title>
 </head>
 <body>
-    <main class="login-content container">
+    <main class="login-content center">
         <section class="login-section">
-            <div class="login-header">
-                <h1>
-                    Bem-Vindo a Archivio Culturale
-                </h1>
-                <p>
-                    Entre com suas informações de login
-                </p>
-            </div>
+
+            <img class="logo" src="imagens/logo.svg" alt="logo">
 
             <form class="login-fields" action="">
-                <label for="login">Usuário</label>
-                <input 
-                    class="login-user"
-                    type="text"
-                    name="nome"
-                    placeholder="Login"
-                    id="login"
-                    value=""
-                    required 
-                    autocomplete="off"
-                >
+                <div class="field">
 
-                <label for="senha">Senha</label>
-                <input 
-                    class="login-password"
-                    type="password"
-                    name="senha"
-                    placeholder="********"
-                    id="senha"
-                    value=""
-                    required 
-                    autocomplete="off"
-                >
+                    <label for="login">Usuário</label>
+                    <input 
+                        class="username"
+                        type="text"
+                        name="nome"
+                        placeholder="Usuário"
+                        id="login"
+                        value=""
+                        required 
+                        autocomplete="off"
+                    >
+
+                </div>
+
+                <div class="field">
+
+                    <label for="senha">Senha</label>
+                    <input 
+                        class="password"
+                        type="password"
+                        name="senha"
+                        placeholder="Senha"
+                        id="senha"
+                        value=""
+                        required 
+                        autocomplete="off"
+                    >
+
+                </div>
 
             </form>
 
-            <button>
+            <button class="login-btn">
                 Entrar
             </button>
 
 
         </section>
     
-        <img class="login-banner" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="estante com livros">
-
+        <div class="banner-content">
+            <img class="banner" src="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?q=80&w=1904&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="banner-login">
+            <div class="banner-text">
+                <h1>Bem-vindo</h1>
+                <p>
+                    Entre com suas informações de login
+                </p>
+            </div>
+        </div>
     </main>
 </body>
 </html>

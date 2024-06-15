@@ -1,11 +1,23 @@
 body {
-    background-image: radial-gradient(circle at center, var(--secondary), var(--primary));
+    background-image: linear-gradient(to top, rgb(var(--background)), rgb(var(--secondary)));
+    height: 100vh;
 }
 
-.container {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 1080px;
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 30%;
+    height: auto;
 }
 
 .login-content {
@@ -13,25 +25,86 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
+    height: 75%;
+    min-width: 1080px;
+    
+    border-radius: 16px;
+    border: solid rgb(var(--text), 0.2) 1px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.3);
+
+    overflow: hidden;
 }
 
 .login-section,
-.login-banner {
+.banner-content {
     width: 50%;
-    height: 80%;
-    box-shadow: 0 0 32px rgba(0, 0, 0, 0.3);
+    height: 100%;
 }
 
 .login-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--primary);
-    color: white;
+
+    color: rgb(var(--text));
+
+    padding: 64px;
 }
 
 .login-fields {
     display: flex;
     flex-direction: column;
+    gap: 24px;
+}
+
+.login-fields .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-fields label {
+    border-bottom: solid rgba(var(--accent), 0.2) 2px;
+    padding: 8px 0;
+    margin: 8px 0;
+}
+
+.login-fields input {
+    border: none;
+    border-radius: 8px;
+}
+
+.login-fields .username,
+.login-fields .password {
+    padding: 0.6rem;
+}
+
+
+.login-btn {
+    border: solid rgba(var(--text), 0.2) 1px;
+    border-radius: 12px;
+
+    background-color: rgb(var(--accent), 0.8);
+    
+    padding: 1rem;
+    color: rgb(var(--text-light));
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: rgb(var(--accent), 0.6);
+    cursor: pointer;
+}
+
+.banner-content {
+    position: relative;
+    object-fit: cover;
+}
+    
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
 }
