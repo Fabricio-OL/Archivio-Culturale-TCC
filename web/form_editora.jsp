@@ -4,17 +4,9 @@
     Author     : Claudia
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <title>Archivio Culturale</title>
-    </head>
     <body>
-        <%@include file="menu.jsp" %>
+        <%@include file="index.jsp" %>
         <section class="container">
             
             <h1>Adicionar/Atualizar Editora</h1>
@@ -45,13 +37,13 @@
                 />
 
 
-                <label for="endereco">EndereÃ§o</label>
+                <label for="endereco">Endereço</label>
                 <input 
                     value="${editora.end}"
                     name="end" 
                     id="endereco" 
                     type="text"
-                    placeholder="Insira EndereÃ§o. Ex. Q5, B3, L2, Avenida dos Anjos, BrasÃ­lia - DF"
+                    placeholder="Insira Endereço. Ex. Q5, B3, L2, Avenida dos Anjos, Brasília - DF"
                 />
                 
              <%--   <label for="Livro_idLivro">ID livro</label>

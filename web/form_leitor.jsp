@@ -7,22 +7,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <title>Archivio Culturale</title>
-        
-    </head>
-    <body>
-    </head>
 <body> 
-    <%@include file="menu.jsp" %>
+    <%@include file="index.jsp" %>
     <section class="container">
 
         <h1>Adicionar/Atualizar Leitor</h1>
 
-        <form method="post" action="gerenciar_leitor.do" class="form">
+        <form method="post" action="gerenciar_leitor" class="form">
             <input 
                 value="${leitor.idLeitor}"
                 name="idLeitor" 

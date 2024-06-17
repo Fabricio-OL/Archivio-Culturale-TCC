@@ -5,15 +5,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo/_main.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <title>Listar</title>
+        <title>Archivio Culturale</title>
     </head>
     <body>
-            <%@include file="menu.jsp" %>
+            <%@include file="index.jsp" %>
             <h1>Lista de Bibliotecario</h1>
             
             <a href="form_bibliotecario.jsp" class="btn btn-primary">Novo Cadastro</a>

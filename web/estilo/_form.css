@@ -27,3 +27,7 @@ input:focus{
     width: 30%;
     padding: 1rem;
 }
+.container{
+    display: flex;
+    justify-content: center;
+}

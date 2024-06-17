@@ -14,14 +14,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <title>Archivio Culturale</title>
-    </head>
     <body>
-        <%@include file="menu.jsp" %>
+        <%@include file="index.jsp" %>
         <section class="container">
 
             <h1>Adicionar/Atualizar Emprestimo</h1>

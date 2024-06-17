@@ -5,12 +5,20 @@
 <%@page import="model.pessoa.Leitor"%>
 <!DOCTYPE html>
 <html>
-     <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo/_main.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>Archivio Culturale</title>
+    </head>
+
+    <body>
         <%@include file="index.jsp" %>
 
         <div class="cadastro">                                 
             <h1>Lista de Leitores</h1>           
-            <a href="form_leitor.jsp">Novo Cadastro</a>           
+            <a href="formArrumada.jsp">Novo Cadastro</a>           
             <table class="table table-hover">
                 <tr>
                     <th>ID</th>

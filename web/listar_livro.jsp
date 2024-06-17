@@ -6,17 +6,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="estilo/livro.css" type="text/css"/>
-        <link rel="stylesheet" href="estilo/main.css" type="text/css"/>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="estilo/_main.css" type="text/css"/>
         <title>Livros</title>
     </head>
     <body style="padding-left: 0px; ">
 
-        <%@include file="menu.jsp" %>
+        <%@include file="index.jsp" %>
         <div class="" ></div>
             <a href="form_livro.jsp">Novo Cadastro</a>
         <div class="container">
