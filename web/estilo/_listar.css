@@ -1,0 +1,63 @@
+.cadrastro{
+    display: flex;
+    justify-content: center;
+}
+
+/*Estilizando o listar bibliotecario*/
+/* Estilo para a seção principal */
+
+
+.content {
+    width: 100%;
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.bibliotecario {
+    background-color: #fff; /* Cor de fundo do container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.bibliotecario h1 {
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    text-align: center; /* Alinhamento central do texto */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Colapso das bordas da tabela */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Borda inferior fina */
+}
+
+.table th {
+    background-color: #f2f2f2; /* Cor de fundo do cabeçalho da tabela */
+    font-weight: bold; /* Negrito para o cabeçalho */
+}
+
+.table td {
+    vertical-align: middle; /* Alinhamento vertical no centro */
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none; /* Remover sublinhado */
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+}

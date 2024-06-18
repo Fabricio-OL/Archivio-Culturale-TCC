@@ -6,8 +6,9 @@
 <!DOCTYPE html>
 <html>
      <body>
-        <%@include file="index.jsp" %>
-
+        <section class="section">
+        <%@include file="menu.jsp" %>
+        <main class="content">
         <div class="cadastro">                                 
             <h1>Lista de Leitores</h1>           
             <a href="form_leitor.jsp">Novo Cadastro</a>           
@@ -51,7 +52,7 @@
                 <% }%>
             </table>
         </div>
-
-
+        </main>
+    </section>
     </body>
 </html>

@@ -13,7 +13,10 @@
         <title>Archivio Culturale</title>
     </head>
     <body>
-            <%@include file="index.jsp" %>
+        <section class="section">
+            <%@include file="menu.jsp" %>
+            <main class="content">            
+            <div class="bibliotecario">
             <h1>Lista de Bibliotecario</h1>
             
             <a href="form_bibliotecario.jsp" class="btn btn-primary">Novo Cadastro</a>
@@ -58,6 +61,9 @@
                 </tr>
                 <% } %>
             </table>
+        </div>
+    </main>
+    </section>
     </body>
 </html>
 

@@ -10,7 +10,9 @@
 <!DOCTYPE html>
 <html>
     <body>
-           <%@include file="index.jsp" %>
+        <section class="section">
+           <%@include file="menu.jsp" %>
+           <main class="content">
             <h1>Lista de Emprestimo</h1>
             
             <a href="form_emprestimo.jsp">Novo Cadastro</a>
@@ -98,7 +100,8 @@
                 </tr>
                 <% } %>
             </table>
-
+        </main>
+        </section>
     </body>
 </html>
 

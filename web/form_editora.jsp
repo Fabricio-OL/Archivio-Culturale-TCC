@@ -6,7 +6,8 @@
 
 <html>
     <body>
-        <%@include file="index.jsp" %>
+        <section class="section">
+        <%@include file="menu.jsp" %>
         <section class="container">
             
             <h1>Adicionar/Atualizar Editora</h1>
@@ -37,13 +38,13 @@
                 />
 
 
-                <label for="endereco">Endereço</label>
+                <label for="endereco">Endereï¿½o</label>
                 <input 
                     value="${editora.end}"
                     name="end" 
                     id="endereco" 
                     type="text"
-                    placeholder="Insira Endereço. Ex. Q5, B3, L2, Avenida dos Anjos, Brasília - DF"
+                    placeholder="Insira Endereï¿½o. Ex. Q5, B3, L2, Avenida dos Anjos, Brasï¿½lia - DF"
                 />
                 
              <%--   <label for="Livro_idLivro">ID livro</label>
@@ -56,7 +57,8 @@
            --%>     
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
-        </section>
         
+        </section>
+    </section>
     </body>
 </html>

@@ -1,90 +1,54 @@
+<%-- 
+    Document   : form_login
+    Created on : 22/10/2023, 21:35:36
+    Author     : Luan
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <title>Archivio Culturale</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/_main.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-</head>
-<body>
-    
-    <section class="section">
-        <aside class="sidemenu">
-                <div class="logo">
-                    <img src="imagens/completo.svg">
-                </div>
-    
-                <div class="user">
-                    <img class="user-image" src="imagens/biblioteca.jpeg" alt="img-user">
-                    <p>Bibliotecario</p>
-                </div>
-    
-                <nav class="menu">
-                    <ul class="menu-items">
-                        <li>
-                            <a class="menu-link" href="index.jsp">
-                            <i class='bx bx-store'></i>
-                            <p>Inicio</p>                          
-                            </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="listar_bibliotecario.jsp">
-                            <i class='bx bx-user-pin'></i>
-                            <p>Bibliotecario</p> 
-                        </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="listar_leitor.jsp">
-                            <i class='bx bxs-book-reader'></i>
-                            <p>Leitor</p> 
-                        </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="listar_autor.jsp">
-                            <i class='bx bx-user-check'></i>
-                            <p>Autor</p>                         
-                            </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="listar_livro.jsp">
-                            <i class='bx bxs-book-bookmark'></i>
-                            <p>Livros</p>                       
-                        </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="listar_editora.jsp">
-                            <i class='bx bx-edit'></i>
-                            <p>Editora</p>                        
-                        </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="listar_emprestimo.jsp">
-                            <i class='bx bx-cart-download'></i>
-                            <p>Empr�stimo</p>                         
-                            </a>
-                        </li>
-    
-                        <li>
-                            <a class="menu-link" href="form_login.jsp">
-                            <i class='bx bx-log-in-circle'></i>
-                            <p>Logout</p> 
-                        </a>                      
-                        </li>
-                    </ul>
-                </nav>
-        </aside>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Archivio Culturale</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1,
+              user-scalable=no" name="viewport"/>
+        <link rel="stylesheet" href="estilo/_login.css" type="text/css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
 
-        <main class="content">
+        <%
+            String mensagem = (String) request.getSession().getAttribute("mensagem");
+            if (mensagem != null) {
+                request.getSession().removeAttribute("mensagem");
 
-        </main>
-    </section>
-</body>
+        %>
+        <div class="alert alert-info"><%=mensagem%></div>
+        <%
+
+            }
+
+        %>
+        <section class="area-login">
+            <div class="login">
+                <div>
+                    <img src="imagens/odontoestoquelogo.svg">
+                </div>
+
+                <h1> Seja bem-vindo ! </h1>               
+
+                <form action="gerenciar_acesso.do" method="POST">
+
+                    <!-- Nome do usuário  -->                       
+                    <input class="logins" type="text" name="nome" placeholder="Login" id="login" value="" required="" autocomplete="off">
+
+                    <!-- Senha do usuário  -->  
+                    <input  class="logins" type="password" name="senha" placeholder="Senha" id="senha" value="" required="" autocomplete="off">
+
+                    <!-- Entrar  --> 
+                    <input type="submit" value="entrar">  
+                </form>
+            </div>      
+        </section>                             
+    </body>
 </html>

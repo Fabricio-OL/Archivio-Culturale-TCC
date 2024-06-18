@@ -7,7 +7,9 @@
 <!DOCTYPE html>
 <html>
     <body>   
-        <%@include file="index.jsp" %>
+        <section class="section">
+        <%@include file="menu.jsp" %>
+        <main class="content">
             <h1>Lista de Autores </h1>
             
             <a href="form_autor.jsp" class="btn btn-primary">Novo Cadastro</a>
@@ -52,7 +54,9 @@
                     </td>
                 </tr>
                 <% } %>
-            </table>                         
+            </table>
+        </main>  
+        </section>  
     </body>
 </html>
 

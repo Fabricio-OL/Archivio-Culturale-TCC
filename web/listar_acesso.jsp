@@ -7,11 +7,11 @@
 <!DOCTYPE html>
 <html>
     <body>
-            <%@include file="index.jsp" %>
+        <section class="section">
+            <%@include file="menu.jsp" %>
+            <main class="content">
             <h1>Lista de Perfis </h1>
-
             <a  href="form_acesso.jsp" class="btn btn-primary">Novo Cadastro</a>
-
             <table class="table table-sucess table-striped-columns   table-hover">
                 <tr>
                     <th>ID</th>
@@ -46,5 +46,7 @@
                 </tr>
                <%} %>
             </table>
+        </main>
+        </section>
     </body>
 </html>

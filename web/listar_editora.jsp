@@ -6,7 +6,9 @@
 <!DOCTYPE html>
 <html>
     <body>
-           <%@include file="index.jsp" %>
+        <section class="section">
+           <%@include file="menu.jsp" %>
+           <main class="content">
             <h1>Lista de Editoras</h1>
             
             <a href="form_editora.jsp">Novo Cadastro</a>
@@ -52,6 +54,7 @@
                 </tr>
                 <% } %>
             </table>
-
+        </main>
+        </section>
     </body>
 </html>

@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <%@include file="index.jsp" %>
+        <section class="section">
+        <%@include file="menu.jsp" %>
         <section class="container">
             
             <h1>Adicionar/Atualizar Autores</h1>
@@ -56,6 +57,6 @@
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>
-        
+    </section>
     </body>
 </html>

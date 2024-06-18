@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <%@include file="index.jsp" %>
+        <section class="section">
+        <%@include file="menu.jsp" %>
         <section class="container">
             
             
@@ -63,10 +64,7 @@
                     id="senha" 
                     type="text"
                     placeholder="Insira a senha . Ex. 1@34%R"
-                />
-                
-                
-
+                />                           
                 <%--<label for="endereco">Endereço</label>
                 <input 
                     value="${bibliotecario.end}"
@@ -75,16 +73,10 @@
                     type="text"
                     placeholder="Insira Endereço. Ex. Q1, C2, L3, Avenida dos Coqueiros, Brasília - DF"
                 />
-                --%>
-                
-                
-               
-                
-                
-                
+                --%>                                                                            
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
         </section>
-        
+    </section>
     </body>
 </html>

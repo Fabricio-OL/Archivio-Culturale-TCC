@@ -3,15 +3,22 @@
 @import url(_sidemenu.css);
 @import url(_logo.css);
 @import url(_form.css);
+@import url(_listar.css);
+
+/*
+    TODO LUGAR QUE TIVER SÓ "var(--variavel)"
+    TEM QUE POR O RGB/RGBA 
+
+    var(--variavel) -> rgb(var(--variavel))
+*/
 
 :root {
-    --text: #1b1513;
-    --text-light: #ece6e4;
-    --background: #f8f6f6;
-    --primary: #4e3b37;
-    --secondary: #b7b49a;
-    --accent: #7e805b;
-    
+    --text: 27, 21, 19;
+    --text-light: 236, 230, 228;
+    --background: 248, 246, 246;
+    --primary: 78, 59, 55;
+    --secondary: 183, 180, 154;
+    --accent: 126, 128, 91;
 }
 
 * {
@@ -25,7 +32,7 @@ p {
 body {
     font-family: Montserrat, sans-serif;
     margin: 0;
-    background-color: var(--background);
+    background-color: rgba(var(--primary), 0.4);
 }
 
 section {
@@ -33,13 +40,21 @@ section {
 }
 
 section.section {
+    width: 30px;
     display: flex;
 }
+
+.menu-link {
+    color: blue;
+}
+
+.menu-link:visited {
+    color: #4e3b37; /* MUDAR COR LINK VISITADO */
+}
+
 
 .content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
 }

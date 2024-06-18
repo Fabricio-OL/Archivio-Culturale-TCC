@@ -1,83 +1,85 @@
-<div class="container">
-    <nav id="biblioteca">
-        <div id="user">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Archivio Culturale</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/_main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    
+    <aside class="sidemenu">
+            <div class="logo">
+                <img src="imagens/logo.svg">
+            </div>
 
-            <img class="img-biblioteca" src="imagens/biblioteca.jpeg">
-            <p id="user_infos">
-                <span class="item-description">
-                    Biblioteca
-                </span>
-                <span class="item-description">
-                    <strong>Archivio Culturale</strong>
-                </span>
-            </p>
-        </div>
-        <ul id="side_items">
-            <li class="side-item ">
-                <a href="index.jsp">
-                    <i class='bx bx-store'></i>
-                    <span class="item-des">
-                        Inicio
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="listar_bibliotecario.jsp">
-                    <i class='bx bx-user-pin'></i>
-                    <span class="item-des">
-                        Bibliotecario
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="listar_leitor.jsp">
-                    <i class='bx bxs-book-reader'></i>
-                    <span class="item-des">
-                        Leitores
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="listar_livro.jsp">
-                    <i class='bx bxs-book-bookmark'></i>
-                    <span class="item-des">
-                        Livros
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="listar_emprestimo.jsp">
-                    <i class='bx bx-cart-download'></i>
-                    <span class="item-des">
-                        Empréstimos
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="listar_editora.jsp">
-                    <i class='bx bx-edit'></i>
-                    <span class="item-des">
-                        Editora
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="listar_autor.jsp">
-                    <i class='bx bx-user-check'></i>
-                    <span class="item-des">
-                        Autor
-                    </span>
-                </a>
-            </li>
-        </ul>
-        <div id="logout">
-            <a href="form_login.jsp">
-            <button id="logout_btn">
-                <i class='bx bx-log-in-circle'></i>
-                <span class="item-description">
-                    Logout
-                </span>
-            </button>
-                </a>
-        </div>
-</div>
+            <div class="user">
+                <img class="user-image" src="imagens/biblioteca.jpeg" alt="img-user">
+                <p>Bibliotecario</p>
+            </div>
+
+            <nav class="menu">
+                <ul class="menu-items">
+                    <li>
+                        <a class="menu-link" href="inicio.jsp">
+                        <i class='bx bx-store'></i>
+                        <p>Inicio</p>                          
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="listar_bibliotecario.jsp">
+                        <i class='bx bx-user-pin'></i>
+                        <p>Bibliotecario</p> 
+                    </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="listar_leitor.jsp">
+                        <i class='bx bxs-book-reader'></i>
+                        <p>Leitor</p> 
+                    </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="listar_autor.jsp">
+                        <i class='bx bx-user-check'></i>
+                        <p>Autor</p>                         
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="listar_livro.jsp">
+                        <i class='bx bxs-book-bookmark'></i>
+                        <p>Livros</p>                       
+                    </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="listar_editora.jsp">
+                        <i class='bx bx-edit'></i>
+                        <p>Editora</p>                        
+                    </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="listar_emprestimo.jsp">
+                        <i class='bx bx-cart-download'></i>
+                        <p>Emprestimo</p>                         
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-link" href="form_login.jsp">
+                        <i class='bx bx-log-in-circle'></i>
+                        <p>Logout</p> 
+                    </a>                      
+                    </li>
+                </ul>
+            </nav>
+    </aside>
+    
+</body>
+</html>
