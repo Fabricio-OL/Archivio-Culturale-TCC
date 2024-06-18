@@ -38,7 +38,7 @@
 .btn {
     display: inline-block;
     padding: 8px 16px;
-    background-color: #007bff; /* Cor de fundo do botão */
+    background-color: #4e3b37; /* Cor de fundo do botão */
     color: #fff; /* Cor do texto do botão */
     text-decoration: none; /* Remover sublinhado */
     border-radius: 4px;
@@ -46,7 +46,7 @@
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+    background-color: #7d6965; /* Cor de fundo do botão ao passar o mouse */
 }
 
 

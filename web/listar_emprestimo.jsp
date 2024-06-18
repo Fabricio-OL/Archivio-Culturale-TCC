@@ -9,13 +9,20 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo/_main.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>Archivio Culturale</title>
+    </head>
     <body>
         <section class="section">
            <%@include file="menu.jsp" %>
-           <main class="content">
+           <main class="content form">
             <h1>Lista de Emprestimo</h1>
             
-            <a href="form_emprestimo.jsp">Novo Cadastro</a>
+            <a href="form_emprestimo.jsp" class="btn btn-primary">Novo Cadastro</a>
             
             <table class="table table-hover">
                 <tr>
@@ -90,10 +97,10 @@
                     <td><%=emprestimo.getLivro().getIdLivro()%></td>
                     <td><%=emprestimo.getBibliotecario().getIdBibliotecario()%></td>
                     <td>
-                        <a href="gerenciar_emprestimo.do?acao=alterar&id=<%= emprestimo.getIdEmp()%>">
+                        <a class="btn btn-danger" href="gerenciar_emprestimo.do?acao=alterar&id=<%= emprestimo.getIdEmp()%>">
                             <i class='bx bxs-pencil' ></i>
                         </a>
-                        <a href="gerenciar_emprestimo.do?acao=delete&id=<%= emprestimo.getIdEmp()%>">
+                        <a class="btn btn-danger" href="gerenciar_emprestimo.do?acao=delete&id=<%= emprestimo.getIdEmp()%>">
                             <i class='bx bxs-trash'></i>
                         </a>
                     </td>

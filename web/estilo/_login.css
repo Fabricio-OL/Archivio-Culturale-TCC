@@ -79,8 +79,18 @@ img {
     padding: 0.6rem;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
 
 .login-btn {
+    text-decoration: none;
+    text-align: center;
+    
+    flex-grow: 1;
+
     border: solid rgba(var(--text), 0.2) 1px;
     border-radius: 12px;
 

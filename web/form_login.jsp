@@ -16,6 +16,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Archivio Culturale</title>
 </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/_main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Archivio Culturale</title>
+</head>
 <body>
     <%
         String mensagem = (String) request.getSession().getAttribute("mensagem");
@@ -67,9 +74,15 @@
                     >
 
                 </div>
-                <input type="submit" value="Entrar" class="login-btn" >
-            </form>
 
+                <div class="btn-container">
+                    <input type="submit" value="Entrar" class="login-btn" >
+                    
+                    <a href="form_bibliotecario.jsp" class="login-btn">Cadastrar</a>
+                </div>
+
+            </form>
+        
         </section>
     
         <div class="banner-content">

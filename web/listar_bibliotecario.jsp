@@ -17,10 +17,8 @@
             <%@include file="menu.jsp" %>
 
             <main class="content form">            
-            <h1>Lista de Bibliotecario</h1>
-            
-            <a href="form_bibliotecario.jsp" class="btn btn-primary">Novo Cadastro</a>
-            
+            <h1>Lista de Bibliotecario</h1>           
+            <a href="form_bibliotecario.jsp" class="btn btn-primary">Novo Cadastro</a>        
             <table class="table table-hover">
                 <tr>
                     <th>ID</th>

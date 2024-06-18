@@ -14,11 +14,11 @@
     <body>
         <section class="section">
         <%@include file="menu.jsp" %>
-        <section class="container">
+        <main class="content form">
              
             <h1>Adicionar/Atualizar Livro</h1>
             
-            <form method="post" action="gerenciar_livro.do" class="form">
+            <form method="post" action="gerenciar_livro.do">
                 <input 
                     value="${livro.idLivro}"
                     name="idLivro" 
@@ -88,7 +88,7 @@
                 
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
-        </section>
+        </main>
     </section>
     </body>
 </html>

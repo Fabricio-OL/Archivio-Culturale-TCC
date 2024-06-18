@@ -17,7 +17,7 @@
         <%@include file="menu.jsp" %>
         <main class="content form">                               
             <h1>Lista de Leitores</h1>           
-            <a href="form_leitor.jsp">Novo Cadastro</a>           
+            <a href="form_leitor.jsp" class="btn btn-primary">Novo Cadastro</a>         
             <table class="table table-hover">
                 <tr>
                     <th>ID</th>
@@ -47,10 +47,11 @@
                     <td><%=leitor.getEnd()%></td>
 
                     <td>
-                        <a href="gerenciar_leitor.do?acao=alterar&id=<%= leitor.getIdLeitor()%>">
+                        <a class="btn btn-danger" href="gerenciar_leitor.do?acao=alterar&id=<%= leitor.getIdLeitor()%>">
                             <i class='bx bxs-pencil' ></i>
                         </a>
-                        <a href="gerenciar_leitor.do?acao=delete&id=<%= leitor.getIdLeitor()%>">
+                        
+                        <a class="btn btn-danger" href="gerenciar_leitor.do?acao=delete&id=<%= leitor.getIdLeitor()%>">
                             <i class='bx bxs-trash'></i>
                         </a>
                     </td>

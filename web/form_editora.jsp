@@ -5,14 +5,21 @@
 --%>
 
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo/_main.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>Archivio Culturale</title>
+    </head>
     <body>
         <section class="section">
         <%@include file="menu.jsp" %>
-        <section class="container">
+        <main class="content form">
             
             <h1>Adicionar/Atualizar Editora</h1>
             
-            <form method="post" action="gerenciar_editora.do" class="form">
+            <form method="post" action="gerenciar_editora.do">
                 <input 
                     value="${editora.idEditora}"
                     name="idEditora" 
@@ -38,7 +45,7 @@
                 />
 
 
-                <label for="endereco">Endere�o</label>
+                <label for="endereco">Endereco</label>
                 <input 
                     value="${editora.end}"
                     name="end" 
@@ -57,7 +64,7 @@
            --%>     
                 <input class="button" type="submit" value="Adicionar"/>
             </form>
-        
+        </main>
         </section>
     </section>
     </body>
