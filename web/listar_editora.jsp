@@ -5,10 +5,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+    
+
     <body>
         <section class="section">
            <%@include file="menu.jsp" %>
-           <main class="content">
+           <main class="content form">
             <h1>Lista de Editoras</h1>
             
             <a href="form_editora.jsp">Novo Cadastro</a>

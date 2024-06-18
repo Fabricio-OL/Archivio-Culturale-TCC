@@ -9,9 +9,13 @@
     
 </head>
 <body>
-    
-    <%@include file="menu.jsp" %>
-            <div class="sidebar">
-    <img src="imagens/bemvindos.png" alt="">;
+
+    <section class="home">
+        <%@include file="menu.jsp"%>
+        <main class="content-banner">
+            <img class="banner" src="imagens/bemvindos.png" alt="">
+        </main>
+    </section>
+
 </body>
 </html>

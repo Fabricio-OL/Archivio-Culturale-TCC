@@ -7,24 +7,11 @@
 /* Estilo para a seção principal */
 
 
-.content {
+/*.content {
     width: 100%;
-    max-width: 800px; /* Largura máxima do conteúdo */
-    margin-top: 20px; /* Espaçamento superior */
-}
-
-.bibliotecario {
-    background-color: #fff; /* Cor de fundo do container */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
-}
-
-.bibliotecario h1 {
-    font-size: 24px; /* Tamanho da fonte do título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
-    text-align: center; /* Alinhamento central do texto */
-}
+    max-width: 800px;
+    margin-top: 20px;
+}*/
 
 .table {
     width: 100%;
@@ -61,3 +48,7 @@
 .btn:hover {
     background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
 }
+
+
+
+
