@@ -64,7 +64,7 @@ public class GerenciarAcesso extends HttpServlet {
 
             if (biDAO.login(nome, senha)) {
                 mensagem="Login Realizado com sucesso";
-                local="./listar_bibliotecario";
+                local="./inicio.jsp";
                 session.setAttribute("n",nome);
             }else {
                  mensagem="Falha na autenticação,Bibliotecario:"+ nome+"não encontrado";

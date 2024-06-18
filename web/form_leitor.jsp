@@ -21,7 +21,7 @@
 
         <h1>Adicionar/Atualizar Leitor</h1>
 
-        <form method="post" action="gerenciar_leitor">
+        <form method="post" action="gerenciar_leitor.do">
             <input 
                 value="${leitor.idLeitor}"
                 name="idLeitor" 

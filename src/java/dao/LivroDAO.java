@@ -69,12 +69,12 @@ public class LivroDAO extends DataBaseDAO {
             pstm.setString(2, livro.getIsbn());
             pstm.setString(3, livro.getGenero());
            // pstm.setString(4,livro.getNomearquivo());
-            pstm.setInt(5,livro.getEditora().getIdEditora());
+            pstm.setInt(4,livro.getEditora().getIdEditora());
             
       
             // Condição para o ID 
             if (livro.getIdLivro()> 0) {
-                pstm.setLong(6, livro.getIdLivro());
+                pstm.setLong(5, livro.getIdLivro());
             }
             pstm.execute();
             this.desconectar();
