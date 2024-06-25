@@ -50,11 +50,7 @@ section.home {
     height: 100vh;
 }
 
-.menu-link {
-    color: blue;
-}
-
-.menu-link:visited {
+.menu-link, .menu-link:visited {
     color: #4e3b37; /* MUDAR COR LINK VISITADO */
 }
 

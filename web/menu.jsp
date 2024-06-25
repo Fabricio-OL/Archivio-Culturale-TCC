@@ -60,7 +60,7 @@
                 </li>
 
                 <li>
-                    <a class="menu-link" href="form_login.jsp">
+                    <a class="menu-link" href="index.jsp">
                     <i class='bx bx-log-in-circle'></i>
                     <p>Logout</p> 
                 </a>                      

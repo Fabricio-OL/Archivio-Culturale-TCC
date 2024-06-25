@@ -11,6 +11,7 @@
         
         <link rel="stylesheet" href="estilo/_main.css" type="text/css"/>
         <title>Livros</title>
+        <link rel="icon" type="image/x-icon" href="imagens/favicon.svg">
     </head>
     <body>
         <section class="section">

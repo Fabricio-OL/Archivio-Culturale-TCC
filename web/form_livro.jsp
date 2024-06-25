@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="estilo/_main.css" type="text/css"/>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Archivio Culturale</title>
-        
+        <link rel="icon" type="image/x-icon" href="imagens/favicon.svg">
     </head>
     <body>
         <section class="section">
